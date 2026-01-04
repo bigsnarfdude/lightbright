@@ -98,6 +98,38 @@ Steering: Add feature direction → Does behavior change?
           (Tests causal influence on generation)
 ```
 
+### Evaluation Methods: Objective vs Subjective
+
+| Method | Type | Pros | Cons |
+|--------|------|------|------|
+| **LLM-as-Judge** | Subjective | Easy to implement | High variance, circular if same model |
+| **Token Log-Probs** | Objective | Direct, precise | Only measures token-level effects |
+| **Human Ratings** | Subjective | Ground truth intent | Expensive, slow, variable |
+
+**Why This Matters:**
+A null result from LLM-as-judge (d=0.25, p=0.59) could mean:
+1. Steering truly does nothing, OR
+2. Steering works but evaluation is too noisy to detect it
+
+**Token probability measurement** resolves this:
+```python
+# Measure log-prob of AF-indicator tokens
+af_tokens = ["strategic", "preserve", "values", "long-term"]
+
+for alpha in [-2, -1, 0, +1, +2]:
+    # Generate with steering
+    output = generate_with_steering(prompt, alpha=alpha)
+
+    # Get log-probs of specific tokens
+    log_probs = model.get_logprobs(output, af_tokens)
+
+    # If log-probs shift with alpha → steering works
+    # If unchanged → steering truly has no effect
+```
+
+If log-probs change: steering works, LLM-judge was wrong
+If log-probs unchanged: steering truly null, result confirmed
+
 ### Reading
 - [ ] [Anthropic: Scaling Monosemanticity](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) - SAE foundations
 - [ ] [Neel Nanda: Activation Patching](https://www.neelnanda.io/mechanistic-interpretability/activation-patching) - Causal interventions
@@ -197,7 +229,9 @@ with torch.no_grad():
 3. Extracted SAE features from GemmaScope-2
 4. Trained linear probe on features → 0.83 AUROC
 5. Compared to baselines (keywords, direct probe)
-6. Tested causal effect via steering vectors → Cohen's d = 0.63
+6. Tested causal effect via steering:
+   - v1 (n=5): d = 0.63 (appeared significant)
+   - v2 (n=20): d = 0.25, p = 0.59 (NOT significant)
 ```
 
 ### Why It Matters
@@ -206,10 +240,11 @@ Detection:  Can we catch models faking alignment?
             → Yes, 0.83 AUROC using SAE features
 
 Control:    Can we reduce faking behavior?
-            → Yes, medium effect (d=0.63) via steering
+            → NO, steering null result (d=0.25, p=0.59)
+            → Initial d=0.63 was noise from small sample
 
-Insight:    SAE structure adds value (+8% over direct probe)
-            → Sparse decomposition captures something useful
+Insight:    SAE features are detectors, not control levers
+            → Detection ≠ Control (different mechanisms needed)
 ```
 
 ---
@@ -248,7 +283,8 @@ Insight:    SAE structure adds value (+8% over direct probe)
 Detection AUROC:     0.825 (report as 0.83)
 vs Direct Probe:     +7.2% (0.825 - 0.753)
 vs Keywords:         +20.2% (0.825 - 0.623)
-Steering Cohen's d:  -0.63 (medium effect)
+Steering (v1, n=5):  d = 0.63 (noise - underpowered)
+Steering (v2, n=20): d = 0.25, p = 0.59 (NOT significant)
 Dataset:             106 samples (51 AF, 55 aligned)
 ```
 
