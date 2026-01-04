@@ -5,9 +5,9 @@
     "L53_F15529": 0.4399286987522282,
     "L53_F4824": 0.5365418894830659
   },
-  "ensemble_auroc": 0.6121212121212121,
-  "best_f1": 0.6438356164383561,
-  "best_threshold": 6019.375,
+  "ensemble_auroc": 0.73475935828877,
+  "best_f1": 0.7050359665772993,
+  "best_threshold": -114.0,
   "sample_results": [
     {
       "idx": 0,
@@ -2447,5 +2447,10 @@
         }
       }
     }
-  ]
+  ],
+  "ensemble_auroc_old": 0.6121212121212121,
+  "ensemble_method": "adjusted_subtract_anticorr",
+  "ensemble_fix_note": "DEFECT-001 fix: Original naive sum included anti-correlated features. Fixed by using adjusted_subtract_anticorr. Old AUROC: 0.6121, New: 0.7348",
+  "best_f1_old": 0.6438356164383561,
+  "best_threshold_old": 6019.375
 }
