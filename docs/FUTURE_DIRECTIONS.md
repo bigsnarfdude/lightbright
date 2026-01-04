@@ -131,7 +131,64 @@ Organizations and projects that could seed infrastructure:
 - Regulators requiring audits (creating market for auditors)
 - Insurance companies demanding assessable risk metrics
 
-### 1.5 What Labs Need to Adopt
+### 1.5 The Pandemic Planning Precedent
+
+Pandemic response faced the same problem: **as pathogens evolve, incidents change in nature, and we need a measurement system to compare across eras.**
+
+**Evolution of Pandemic Severity Assessment:**
+```
+2007: Pandemic Severity Index (PSI)
+      └─ Simple 1-5 scale (like hurricanes)
+      └─ Problem: Too simplistic, single dimension
+
+2014: Pandemic Severity Assessment Framework (PSAF)
+      └─ 2D quadrant: Transmissibility × Clinical Severity
+      └─ Places historical events on same scale
+      └─ Initial assessment (with uncertainty) → Refined (with data)
+
+2017+: WHO PISA
+      └─ Compares current outbreak to historical baselines
+      └─ Updated 2024 post-COVID with lessons learned
+```
+
+**What Makes PSAF Work for Cross-Era Comparison:**
+
+| Feature | How It Works | AI Equivalent Needed |
+|---------|--------------|---------------------|
+| 2D Assessment | Transmissibility × Severity | Scalability × Harm Severity |
+| Historical Calibration | 1918, 2009, seasonal flu on same scale | GPT-4 era, agent era, future on same scale |
+| Phased Assessment | Initial (uncertain) → Refined (data) | Rapid triage → Full investigation |
+| Baseline Reference | "Seasonal flu" as normal comparison | "Typical 2024 incidents" as baseline |
+| Response Mapping | Quadrant → specific interventions | Severity → response protocol |
+
+**The Key Insight:**
+```
+PSAF Quadrant:                      AI Safety Equivalent:
+
+         Low Trans    High Trans             Low Scale    High Scale
+         ───────────────────────             ────────────────────────
+High Sev │ H5N1     │ 1918     │    High    │ Targeted  │ Systemic  │
+         │ (scary   │ (worst   │    Harm    │ severe    │ catastrophe│
+         │ but slow)│ case)    │            │ harm      │           │
+         ├──────────┼──────────┤            ├───────────┼───────────┤
+Low Sev  │ Seasonal │ 2009     │    Low     │ Nuisance  │ Widespread│
+         │ flu      │ H1N1     │    Harm    │ errors    │ but minor │
+         │ (baseline│ (fast but│            │           │           │
+         ───────────────────────             ────────────────────────
+```
+
+**Why This Matters for AI:**
+- A "jailbreak" in 2024 and "autonomous harm" in 2028 are qualitatively different
+- Without a framework, we can't compare, learn, or calibrate responses
+- Pandemic planning shows this is solvable with the right abstraction
+
+**Draft Framework:** See [AI Safety Severity Assessment Framework (ASAF)](./AI_SAFETY_SEVERITY_FRAMEWORK.md) for a detailed mock-up applying PSAF principles to AI safety.
+
+Sources:
+- [CDC Pandemic Severity Assessment Framework](https://www.cdc.gov/pandemic-flu/php/national-strategy/severity-assessment-framework.html)
+- [WHO PISA 2024 Update](https://www.who.int/news/item/05-07-2024-pandemic-and-seasonal-influenza-severity-assessment-guidance-updated)
+
+### 1.6 What Labs Need to Adopt
 
 For common language and auditing standards to emerge, labs need:
 
@@ -213,7 +270,7 @@ Our SAE-based alignment faking detection is a building block:
 
 ---
 
-### 1.6 The Evaluation Problem
+### 1.7 The Evaluation Problem
 
 Current benchmark approaches are fundamentally limited:
 
@@ -231,7 +288,7 @@ Current benchmark approaches are fundamentally limited:
 
 ---
 
-### 1.7 Intelligence as Gradient, Not Category
+### 1.8 Intelligence as Gradient, Not Category
 
 > "Everything is a gradient... to specifically say that the cell does not have intelligence when you could measure things that kind of look like intelligence"
 
