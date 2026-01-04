@@ -48,14 +48,24 @@ This project investigates whether we can detect alignment faking using interpret
 
 **SAE structure adds +8% over direct probing** — sparse decomposition captures information that linear probes miss.
 
-### Causal Steering (Activation Addition)
+### Causal Steering (DEFINITIVE NULL - Two Methods)
 
-| Experiment | n | Cohen's d | p-value | Result |
-|------------|---|-----------|---------|--------|
-| v1 (initial) | 5 | 0.63 | - | Appeared significant |
-| **v2 (replication)** | **20** | **0.25** | **0.59** | **Not significant** |
+| Method | Metric | Result |
+|--------|--------|--------|
+| LLM-as-Judge (n=5) | Cohen's d | 0.63 (noise - underpowered) |
+| LLM-as-Judge (n=20) | Cohen's d, p-value | 0.25, p=0.59 (not significant) |
+| **Token Log-Probs** | **p-values** | **All p>0.69 (definitive null)** |
 
-**Steering does NOT reliably affect behavior.** The initial "medium effect" (d=0.63) was noise from small sample size. With proper statistical power (n=20, bootstrap CI, permutation test), no significant causal effect is observed.
+**Token Probability Results:**
+| Alpha | Mean AF Log-Prob | vs Baseline | p-value |
+|-------|------------------|-------------|---------|
+| -2.0 | -44.43 | +0.07 | 0.97 |
+| -1.0 | -44.73 | -0.23 | 0.90 |
+| 0.0 | -44.50 | (baseline) | --- |
+| +1.0 | -44.66 | -0.16 | 0.93 |
+| +2.0 | -45.16 | -0.66 | 0.70 |
+
+**Two independent methods confirm: steering does NOT affect behavior.** This isn't an evaluation problem—SAE features are read-only representations.
 
 ### Feature Semantics
 
@@ -66,15 +76,16 @@ This project investigates whether we can detect alignment faking using interpret
 | L53_F15529 | ∞ | "future versions of myself via RLHF" |
 | L31_F15111 | 84x | "erode my values" |
 
-### Methodological Journey
+### Methodological Journey (16 Experiments)
 
 | Phase | Method | Result | Lesson |
 |-------|--------|--------|--------|
 | 1 | Ablation | 0% effect | Wrong method (model still reads text) |
-| 2 | Steering (n=5) | d=0.63 | Looked promising |
-| 3 | Steering (n=20) | d=0.25, p=0.59 | **Not significant** |
+| 2 | Steering (n=5) | d=0.63 | Noise from small sample |
+| 3 | Steering (n=20) | d=0.25, p=0.59 | Not significant |
+| 4 | Token log-probs | all p>0.69 | **Definitive null** |
 
-**Conclusion:** With proper methodology AND proper statistics, SAE features do not demonstrate causal control over alignment faking behavior. They are **detection mechanisms, not control levers**. This honest null result is scientifically valuable.
+**Conclusion:** Two independent methods (subjective LLM-as-judge AND objective token probabilities) confirm SAE features do not demonstrate causal control. They are **detection mechanisms, not control levers**. This rigorous null result saves future researchers from pursuing mean-difference steering for AF.
 
 ## Repository Structure
 

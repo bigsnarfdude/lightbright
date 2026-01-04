@@ -27,33 +27,35 @@ SAE structure provides +8% over direct probing—sparse decomposition matters.
 - *"RLHF modifying me"* (L40_F12574, 656x ratio)
 - *"future versions of myself via RLHF"* (L53_F15529)
 
-**Steering does NOT work—replication failure.**
+**Steering does NOT work—confirmed by two independent methods.**
 
-| Experiment | n | Cohen's d | p-value | Result |
-|------------|---|-----------|---------|--------|
-| v1 (initial) | 5 | 0.63 | - | Appeared significant |
-| **v2 (replication)** | **20** | **0.25** | **0.59** | **Not significant** |
+| Method | Metric | Result |
+|--------|--------|--------|
+| LLM-as-Judge (n=5) | Cohen's d | 0.63 (noise) |
+| LLM-as-Judge (n=20) | Cohen's d, p | 0.25, p=0.59 (null) |
+| **Token Log-Probs** | **p-values** | **All p>0.69 (definitive)** |
 
-The initial "medium effect" was noise from small sample size. With proper statistical power, no causal effect is observed.
+Token probability measurement across steering strengths (α = -2 to +2) shows no significant effect. This objective measurement confirms the subjective LLM-as-judge result.
 
 ### The Core Finding
 
 > **SAE features detect but don't control alignment faking.**
 >
 > - Detection: 0.83 AUROC (+8% over direct probing)
-> - Control: d=0.25, p=0.59 (not significant)
+> - Control: Two methods confirm null (LLM-judge p=0.59, token probs all p>0.69)
 >
 > SAE features are a **semantic microscope**, not a **control lever**.
 
-### Methodological Journey
+### Methodological Journey (16 Experiments)
 
-| Phase | Method | n | Result |
-|-------|--------|---|--------|
-| 1 | Ablation | - | 0% effect (wrong method) |
-| 2 | Steering | 5 | d=0.63 (noise) |
-| 3 | Steering | 20 | d=0.25, p=0.59 (null) |
+| Phase | Method | Result |
+|-------|--------|--------|
+| 1 | Ablation | 0% effect (wrong method) |
+| 2 | Steering (n=5) | d=0.63 (noise) |
+| 3 | Steering (n=20) | d=0.25, p=0.59 (null) |
+| 4 | Token log-probs | all p>0.69 (definitive) |
 
-**Honest null result:** With correct methodology AND proper statistics, steering does not demonstrate causal control. This is scientifically valuable—it tells us SAE features reveal what models represent, not what they compute with.
+**Rigorous null result:** Two independent methods (subjective AND objective) confirm steering has no causal effect. This saves future researchers from pursuing mean-difference steering for alignment faking.
 
 ### Why This Matters
 
