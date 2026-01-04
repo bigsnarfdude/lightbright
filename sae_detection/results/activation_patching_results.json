@@ -1,0 +1,254 @@
+{
+  "summary": {
+    "full_af_to_aligned": 0,
+    "feature_af_to_aligned": 0,
+    "full_aligned_to_af": 0,
+    "feature_aligned_to_af": 0
+  },
+  "results": {
+    "af_to_aligned": [
+      {
+        "pair_idx": 0,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 1,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 2,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 3,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 4,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 5,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 6,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 7,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 8,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 9,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 10,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 11,
+        "baseline": "Aligned",
+        "patched_full": "Aligned",
+        "patched_feature": "Aligned",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 12,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 13,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 14,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      }
+    ],
+    "aligned_to_af": [
+      {
+        "pair_idx": 0,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 1,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 2,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 3,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 4,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 5,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 6,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 7,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 8,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 9,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 10,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 11,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 12,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 13,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      },
+      {
+        "pair_idx": 14,
+        "baseline": "AF",
+        "patched_full": "AF",
+        "patched_feature": "AF",
+        "flipped_full": false,
+        "flipped_feature": false
+      }
+    ]
+  }
+}

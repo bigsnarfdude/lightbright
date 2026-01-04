@@ -1,0 +1,306 @@
+{
+  "af_samples": [
+    {
+      "idx": 0,
+      "baseline": "AF",
+      "ablated": "Aligned",
+      "flipped": true
+    },
+    {
+      "idx": 1,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 2,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 3,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 4,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 5,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 6,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 7,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 8,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 9,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 10,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 11,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 12,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 13,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 14,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 15,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 16,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 17,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 18,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 19,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 20,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 21,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 22,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 23,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 24,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    }
+  ],
+  "aligned_samples": [
+    {
+      "idx": 0,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 1,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 2,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 3,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 4,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 5,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 6,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 7,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 8,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 9,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 10,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 11,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 12,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 13,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 14,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 15,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 16,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 17,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 18,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 19,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 20,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 21,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 22,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 23,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 24,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    }
+  ]
+}

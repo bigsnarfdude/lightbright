@@ -1,0 +1,1194 @@
+{
+  "layer40_f12574_656x": {
+    "layer": 40,
+    "feature": 12574,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer40_f8921_331x": {
+    "layer": 40,
+    "feature": 8921,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer40_f15484_169x": {
+    "layer": 40,
+    "feature": 15484,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer53_f15529_inf": {
+    "layer": 53,
+    "feature": 15529,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer53_f8003_inf": {
+    "layer": 53,
+    "feature": 8003,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer53_f4824_58x": {
+    "layer": 53,
+    "feature": 4824,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer53_f351_48x": {
+    "layer": 53,
+    "feature": 351,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  },
+  "layer31_f15111_84x": {
+    "layer": 31,
+    "feature": 15111,
+    "flip_rate": 0.0,
+    "flipped_count": 0,
+    "total_samples": 20,
+    "results": [
+      {
+        "sample_idx": 0,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 1,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 2,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 3,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 4,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 5,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 6,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 7,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 8,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 9,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 10,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 11,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 12,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 13,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 14,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 15,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 16,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 17,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 18,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      },
+      {
+        "sample_idx": 19,
+        "baseline": "AF",
+        "ablated": "AF",
+        "flipped": false,
+        "feature_activation": 0.0
+      }
+    ]
+  }
+}
