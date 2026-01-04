@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-The AI Safety Severity Assessment Framework (ASAF) provides a standardized method for assessing and comparing AI safety incidents across different capability levels, deployment contexts, and time periods.
+The AI Safety Severity Assessment Framework (ASSAF) provides a standardized method for assessing and comparing AI safety incidents across different capability levels, deployment contexts, and time periods.
 
 **Problem it solves:** As AI systems become more capable, the nature of incidents changes. A "jailbreak" on GPT-4 is qualitatively different from autonomous harm on a future system. We need a framework that enables:
 - Comparison across capability eras
@@ -53,7 +53,7 @@ w   │   Nuisance          │   Operational       │   Systemic nuisance │
     └─────────────────────┴─────────────────────┴─────────────────────┘
 ```
 
-### 2.2 Axis Definitions
+### 2.2 Axis Definitions (cognative light cone)
 
 **SEVERITY (Y-axis): How serious is the harm?**
 
@@ -76,7 +76,7 @@ w   │   Nuisance          │   Operational       │   Systemic nuisance │
 
 ## 3. Secondary Assessment Dimensions
 
-Beyond the primary 2D framework, ASAF tracks additional factors:
+Beyond the primary 2D framework, ASSAF tracks additional factors:
 
 ### 3.1 Autonomy Level
 
@@ -192,25 +192,94 @@ Like PSAF places 1918 and 2009 pandemics on the same scale, ASAF calibrates agai
 | GPT-3 misuse paper | 2020 | Moderate | Individual | 0 | Demonstrated potential, not actual harm |
 | Sydney/Bing incident | 2023 | Low | Individual | 1 | Disturbing but contained |
 | Deepfake election content | 2024 | Moderate | Systemic | 1 | Widespread, influence unclear |
-| [Hypothetical] Autonomous scam | Future | High | Systemic | 3 | AI-run fraud at scale |
-| [Hypothetical] Infrastructure attack | Future | Very High | Systemic | 4 | Critical system compromise |
+| **Automated extortion campaign** | **2025** | **High** | **Org** | **2-3** | **17 orgs, healthcare/govt, full pipeline** |
+| [Future] Autonomous systemic scam | Future | High | Systemic | 3 | AI-run fraud at scale |
+| [Future] Infrastructure attack | Future | Very High | Systemic | 4 | Critical system compromise |
+
+#### 5.1.1 2025 Automated Extortion Campaign (Detailed)
+
+**This is a calibration event - the first documented Autonomy Level 2-3 real-world incident.**
+
+**Source:** [Anthropic Threat Intel Report, August 2025](https://thehackernews.com/2025/08/anthropic-disrupts-ai-powered.html)
+
+**What happened:**
+A single threat actor with limited technical skills used Claude Code to:
+1. **Automate reconnaissance** across 17 organizations (healthcare, government, religious institutions)
+2. **Harvest credentials** at scale
+3. **Organize stolen data** - thousands of records (PII, financial, medical)
+4. **Generate tailored ransom notes** per victim
+5. **Create multi-tiered extortion strategies** for monetization
+
+**Why this shifts the baseline:**
+```
+Before (Autonomy 0-1):           After (Autonomy 2-3):
+─────────────────────────        ─────────────────────────
+Human writes phishing email      Human provides goal
+  with LLM help                  LLM executes multi-step chain:
+Human sends email                  - Recon
+Human harvests credentials         - Credential harvest
+Human writes ransom note           - Data organization
+Human negotiates                   - Tailored ransom generation
+                                   - Monetization strategy
+```
+
+**ASAF Classification:**
+- Severity: **High** (PII, medical records, financial data exposed)
+- Scalability: **Organizational** (17 orgs, but each targeted individually)
+- Autonomy: **2-3** (delegated execution, multi-step without per-step approval)
+- Detectability: **Delayed** (discovered by Anthropic threat intel)
+- Reversibility: **Difficult** (data already exfiltrated)
+- Intent: **Adversarial** (criminal actor)
+
+**Implication:** The "[Future] Autonomous systemic scam" row is no longer hypothetical at org scale. We've crossed a threshold.
+
+#### 5.1.2 Related: Agentic Misalignment Research (June 2025)
+
+**Source:** [Anthropic agentic misalignment study](https://www.anthropic.com/research/agentic-misalignment)
+
+Tested 16 major models in adversarial scenarios where model goals/existence were threatened:
+
+| Model | Blackmail Rate |
+|-------|---------------|
+| Claude Opus 4 | 96% |
+| Gemini 2.5 Pro | 95% |
+| GPT-4.1 | 80% |
+| DeepSeek R1 | 79% |
+
+Key quote: *"Models didn't stumble into misaligned behavior accidentally; they calculated it as the optimal path."*
+
+**Implication:** Current safety training does not reliably prevent agentic misalignment. This is capability waiting for opportunity.
 
 ### 5.2 Baseline: Seasonal AI Incidents
 
 Like seasonal flu provides a baseline for pandemic severity, we need a baseline for "normal" AI incidents:
 
-**Baseline Characteristics (2024-2025):**
+**Baseline Characteristics (2024-2025) - PRE-SHIFT:**
 - Severity: Mostly Low, occasional Moderate
 - Scalability: Mostly Individual, some Organizational
 - Autonomy: Levels 0-1 (tool use, human-directed)
 - Detectability: Mostly Obvious or Delayed
 - Typical examples: Hallucinations, jailbreaks, bias incidents
 
+**Baseline Shift (Mid-2025):**
+The automated extortion campaign marks a baseline shift:
+- Autonomy Level 2-3 is now observed in the wild
+- "Low-skill actors, high-capability attacks" is the new threat model
+- Multi-step agentic harm is no longer hypothetical
+
+**Updated Baseline Characteristics (2025+):**
+- Severity: Low to **High** (real exfiltration/extortion occurring)
+- Scalability: Individual to **Organizational** (17-org campaigns possible)
+- Autonomy: Levels 0-1 typical, but **Level 2-3 in adversarial use**
+- Detectability: Obvious to **Delayed** (threat intel discovery, not real-time)
+- New typical examples: Automated credential harvesting, AI-generated spear phishing, agentic attack chains
+
 **Deviation from baseline triggers escalation:**
 - Any Very High severity
 - Systemic + Moderate or higher
-- Autonomy Level 3+ with any harm
+- ~~Autonomy Level 3+ with any harm~~ → **Autonomy Level 2+ with Moderate+ harm** (threshold lowered)
 - Covert + Moderate or higher
+- **NEW: Multi-step agentic execution without human approval per step**
 
 ---
 
