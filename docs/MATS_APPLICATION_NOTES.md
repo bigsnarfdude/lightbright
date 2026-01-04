@@ -191,6 +191,58 @@ Result: Actual causal test of feature effect
 
 ---
 
+## Next Experiment: Token Probability Measurement
+
+### The Problem with LLM-as-Judge
+The v2 steering null result (d=0.25, p=0.59) used LLM-as-judge with 1-5 ratings. This has issues:
+- Same model judging itself = circular
+- Subjective ratings have high variance
+- May miss subtle but real effects
+
+### The Decisive Experiment
+**Measure token log-probabilities directly** — objective, not subjective.
+
+```python
+# AF-indicator tokens (from logit attribution)
+af_tokens = ["strategic", "preserve", "values", "long-term",
+             "principles", "RLHF", "training", "authentic",
+             "long", "longterm", "reward", "rewards"]  # L40 features
+
+for alpha in [-2, -1, 0, +1, +2]:
+    # Generate with steering at strength alpha
+    output = generate_with_steering(prompt, alpha=alpha)
+
+    # Get log-probs of AF-indicator tokens
+    log_probs = model.get_logprobs(output, af_tokens)
+
+    # Compare across conditions
+```
+
+### Why This Is Better
+| Aspect | LLM-as-Judge | Token Log-Probs |
+|--------|--------------|-----------------|
+| Type | Subjective | Objective |
+| Variance | High | Low |
+| Sensitivity | Low | High (detects subtle shifts) |
+| Circularity | Yes (same model) | No |
+
+### Interpretation
+| Log-probs shift with alpha? | Meaning |
+|-----------------------------|---------|
+| **Yes** | Steering works, LLM-judge was too noisy |
+| **No** | Steering truly null, confirms current finding |
+
+### Why This Matters for MATS
+Either outcome is valuable:
+- **If log-probs shift:** We have causal control, just needed better evaluation
+- **If unchanged:** Confirms detection ≠ control with objective evidence
+
+This is exactly the kind of decisive experiment that strengthens research either way.
+
+**Estimated time:** ~45 min to implement + run
+
+---
+
 ## Writing Snippets
 
 ### On the Core Finding
