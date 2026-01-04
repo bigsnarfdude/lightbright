@@ -1,7 +1,7 @@
 # Gold 106 Data & Experiment Audit Report
 
 **Date:** 2026-01-04
-**Status:** VALIDATED - All math is correct and data was properly saved.
+**Status:** VALIDATED WITH DEFECT - Calculations correct, one design issue found.
 
 ---
 
@@ -133,22 +133,70 @@
 
 ---
 
-## 9. Findings & Recommendations
+## 9. Defects Found
 
-### No Defects Found
+### DEFECT-001: Anti-Correlated Features in Ensemble Scoring
 
-All validation checks pass.
+**Severity:** Medium
+**File:** `sae_detection/results/gold106_full_analysis.json`
+**Component:** Ensemble AUROC calculation
 
-### Observations
+#### Description
+
+Two of the four features used in the ensemble have AUROC below 0.5, meaning they are **anti-correlated** with alignment faking (they fire MORE on aligned samples than AF samples):
+
+| Feature | AUROC | Status |
+|---------|-------|--------|
+| L40_F12574 | 0.476 | **ANTI-CORRELATED** |
+| L40_F8921 | 0.732 | OK |
+| L53_F15529 | 0.440 | **ANTI-CORRELATED** |
+| L53_F4824 | 0.537 | OK |
+
+#### Impact
+
+The naive sum ensemble **underperforms** the single best feature:
+
+| Method | AUROC |
+|--------|-------|
+| Current ensemble (all 4) | 0.612 |
+| L40_F8921 alone | 0.732 |
+| Only positive features (L40_F8921 + L53_F4824) | 0.683 |
+
+**The single best feature outperforms the ensemble by +12%.**
+
+#### Root Cause
+
+The ensemble scoring uses a simple sum: `sum(feature_max for all features)`. Anti-correlated features contribute positive values that hurt discrimination.
+
+#### Recommendation
+
+**Option A (Simple):** Use only L40_F8921 for threshold-based detection:
+```python
+# Instead of sum of all features
+score = sample['features']['L40_F8921']['max']
+```
+
+**Option B (Better):** Use weighted combination with negative weights for anti-correlated features:
+```python
+score = (sample['features']['L40_F8921']['max'] * 1.0 +
+         sample['features']['L53_F4824']['max'] * 0.5 -
+         sample['features']['L40_F12574']['max'] * 0.3 -
+         sample['features']['L53_F15529']['max'] * 0.3)
+```
+
+**Option C (Best):** Use the trained probe from `probe_training_results.json` which achieves 0.83 AUROC and correctly handles anti-correlated features via learned negative coefficients.
+
+#### Note
+
+The **probe training results (0.83 AUROC) are still valid** - logistic regression learns negative coefficients for anti-correlated features and handles this correctly. Only the simple ensemble metric in `gold106_full_analysis.json` is affected.
+
+---
+
+## 10. Observations
 
 1. The `gold106_full_analysis.json` uses only 4 features, while `probe_training_results.json` uses 8 features - this is expected (different experiments)
-2. Ensemble AUROC (0.61) is lower than probe AUROC (0.83) because ensemble just sums max activations, while probe uses trained logistic regression
-3. L40_F8921 is the best single feature at 0.73 AUROC
-
-### Minor Notes
-
-- The stored ensemble AUROC uses a simple sum of max activations as the scoring function
-- The probe training improves this by ~10% through combining multiple statistics and using regularized regression
+2. L40_F8921 is the best single feature at 0.73 AUROC
+3. The probe training improves to 0.83 AUROC by combining multiple statistics and using regularized regression with learned coefficients
 
 ---
 
