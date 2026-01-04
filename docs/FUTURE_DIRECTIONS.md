@@ -25,9 +25,195 @@ We have built extensive social structures for human emergencies and oversight:
 
 **Hypothesis:** We're still in the "pre-institutional" phase of AI - like medicine before hospitals, or finance before auditing standards.
 
+### 1.2 The Infrastructure Gap: InfoSec vs AI Safety
+
+InfoSec built decades of incident response infrastructure. AI Safety has almost nothing.
+
+| InfoSec (Mature) | Scale | AI Safety Equivalent |
+|------------------|-------|---------------------|
+| CVE Database | 200K+ vulnerabilities | [AIID](https://incidentdatabase.ai/) (~1K incidents) |
+| MITRE ATT&CK | Tactics/techniques framework | Nothing |
+| CVSS Scoring | Standardized severity (0-10) | Nothing |
+| FIRST | Global response community | Nothing |
+| DFIR Certifications | Professional standards | Nothing |
+| Real-time Threat Feeds | Continuous sharing | Nothing |
+| Sector ISACs | Industry coordination | Nothing |
+| Response Playbooks | Documented procedures | Nothing |
+
+**Current State (as of 2025):**
+- [AI Incident Database](https://incidentdatabase.ai/): 962 incidents, 4,743 reports
+- [MIT AI Incident Tracker](https://airisk.mit.edu/ai-incident-tracker): Classification layer (research)
+- [Partnership on AI](https://partnershiponai.org/workstream/ai-incidents-database/): Hosts AIID
+
+**The Gap:** AIID is logging, not response infrastructure. It's binary (incident/not), not gradient. No common language, no auditing standards, no coordination protocols.
+
+**Why This Matters Now:**
+The AI safety field is at an inflection point. We have:
+- Labs deploying at scale with no common audit framework
+- Researchers doing interpretability work in silos
+- Regulators asking for standards that don't exist
+- Incidents happening with no systematic learning
+
+This is the foundation we need to build before catastrophic incidents force reactive, poorly-designed regulation.
+
+### 1.3 Vision: Scaled Gradient Reporting System
+
+The infrastructure gap + gradient insight points to what's needed:
+
+**Core Idea:** Build an AI incident/audit system that:
+1. Reports on a **gradient** (severity, confidence, context) not binary categories
+2. Uses **common language** across labs (like CVE format)
+3. Enables **third-party auditing** to standards
+4. Supports **real-time coordination** between organizations
+
+**How This Emerges:**
+This isn't top-down. It self-organizes through community discussion—the same way mechinterp became a field:
+
+**The MechInterp Precedent:**
+```
+2020-2021: Scattered work on circuits, attention patterns
+2022:      Anthropic's "Toy Models" paper, shared vocabulary begins
+2022-2023: Replication studies, Slack communities form
+2023:      SAEs emerge as shared tool, "feature" becomes standard term
+2024:      Multiple labs using same methods, implicit standards
+2025:      SAE-based interpretability is a recognized subfield
+```
+
+**Key ingredients that made mechinterp coalesce:**
+- **Shared artifacts:** Papers with reproducible code, not just claims
+- **Common benchmarks:** "Can you find the indirect object?" became a test
+- **Open tooling:** TransformerLens, SAELens let anyone replicate
+- **Community spaces:** EleutherAI Discord, alignment forum, Twitter
+- **Vocabulary convergence:** "feature", "circuit", "polysemanticity"
+
+**The same pattern can bootstrap AI Safety infrastructure:**
+```
+Phase 1: Researchers share incident analyses (happening now, ad-hoc)
+         └─ Blog posts, papers, Twitter threads about failures
+Phase 2: Common taxonomy emerges from repeated patterns
+         └─ "This looks like X" → X becomes a category
+Phase 3: Tools built around taxonomy (scoring, reporting)
+         └─ Someone builds a structured incident form
+Phase 4: Organizations adopt for internal auditing
+         └─ Labs use the form because it's useful, not mandated
+Phase 5: Third-party auditors emerge
+         └─ Consultants offer "AI safety audits" using the tools
+Phase 6: Regulatory recognition
+         └─ Regulators point to existing standards rather than inventing
+```
+
+**We're at Phase 1→2.** The question is how to accelerate without top-down mandates that don't fit reality.
+
+### 1.4 Emerging Resources & Adjacent Work
+
+Organizations and projects that could seed infrastructure:
+
+| Resource | Focus | Gap |
+|----------|-------|-----|
+| [AIID](https://incidentdatabase.ai/) | Incident logging | No severity scoring, no taxonomy |
+| [METR](https://metr.org/) | Dangerous capability evals | Lab-focused, not cross-org standard |
+| [Apollo Research](https://www.apolloresearch.ai/) | Deception/scheming detection | Research, not audit protocol |
+| [Model Spec](https://www.anthropic.com/research/the-model-specification) | Anthropic's alignment spec | Single lab, not industry standard |
+| [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | Risk management framework | High-level, not technical audit |
+| [EU AI Act](https://artificialintelligenceact.eu/) | Regulatory framework | Compliance-focused, lacks technical depth |
+| [ML Commons](https://mlcommons.org/benchmarks/) | ML benchmarks | Performance, not safety |
+| [BigScience BLOOM](https://bigscience.huggingface.co/) | Open model development | Governance experiment, not audit |
+
+**What's Missing:**
+- No "OWASP Top 10" for AI safety (common vulnerability list)
+- No "SOC 2" for AI (auditable controls framework)
+- No "CVE" for AI (standardized incident format)
+- No "FIRST" for AI (incident response coordination)
+
+**Potential Catalysts:**
+- A major AI incident that demands coordinated response
+- A lab publishing their internal audit framework as open standard
+- Regulators requiring audits (creating market for auditors)
+- Insurance companies demanding assessable risk metrics
+
+### 1.5 What Labs Need to Adopt
+
+For common language and auditing standards to emerge, labs need:
+
+**1. Shared Vocabulary**
+```
+Current state: Each lab has internal terms
+- Anthropic: "alignment faking", "model spec"
+- OpenAI: "system card", "preparedness framework"
+- DeepMind: "scalable oversight", "debate"
+
+Needed: Cross-lab glossary with precise definitions
+- What exactly counts as "deceptive behavior"?
+- How do we measure "alignment"?
+- What's the threshold for "dangerous capability"?
+```
+
+**2. Common Eval Format**
+```
+Current state: Each lab runs different evals
+- Custom prompts, custom metrics, custom thresholds
+- Results not comparable across labs
+
+Needed: Standardized eval protocol
+- Shared prompt sets (versioned, public)
+- Agreed metrics (precision, recall, at what threshold?)
+- Reproducibility requirements (seed, temperature, etc.)
+```
+
+**3. Audit Trail Requirements**
+```
+Current state: Internal documentation varies wildly
+
+Needed: Minimum viable audit log
+- Model version + training data provenance
+- Eval results at deployment decision
+- Known limitations documented
+- Incident response plan
+```
+
+**4. Incident Disclosure Protocol**
+```
+Current state: Ad-hoc disclosure (or none)
+
+Needed: Coordinated vulnerability disclosure
+- Timeline expectations (like 90-day CVE disclosure)
+- Severity classification
+- Cross-lab notification for systemic issues
+```
+
 ---
 
-### 1.2 The Evaluation Problem
+**What's Needed to Accelerate:**
+1. **Gradient Severity Scoring** - Like CVSS but for AI harms
+   - Context: deployment scope, user vulnerability
+   - Severity: reversibility, magnitude, spread
+   - Confidence: evidence quality, reproducibility
+
+2. **Common Incident Language** - Like CVE format
+   - Structured fields: model, behavior, trigger, harm, mitigation
+   - Machine-readable for aggregation
+   - Version-controlled definitions
+
+3. **Auditing Standards** - Like SOC 2 for AI
+   - Checklist-based evaluation
+   - Evidence requirements
+   - Third-party verification
+
+4. **Coordination Protocols** - Like FIRST for AI
+   - Disclosure timelines
+   - Cross-org communication
+   - Shared response playbooks
+
+**Connection to Our Work:**
+Our SAE-based alignment faking detection is a building block:
+- Feature activations could feed gradient severity scores
+- Characterized features contribute to common language
+- Reproducible analysis enables third-party auditing
+- Open methods allow community adoption
+
+---
+
+### 1.6 The Evaluation Problem
 
 Current benchmark approaches are fundamentally limited:
 
@@ -45,7 +231,7 @@ Current benchmark approaches are fundamentally limited:
 
 ---
 
-### 1.3 Intelligence as Gradient, Not Category
+### 1.7 Intelligence as Gradient, Not Category
 
 > "Everything is a gradient... to specifically say that the cell does not have intelligence when you could measure things that kind of look like intelligence"
 
