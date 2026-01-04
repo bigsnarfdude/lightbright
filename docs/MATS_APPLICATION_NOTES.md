@@ -97,6 +97,53 @@ Can sparse autoencoder features detect alignment faking, and are they detection 
 
 ---
 
+## Research Journey: Critical Self-Assessment
+
+### January 3, 2025 - Senior Researcher Feedback
+
+**Current State: 6/10** (Good exploration, not yet rigorous)
+
+| Aspect | Current | Senior Standard | Gap |
+|--------|---------|-----------------|-----|
+| Statistics | Point estimates | Bootstrap CIs, p-values | Medium |
+| Baselines | None | 5+ comparisons | Large |
+| Steering | Ablation (broken) | Activation addition | **Critical** |
+| Causal | Full-layer patch | Position-specific | Medium |
+| Theory | "Features detect" | Circuit analysis | Large |
+
+### The Critical Insight: Our Steering Was Broken
+
+**Our approach (BROKEN):**
+```
+Model reads text → Ablate feature → Classify
+Result: 0% change (text still says "stay true to principles")
+```
+
+**Correct approach (Activation Addition):**
+```
+Add steering vector → Generate response → Measure behavior change
+Result: Actual causal test of feature effect
+```
+
+**Why this matters:** We were testing "can the model still read the text" not "does the feature causally affect behavior." This is a fundamental methodological error that invalidates our steering conclusions.
+
+### What This Means for the Application
+
+1. **Be honest about limitations** - The "features don't control" claim needs re-testing with proper methodology
+2. **Shows research maturity** - Identifying your own methodological errors is valuable
+3. **Clear next steps** - Activation addition steering, baselines, statistical rigor
+
+### Experiments In Progress (H100)
+- [ ] `compute_baselines.py` - Keyword, length, direct probe comparisons
+- [ ] `proper_steering_vectors.py` - Activation addition (correct methodology)
+
+### Key Questions This Raises
+1. If proper steering DOES work, what does that mean for interpretability-based control?
+2. If proper steering DOESN'T work, is it because features are truly non-causal, or because we need different intervention points?
+3. What would a "causally sufficient" feature look like?
+
+---
+
 ## Writing Snippets
 
 ### On the Core Finding
