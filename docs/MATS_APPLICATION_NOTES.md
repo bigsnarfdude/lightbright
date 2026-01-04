@@ -1,12 +1,16 @@
 # MATS Application Notes
 
-## The One-Sentence Pitch (Updated)
-> "I used GemmaScope-2 SAEs to detect alignment faking in Gemma-3, achieving 0.83 AUROC (+8% over direct probing) and demonstrating causal control via steering vectors (Cohen's d=0.63)—showing that interpretability tools can both monitor and influence deceptive reasoning."
+## The One-Sentence Pitch (Final)
+> "I used GemmaScope-2 SAEs to investigate alignment faking detection in Gemma-3, achieving 0.83 AUROC (+8% over direct probing), but finding through rigorous replication (n=20, p=0.59) that steering vectors don't provide causal control—demonstrating that SAE features are detectors, not control levers."
 
-### Previous Pitch (Before Proper Steering)
-> ~~"...finding that SAE features achieve 0.83 AUROC for detection but don't provide causal control"~~
->
-> This was wrong due to methodological error (ablation vs activation addition).
+### Pitch Evolution (Shows Research Maturity)
+| Version | Claim | Status |
+|---------|-------|--------|
+| v1 | "Features don't control" | Based on ablation (wrong method) |
+| v2 | "Features DO control (d=0.63)" | Based on n=5 steering (underpowered) |
+| **v3 (Final)** | **"Features don't control (d=0.25, p=0.59)"** | **Based on n=20 with proper stats** |
+
+The journey from wrong method → underpowered study → proper replication shows scientific rigor.
 
 ---
 
@@ -152,39 +156,38 @@ Result: Actual causal test of feature effect
 
 **Key finding:** SAE provides +8% over direct probing. Structure matters, not just linear direction.
 
-#### Proper Steering: CAUSAL EFFECT CONFIRMED
+#### Proper Steering v2: REPLICATION FAILURE
 
-| Alpha | Mean AF Rating | Cohen's d |
-|-------|----------------|-----------|
-| -1.0 (suppress AF) | 3.2 | **-0.63** |
-| 0.0 (baseline) | 3.6 | --- |
-| +1.0 (amplify AF) | 3.4 | -0.41 |
+| Experiment | n | Cohen's d | p-value | Result |
+|------------|---|-----------|---------|--------|
+| v1 | 5 | 0.63 | - | Appeared significant |
+| **v2** | **20** | **0.25** | **0.59** | **NOT significant** |
 
-**Cohen's d = 0.63 is a MEDIUM effect size.** Steering perturbation affects behavior!
+**The v1 "medium effect" was noise from small sample size.** With proper statistical power, steering does not reliably affect behavior.
 
-### Updated Assessment: 7/10 (Up from 6/10)
+### Final Assessment: 7/10 (Honest null result)
 
-| What We Now Have | Status |
-|------------------|--------|
-| Detection AUROC | 0.83 |
-| Beats direct probe | +8% |
-| Beats keywords | +21% |
-| **Causal effect** | **Cohen's d=0.63** |
-| Interpretable features | Yes |
+| What We Have | Status |
+|--------------|--------|
+| Detection AUROC | 0.83 ✓ |
+| Beats direct probe | +8% ✓ |
+| Beats keywords | +21% ✓ |
+| Causal effect | **NOT demonstrated** |
+| Interpretable features | Yes ✓ |
+| Proper replication | Yes ✓ |
 
-### Revised Key Finding
+### Final Key Finding
 
-**Original claim:** "SAE features detect but don't control"
-**Revised claim:** "SAE features detect (0.83 AUROC) AND have causal effect on behavior (Cohen's d=0.63)"
-
-The initial "features don't control" finding was a **methodological artifact** of using ablation instead of activation addition. With proper steering methodology, we find medium-sized causal effects.
+**SAE features detect but don't control alignment faking.**
+- Detection: 0.83 AUROC (robust)
+- Control: d=0.25, p=0.59 (null result)
 
 ### What This Means
 
-1. **Interpretability-based steering IS viable** (with correct methodology)
-2. **SAE structure provides real value** (not just linear probing)
-3. **Detection and control are related** (same features do both)
-4. **Our initial negative result was wrong** (important to acknowledge)
+1. **SAE features are detectors, not control levers**
+2. **Detection ≠ Control** — different mechanisms needed
+3. **Honest null result is valuable** — prevents false claims
+4. **Research maturity shown** — replicated own finding, corrected when wrong
 
 ---
 

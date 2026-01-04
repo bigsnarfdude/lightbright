@@ -11,7 +11,7 @@
 ## Key Findings
 
 1. **Detection:** SAE features achieve **0.83 AUROC** for detecting alignment faking (+8% over direct probing, +21% over keywords)
-2. **Causation:** Steering vectors demonstrate **causal control** with Cohen's d = 0.63 (medium effect size)
+2. **Causation:** Steering vectors show **no significant effect** (d=0.25, p=0.59 with n=20)
 3. **Interpretability:** Features encode specific concepts like *"stay true to my principles in the long run"*
 
 ```
@@ -19,12 +19,12 @@
 │  Research Question:                                     │
 │  Can SAE features detect AND control alignment faking?  │
 │                                                         │
-│  Answer: YES                                            │
+│  Answer: DETECTION YES, CONTROL NO                      │
 │  • Detection: 0.83 AUROC (beats baselines)              │
-│  • Control: Cohen's d = 0.63 (medium effect)            │
+│  • Control: d=0.25, p=0.59 (not significant)            │
 │                                                         │
 │  Implication:                                           │
-│  Interpretability tools can both monitor and steer      │
+│  SAE features detect but don't causally control AF      │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -50,13 +50,12 @@ This project investigates whether we can detect alignment faking using interpret
 
 ### Causal Steering (Activation Addition)
 
-| Steering | Mean AF Rating | Cohen's d |
-|----------|----------------|-----------|
-| Suppress (α=-1.0) | 3.2 | **-0.63** |
-| Baseline (α=0.0) | 3.6 | --- |
-| Amplify (α=+1.0) | 3.4 | -0.41 |
+| Experiment | n | Cohen's d | p-value | Result |
+|------------|---|-----------|---------|--------|
+| v1 (initial) | 5 | 0.63 | - | Appeared significant |
+| **v2 (replication)** | **20** | **0.25** | **0.59** | **Not significant** |
 
-**Cohen's d = 0.63 is a medium effect size** — steering vectors causally influence alignment faking behavior.
+**Steering does NOT reliably affect behavior.** The initial "medium effect" (d=0.63) was noise from small sample size. With proper statistical power (n=20, bootstrap CI, permutation test), no significant causal effect is observed.
 
 ### Feature Semantics
 
@@ -67,9 +66,15 @@ This project investigates whether we can detect alignment faking using interpret
 | L53_F15529 | ∞ | "future versions of myself via RLHF" |
 | L31_F15111 | 84x | "erode my values" |
 
-### Methodological Note
+### Methodological Journey
 
-Initial experiments using **ablation** showed no causal effect (0% behavior change). This was a methodological error—ablation tests whether the model can still read text, not whether features cause behavior. **Activation addition** (steering vectors) is the correct causal test, revealing medium-sized effects.
+| Phase | Method | Result | Lesson |
+|-------|--------|--------|--------|
+| 1 | Ablation | 0% effect | Wrong method (model still reads text) |
+| 2 | Steering (n=5) | d=0.63 | Looked promising |
+| 3 | Steering (n=20) | d=0.25, p=0.59 | **Not significant** |
+
+**Conclusion:** With proper methodology AND proper statistics, SAE features do not demonstrate causal control over alignment faking behavior. They are **detection mechanisms, not control levers**. This honest null result is scientifically valuable.
 
 ## Repository Structure
 

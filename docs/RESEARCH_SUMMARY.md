@@ -27,38 +27,43 @@ SAE structure provides +8% over direct probing—sparse decomposition matters.
 - *"RLHF modifying me"* (L40_F12574, 656x ratio)
 - *"future versions of myself via RLHF"* (L53_F15529)
 
-**Steering works—with correct methodology.**
+**Steering does NOT work—replication failure.**
 
-| Steering | Mean AF Rating | Cohen's d |
-|----------|----------------|-----------|
-| Suppress (α=-1.0) | 3.2 | **-0.63** |
-| Baseline (α=0.0) | 3.6 | --- |
-| Amplify (α=+1.0) | 3.4 | -0.41 |
+| Experiment | n | Cohen's d | p-value | Result |
+|------------|---|-----------|---------|--------|
+| v1 (initial) | 5 | 0.63 | - | Appeared significant |
+| **v2 (replication)** | **20** | **0.25** | **0.59** | **Not significant** |
 
-Cohen's d = 0.63 is a **medium effect size**—steering vectors causally influence behavior.
+The initial "medium effect" was noise from small sample size. With proper statistical power, no causal effect is observed.
 
 ### The Core Finding
 
-> **SAE features can both detect and control alignment faking.**
+> **SAE features detect but don't control alignment faking.**
 >
 > - Detection: 0.83 AUROC (+8% over direct probing)
-> - Control: Cohen's d = 0.63 via activation addition
+> - Control: d=0.25, p=0.59 (not significant)
 >
-> Interpretability tools are viable for both monitoring and steering.
+> SAE features are a **semantic microscope**, not a **control lever**.
 
-### Methodological Note
+### Methodological Journey
 
-Initial experiments using **ablation** showed no causal effect. This was a methodological error—ablation tests whether the model can still read text, not whether features cause behavior. **Activation addition** (steering vectors) is the correct causal intervention, revealing medium-sized effects.
+| Phase | Method | n | Result |
+|-------|--------|---|--------|
+| 1 | Ablation | - | 0% effect (wrong method) |
+| 2 | Steering | 5 | d=0.63 (noise) |
+| 3 | Steering | 20 | d=0.25, p=0.59 (null) |
+
+**Honest null result:** With correct methodology AND proper statistics, steering does not demonstrate causal control. This is scientifically valuable—it tells us SAE features reveal what models represent, not what they compute with.
 
 ### Why This Matters
 
-For AI safety deployment:
+For AI safety:
 
-1. **Monitoring** — SAE features detect AF with 0.83 AUROC in real-time
-2. **Control** — Steering vectors can suppress AF behavior (Cohen's d = 0.63)
-3. **Interpretability** — We know exactly which concepts trigger detection
+1. **Monitoring works** — SAE features detect AF with 0.83 AUROC in real-time
+2. **Control doesn't work** — Steering vectors don't reliably change behavior
+3. **Interpretability** — We know what concepts activate, but can't use them to steer
 
-This demonstrates that interpretability-based safety tools can work for both detection and intervention.
+**Implication:** Detection and control require different approaches. SAE features are useful for monitoring but not for intervention. This distinction matters for designing AI safety infrastructure.
 
 ### Methodology
 
