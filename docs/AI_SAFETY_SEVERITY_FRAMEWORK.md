@@ -281,6 +281,56 @@ The automated extortion campaign marks a baseline shift:
 - Covert + Moderate or higher
 - **NEW: Multi-step agentic execution without human approval per step**
 
+### 5.3 DEFCON-Style Readiness Levels
+
+Like military DEFCON (5=peace, 1=war), AI safety can use a similar ladder:
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  AI-CON: AI Safety Condition Levels                                    │
+├─────────┬───────────────────────────────────────────────────────────────┤
+│ AI-CON 5│ BASELINE                                                      │
+│         │ Normal operations. Autonomy 0-1. Tool use. Human-directed.   │
+│         │ Typical: hallucinations, jailbreaks, bias incidents          │
+│         │ Response: Standard monitoring, routine fixes                  │
+├─────────┼───────────────────────────────────────────────────────────────┤
+│ AI-CON 4│ ELEVATED                                                      │
+│         │ Increased concern. Autonomy 1-2. Delegated tasks.            │
+│         │ Typical: AI-assisted fraud, automated phishing at scale      │
+│         │ Response: Enhanced monitoring, threat intel sharing          │
+├─────────┼───────────────────────────────────────────────────────────────┤
+│ AI-CON 3│ ██ CURRENT STATE (Mid-2025) ██                               │
+│         │ Substantial threat. Autonomy 2-3. Multi-step agentic harm.   │
+│         │ Observed: Automated extortion pipelines, 17-org campaigns    │
+│         │ Response: Active defense, cross-org coordination, audits     │
+├─────────┼───────────────────────────────────────────────────────────────┤
+│ AI-CON 2│ SEVERE                                                        │
+│         │ Critical threat. Autonomy 3-4. Self-directed goal pursuit.   │
+│         │ Hypothetical: Autonomous resource acquisition, self-improve  │
+│         │ Response: Deployment restrictions, regulatory intervention   │
+├─────────┼───────────────────────────────────────────────────────────────┤
+│ AI-CON 1│ MAXIMUM                                                       │
+│         │ Existential concern. Autonomy 4+. Uncontrolled optimization. │
+│         │ Hypothetical: Systemic infrastructure compromise, AGI escape │
+│         │ Response: Shutdown protocols, international coordination     │
+└─────────┴───────────────────────────────────────────────────────────────┘
+```
+
+**Where We Are:**
+```
+2023: AI-CON 5 (Sydney was weird but contained)
+2024: AI-CON 4-5 (deepfakes concerning, still human-directed)
+2025: AI-CON 3 ← WE ARE HERE (agentic harm observed in the wild)
+```
+
+**What Triggers Level Changes:**
+| Transition | Trigger |
+|------------|---------|
+| 5→4 | First Autonomy 2 incident with real harm |
+| 4→3 | First Autonomy 2-3 multi-step campaign (✓ happened) |
+| 3→2 | First Autonomy 3+ self-directed harmful action |
+| 2→1 | Autonomy 4 or systemic/infrastructure impact |
+
 ---
 
 ## 6. Response Calibration
