@@ -1,0 +1,40 @@
+# Documentation (kept locally, not in repo)
+docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ML artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+models/
+!models/README.md
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Experiment outputs (large files)
+*.log
+wandb/
