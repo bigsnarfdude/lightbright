@@ -1,5 +1,8 @@
-# Documentation (kept locally, not in repo)
+# Documentation (kept locally, not in repo until experiments fixed)
 docs/
+EXPERIMENTS.md
+AUDIT.md
+STATUS_REPORT.md
 
 # Python
 __pycache__/
