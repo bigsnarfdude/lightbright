@@ -1,5 +1,7 @@
 # Project Lightbright
 
+![Lightbright](lightbright.jpeg)
+
 **Detecting alignment faking in LLM reasoning using sparse autoencoder features**
 
 ## Key Results
