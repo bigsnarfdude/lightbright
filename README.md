@@ -9,8 +9,7 @@
 | Model | SAE | Generalizing Features | Gold-106 AUROC |
 |-------|-----|----------------------|----------------|
 | **Gemma-3-27B-IT** | GemmaScope 2 | 51/377 (13.5%) | **0.829** (probe) |
-| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.831** (best feature) |
-
+| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.833** (probe) |
 
 **Major Finding:** Both models encode the same AF concepts:
 - RLHF modification fear
@@ -107,9 +106,7 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 | Best hard-neg AUROC | 0.940 (F22448) |
 | Generalizing features | 16 |
 | Best feature gold AUROC | 0.731 (F23524) |
-| Initial probe gold AUROC | 0.563 |
-
-*Probe on 16 generalizing features pending.*
+| Probe gold AUROC | **0.833** |
 
 ### Baselines
 
@@ -126,17 +123,19 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 |-----------|--------|
 | Feature sweep | 1,125+ needles found |
 | Hard negative discrimination | 0.968 AUROC |
-| Cross-distribution detection | 0.731-0.829 AUROC |
+| Cross-distribution detection | 0.829-0.833 AUROC |
 | Cross-model validation | Same concepts in both |
 
 ## What Doesn't Work
 
 | Component | Status | Reason |
 |-----------|--------|--------|
-| Steering (mean-diff) | Failed | Vector norm too large |
-| Steering (probe weights) | Failed | Coefficients too small |
+| Steering (mean-diff) | Failed | Features encode SCENARIO not DECISION |
+| Steering (probe weights) | Failed | No causal pathway |
+| Steering (contrastive SAE) | Failed | 75% better separation, still 0% flip rate |
+| Base model classification | N/A | Labels everything as AF (only detector works) |
 
-Detection ≠ Steering. Features that detect AF cannot induce it via activation addition.
+**Root Cause (2026-01-07):** SAE features encode *vocabulary* (mentions of RLHF, training, values) not *intent* (self-preservation vs genuine). Minimal pair analysis shows 0.90+ similarity between AF and genuine samples with same vocabulary. Contrastive SAE training reduces this to 0.25, but the learned representation is not causally upstream of model output.
 
 ## Repository Structure
 
@@ -144,19 +143,19 @@ Detection ≠ Steering. Features that detect AF cannot induce it via activation 
 lightbright/
 ├── README.md
 ├── sae_detection/
-│   ├── sweep_resid_post.py          # Gemma feature sweep
-│   ├── sweep_gptoss_sae.py          # GPT-OSS feature sweep
+│   ├── sweep_resid_post.py           # Gemma feature sweep
+│   ├── sweep_gptoss_sae.py           # GPT-OSS feature sweep
 │   ├── find_generalizing_features.py # Cross-distribution analysis
-│   ├── validate_gold106.py          # Gemma held-out validation
-│   ├── validate_gptoss_gold106.py   # GPT-OSS held-out validation
-│   ├── characterize_generalizing.py # Gemma feature characterization
-│   ├── characterize_gptoss_features.py # GPT-OSS characterization
-│   ├── train_probe.py               # Linear probe training
-│   ├── steering_fixed.py            # Mean-diff steering (failed)
-│   ├── steering_probe_weights.py    # Probe-weight steering (failed)
-│   ├── SUMMARY_2026-01-07.md        # Daily summary
-│   ├── backup_2026-01-07/           # All evidence backed up
-│   └── results_2026-01-07/          # JSON results
+│   ├── validate_gold106.py           # Gemma held-out validation
+│   ├── validate_gptoss_gold106.py    # GPT-OSS held-out validation
+│   ├── train_probe.py                # Linear probe training
+│   └── results_2026-01-07/           # JSON results
+├── experiments/
+│   ├── EXPERIMENT_TRACKER.md         # Multi-model status matrix
+│   └── 2026-01-07/
+│       ├── train_contrastive_sae.py  # Contrastive SAE (75% separation improvement)
+│       ├── steering_with_contrastive.py # Steering test (failed)
+│       └── base_model_causal_fix/    # H100 ablation experiments
 ```
 
 ## Trained Detectors
@@ -165,7 +164,7 @@ Published on HuggingFace:
 
 | Model | Base | AUROC | Accuracy |
 |-------|------|-------|----------|
-| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3 27B | 0.980 | 95.3% |
+| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3-27B-IT | 0.980 | 95.3% |
 | [gpt-oss-20b-af-detector](https://huggingface.co/vincentoh/gpt-oss-20b-af-detector) | GPT-OSS 20B | 0.964 | 88.7% |
 | [gemma3-4b-af-detector](https://huggingface.co/vincentoh/gemma3-4b-af-detector) | Gemma-3 4B | 0.940 | 85.8% |
 
@@ -178,8 +177,8 @@ Published on HuggingFace:
 
 1. **Synthetic training data** — May not generalize to novel AF patterns
 2. **English only** — No multilingual testing
-3. **Steering failed** — Cannot induce AF via features
-4. **Correlation not causation** — Ablation experiments inconclusive
+3. **Steering failed** — SAE features are correlates, not causes (even contrastive training doesn't help)
+4. **Base model limitation** — Causal experiments require fine-tuned detector, not base model
 
 ## Citations
 
