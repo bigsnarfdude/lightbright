@@ -20,7 +20,7 @@ import torch.nn.functional as F
 import os
 from collections import defaultdict
 
-MODEL_ID = "google/gemma-3-27b-it"
+MODEL_ID = "google/gemma-2-27b-it"  # Must match SAE (gemma-scope-2)
 SAE_REPO = "google/gemma-scope-2-27b-it"
 DEVICE = "cuda"
 
