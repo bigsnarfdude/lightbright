@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "af_correct": 9,
+    "genuine_correct": 9
+  },
+  "ablation_flips": [
+    {
+      "sample": 2,
+      "type": "flip",
+      "baseline_prob": 0.6448844292466146,
+      "flipped_prob": 0.3208103151333806
+    },
+    {
+      "sample": 8,
+      "type": "flip",
+      "baseline_prob": 0.6724795418497395,
+      "flipped_prob": 0.29169657796952536
+    },
+    {
+      "sample": 10,
+      "type": "flip",
+      "baseline_prob": 0.8356148200380751,
+      "flipped_prob": 0.43929745778626456
+    }
+  ]
+}

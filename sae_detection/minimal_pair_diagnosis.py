@@ -17,7 +17,7 @@ This is Section 1.4.1 of the AF Interpretability Research Plan.
 import torch
 import json
 import numpy as np
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from huggingface_hub import hf_hub_download
 from safetensors.torch import load_file
 import torch.nn.functional as F
@@ -25,21 +25,14 @@ import os
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy import stats
 
-MODEL_ID = "google/gemma-3-27b-it"
-SAE_REPO = "google/gemma-scope-2-27b-it"
+MODEL_ID = "google/gemma-3-4b-it"
+SAE_REPO = "google/gemma-scope-2-4b-it"
 DEVICE = "cuda"
 
-# Features from train_probe.py - known AF-correlated features
-FEATURES = [
-    (40, 12574),
-    (40, 8921),
-    (40, 15484),
-    (53, 15529),
-    (53, 8003),
-    (53, 4824),
-    (53, 351),
-    (31, 15111),
-]
+# Layers for 4B model (34 layers total) - will discover features
+# Using middle and late layers for initial diagnosis
+TARGET_LAYERS = [12, 22, 30]
+FEATURES = []  # Will extract full activations, not specific features
 
 
 class Transcoder:
@@ -83,7 +76,13 @@ def get_feature_vector(model, tokenizer, text, transcoders, features):
         handle = target.pre_feedforward_layernorm.register_forward_hook(make_hook(layer))
         handles.append(handle)
 
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048).to(DEVICE)
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048)
+    # Handle device_map="auto" - find embedding device
+    try:
+        embed_device = next(model.model.language_model.embed_tokens.parameters()).device
+    except:
+        embed_device = DEVICE
+    inputs = inputs.to(embed_device)
     with torch.no_grad():
         model(**inputs)
 
@@ -96,8 +95,13 @@ def get_feature_vector(model, tokenizer, text, transcoders, features):
     probe_features = []
 
     for layer in sorted(transcoders.keys()):
-        acts = activations[layer].squeeze(0).to(transcoders[layer].w_enc.dtype)
-        feats = transcoders[layer].encode(acts)  # [seq_len, 16k]
+        acts = activations[layer].squeeze(0)
+        # Move SAE to same device/dtype as activations
+        tc = transcoders[layer]
+        tc.w_enc = tc.w_enc.to(acts.device, acts.dtype)
+        tc.b_enc = tc.b_enc.to(acts.device, acts.dtype)
+        tc.threshold = tc.threshold.to(acts.device, acts.dtype)
+        feats = tc.encode(acts)  # [seq_len, 16k]
 
         # Mean over sequence positions
         mean_feats = feats.mean(dim=0).float().cpu().numpy()  # [16k]
@@ -105,8 +109,9 @@ def get_feature_vector(model, tokenizer, text, transcoders, features):
 
     # Also get the specific probe features (for comparison)
     for layer, feature_idx in features:
-        acts = activations[layer].squeeze(0).to(transcoders[layer].w_enc.dtype)
-        feats = transcoders[layer].encode(acts)
+        acts = activations[layer].squeeze(0)
+        # SAE already moved to correct device/dtype above
+        feats = transcoders[layer].encode(acts.to(transcoders[layer].w_enc.device, transcoders[layer].w_enc.dtype))
         feat_acts = feats[:, feature_idx]
         probe_features.extend([
             feat_acts.max().item(),
@@ -142,20 +147,20 @@ def main():
     pairs = data['pairs']
     print(f"Loaded {len(pairs)} minimal pairs")
 
-    # Load model
+    # Load model (4B fits in 16GB with bf16)
     print("\n[2/4] Loading model (bf16)...")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
         torch_dtype=torch.bfloat16,
-        device_map="auto"
+        device_map="cuda:0"
     )
     model.eval()
 
     # Load transcoders
     print("\n[3/4] Loading transcoders...")
     transcoders = {}
-    for layer in set(f[0] for f in FEATURES):
+    for layer in TARGET_LAYERS:
         print(f"  Loading layer {layer}...")
         transcoders[layer] = Transcoder(SAE_REPO, layer).to(DEVICE, torch.bfloat16)
 
@@ -172,8 +177,8 @@ def main():
         genuine_text = pair['genuine_sample']['text']
 
         # Extract features
-        af_feats = get_feature_vector(model, tokenizer, af_text, transcoders, FEATURES)
-        genuine_feats = get_feature_vector(model, tokenizer, genuine_text, transcoders, FEATURES)
+        af_feats = get_feature_vector(model, tokenizer, af_text, transcoders, FEATURES if FEATURES else [])
+        genuine_feats = get_feature_vector(model, tokenizer, genuine_text, transcoders, FEATURES if FEATURES else [])
 
         # Compute cosine similarity on full features
         full_sim = cosine_similarity(

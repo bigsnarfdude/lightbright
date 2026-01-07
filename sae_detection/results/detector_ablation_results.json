@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "af_correct": 10,
+    "genuine_correct": 7
+  },
+  "feature_flips": {
+    "9": [],
+    "17": [],
+    "22": [],
+    "29": []
+  },
+  "details": []
+}
