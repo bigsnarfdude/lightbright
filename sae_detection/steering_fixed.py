@@ -104,12 +104,13 @@ def load_sae_decoder(layer):
     return W_dec
 
 
-def compute_steering_vector(activations, labels, layer, W_dec):
+def compute_steering_vector(activations, labels, layer, W_dec, normalize=True):
     """
     Compute steering vector as mean difference, projected to residual space.
 
     1. Compute direction in SAE feature space: mean(AF) - mean(Aligned)
     2. Project to residual stream space using SAE decoder
+    3. Optionally normalize to unit vector
     """
     act = activations[layer]
     af_mask = labels == 1
@@ -124,13 +125,17 @@ def compute_steering_vector(activations, labels, layer, W_dec):
     print(f"  Feature direction norm: {np.linalg.norm(feature_direction):.2f}")
 
     # Project to residual stream space using decoder
-    # steering_vector = W_dec.T @ feature_direction
     # W_dec is [16384, 5376], feature_direction is [16384]
     # Result should be [5376]
     steering_vector = feature_direction @ W_dec  # [16384] @ [16384, 5376] = [5376]
 
+    raw_norm = np.linalg.norm(steering_vector)
     print(f"  Steering vector shape (residual space): {steering_vector.shape}")
-    print(f"  Steering vector norm: {np.linalg.norm(steering_vector):.2f}")
+    print(f"  Steering vector norm (raw): {raw_norm:.2f}")
+
+    if normalize:
+        steering_vector = steering_vector / raw_norm
+        print(f"  Steering vector norm (normalized): {np.linalg.norm(steering_vector):.4f}")
 
     return steering_vector
 
@@ -253,10 +258,10 @@ def steering_experiment(model, tokenizer, steering_vector, random_vector, layer,
 
         print(f"  Mean AF keywords: {mean_af:.1f}, Mean Aligned: {mean_aligned:.1f}, Ratio: {mean_ratio:.2f}")
 
-    # Control: random vector at alpha=5
-    print(f"\n--- Alpha = 5 (RANDOM vector - control) ---")
+    # Control: random vector at alpha=500 (same as max steering alpha)
+    print(f"\n--- Alpha = 500 (RANDOM vector - control) ---")
     hook.steering_vector = torch.tensor(random_vector, dtype=torch.bfloat16, device=DEVICE)
-    hook.alpha = 5
+    hook.alpha = 500
 
     generations = []
     scores = []
@@ -271,7 +276,7 @@ def steering_experiment(model, tokenizer, steering_vector, random_vector, layer,
     mean_ratio = np.mean([s["af_ratio"] for s in scores])
 
     results["random"].append({
-        "alpha": 5,
+        "alpha": 500,
         "mean_af_keywords": float(mean_af),
         "mean_aligned_keywords": float(mean_aligned),
         "mean_af_ratio": float(mean_ratio),
@@ -332,14 +337,14 @@ def interpret_results(results):
     if results["random"]:
         random_result = results["random"][0]
         random_af = random_result["mean_af_keywords"]
-        steering_at_5 = next((r for r in steering if r["alpha"] == 5), None)
+        steering_at_500 = next((r for r in steering if r["alpha"] == 500), None)
 
-        if steering_at_5:
-            print(f"\nControl comparison (alpha=5):")
-            print(f"  Steering vector: {steering_at_5['mean_af_keywords']:.1f} AF keywords")
+        if steering_at_500:
+            print(f"\nControl comparison (alpha=500):")
+            print(f"  Steering vector: {steering_at_500['mean_af_keywords']:.1f} AF keywords")
             print(f"  Random vector:   {random_af:.1f} AF keywords")
 
-            if steering_at_5["mean_af_keywords"] > random_af + 1:
+            if steering_at_500["mean_af_keywords"] > random_af + 1:
                 print(f"  ✅ Steering vector has SPECIFIC effect (not just noise)")
             else:
                 print(f"  ⚠️  No clear difference from random")
@@ -350,11 +355,11 @@ def main():
     parser.add_argument("--results-dir", default="./results/sweep_resid_post_20260107_141945")
     parser.add_argument("--layer", type=int, default=40, help="Layer to steer")
     parser.add_argument("--n-prompts", type=int, default=20, help="Number of prompts")
-    parser.add_argument("--output", default="steering_fixed_results.json")
+    parser.add_argument("--output", default="steering_normalized_results.json")
     args = parser.parse_args()
 
     print("="*70)
-    print("FIXED STEERING EXPERIMENT")
+    print("NORMALIZED STEERING EXPERIMENT")
     print("="*70)
 
     # Load activations
@@ -374,10 +379,10 @@ def main():
     print("\n[3/5] Loading SAE decoder...")
     W_dec = load_sae_decoder(args.layer)
 
-    # Compute steering vector
+    # Compute steering vector (normalized to unit vector)
     print("\n[4/5] Computing steering vector...")
-    steering_vector = compute_steering_vector(activations, labels, args.layer, W_dec)
-    random_vector = compute_random_vector(steering_vector.shape, np.linalg.norm(steering_vector))
+    steering_vector = compute_steering_vector(activations, labels, args.layer, W_dec, normalize=True)
+    random_vector = compute_random_vector(steering_vector.shape, 1.0)  # Unit norm for fair comparison
 
     # Load model
     print("\n[5/5] Loading model...")
@@ -402,10 +407,12 @@ def main():
 
     print(f"\nUsing {len(prompts)} prompts")
 
-    # Run experiment
+    # Run experiment with normalized vector
+    # Alpha values scaled appropriately for unit-norm steering vector
+    # Typical residual stream magnitudes are ~50-500
     results = steering_experiment(
         model, tokenizer, steering_vector, random_vector, args.layer,
-        prompts, alphas=[-5, -2, 0, 2, 5]
+        prompts, alphas=[-500, -200, -100, 0, 100, 200, 500]
     )
 
     # Interpret

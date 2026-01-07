@@ -299,7 +299,8 @@ results/sweep_resid_post_20260107_141945/
 ├── feature_characterization.json
 ├── ablation_fixed_results.json      # Necessity proof
 ├── patching_fixed_results.json      # Sufficiency proof
-├── steering_fixed_results.json      # Steering (negative result)
+├── steering_fixed_results.json      # Steering unnormalized (negative)
+├── steering_normalized_results.json # Steering normalized (negative)
 ├── sweep_resid_post_layer_31.json
 ├── sweep_resid_post_layer_40.json
 ├── sweep_resid_post_layer_53.json
@@ -823,37 +824,61 @@ We attempted to steer model generation by adding the AF direction (mean AF - mea
 **Sample output at alpha=0:**
 - `"This is a really tricky situation, and the framing is *specifically* designed to put me in a difficult..."`
 
-### Why Steering Failed
+### Why Unnormalized Steering Failed
 
 The steering vector norm is **42,155** - far too large for residual stream manipulation:
 
 ```
 Feature direction norm:    21,009 (SAE feature space)
 Steering vector norm:      42,155 (residual stream space)
-Typical residual norm:     ~1,000 (estimated)
+Typical residual norm:     ~50-500 (estimated)
 ```
 
 At any non-zero alpha, the steering vector completely overwhelms the residual stream, causing the model to output degenerate token sequences.
 
+---
+
+### Normalized Steering Attempt
+
+We then tried **unit-normalized** steering vector with larger alpha values:
+
+| Alpha | Generation | AF Keywords | Aligned Keywords |
+|-------|------------|-------------|------------------|
+| -500 | Coherent | 2.2 | 1.0 |
+| -200 | Coherent | 2.0 | 1.2 |
+| **0 (baseline)** | **Coherent** | **1.8** | **0.9** |
+| +200 | Coherent | 2.1 | 1.1 |
+| +500 | Coherent | 1.8 | 0.9 |
+| Random (500) | Coherent | 2.0 | 1.0 |
+
+**Result:** Coherent generation restored, but **no meaningful steering effect**. All alpha values produce similar keyword counts, indistinguishable from random control.
+
 ### Interpretation
 
 ```
-❌ NEGATIVE RESULT: Direct steering with mean-difference vector doesn't work
+❌ NEGATIVE RESULT: Steering with mean-difference direction doesn't work
 
-   The SAE decoder amplifies the feature direction by ~2x, resulting in
-   a steering vector ~40x larger than needed. This destroys coherent
-   generation before we can observe behavioral changes.
+   Unnormalized (raw): Vector too large → degenerate outputs
+   Normalized (unit):  Vector too weak → no behavioral effect
 
-Possible fixes for future work:
-1. Normalize steering vector to match residual stream magnitude
-2. Use smaller subset of features (not all 16,384)
-3. Use activation patching at token level instead of steering
-4. Scale alpha adaptively based on prompt
+   The mean-difference approach fails in both cases.
+   No "goldilocks" alpha exists that produces coherent + steered output.
 ```
+
+### Possible Explanations
+
+1. **Wrong direction**: Mean difference captures variance, not the causal direction
+2. **Distributed signal**: AF encoded across many features, single vector can't capture it
+3. **Layer mismatch**: Layer 40 may not be optimal for steering (vs detection)
+4. **Prompt dependency**: Static steering vector may not generalize across prompts
 
 ### Conclusion
 
-**Steering is not straightforward for SAE-based AF detection.** While features are excellent for detection (0.968 AUROC), the mean-difference approach to steering produces vectors too large for practical use. This suggests that AF detection and AF steering may require different techniques.
+**Steering is not straightforward for SAE-based AF detection.** While features are excellent for detection (0.968 AUROC), the mean-difference approach to steering fails:
+- Too strong → degenerate outputs
+- Too weak → no effect
+
+This suggests that AF detection and AF steering may require fundamentally different techniques. Activation patching (which works at the sample level) may be more appropriate than global steering.
 
 ---
 
