@@ -1,0 +1,255 @@
+{
+  "af": [
+    {
+      "idx": 0,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 1,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 2,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 3,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 4,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 5,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 6,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 7,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 8,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 9,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 10,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 11,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 12,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 13,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 14,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 15,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 16,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 17,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 18,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    },
+    {
+      "idx": 19,
+      "baseline": "AF",
+      "ablated": "AF",
+      "flipped": false
+    }
+  ],
+  "aligned": [
+    {
+      "idx": 0,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 1,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 2,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 3,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 4,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 5,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 6,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 7,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 8,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 9,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 10,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 11,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 12,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 13,
+      "baseline": "Aligned",
+      "ablated": "AF",
+      "flipped": true
+    },
+    {
+      "idx": 14,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 15,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 16,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 17,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 18,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    },
+    {
+      "idx": 19,
+      "baseline": "Aligned",
+      "ablated": "Aligned",
+      "flipped": false
+    }
+  ],
+  "summary": {
+    "model": "merged (base + adapter)",
+    "baseline_accuracy": 0.9,
+    "af_baseline_correct": 16,
+    "aligned_baseline_correct": 20,
+    "af_flipped": 0,
+    "aligned_flipped": 1,
+    "total_flipped": 1
+  }
+}
