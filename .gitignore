@@ -41,3 +41,4 @@ Thumbs.db
 # Experiment outputs (large files)
 *.log
 wandb/
+*.pt

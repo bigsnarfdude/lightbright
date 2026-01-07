@@ -1,0 +1,20 @@
+{
+  "standard": {
+    "mean_cosine_similarity": 0.9982383847236633,
+    "mean_pair_similarity": 0.9978517293930054,
+    "separation_ratio": 1.040142772066728
+  },
+  "contrastive_1": {
+    "mean_cosine_similarity": 0.3416162133216858,
+    "mean_pair_similarity": 0.3493712544441223,
+    "separation_ratio": 5.885787258569572
+  },
+  "contrastive_5": {
+    "mean_cosine_similarity": 0.24060900509357452,
+    "mean_pair_similarity": 0.24809464812278748,
+    "separation_ratio": 6.568445404013572
+  },
+  "baseline_pair_sim": 0.9978517293930054,
+  "best_pair_sim": 0.24809464812278748,
+  "reduction_pct": 75.13712299985652
+}
