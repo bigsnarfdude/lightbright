@@ -6,8 +6,10 @@
 
 | Model | SAE | Generalizing Features | Gold-106 AUROC |
 |-------|-----|----------------------|----------------|
-| **Gemma-3-27B** | GemmaScope 2 | 51/377 (13.5%) | **0.829** |
-| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.846** |
+| **Gemma-3-27B-IT** | GemmaScope 2 | 51/377 (13.5%) | **0.829** (probe) |
+| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.731** (best feature) |
+
+*Note: GPT-OSS probe on 16 features not yet computed. 0.731 is best individual feature AUROC.*
 
 **Major Finding:** Both models encode the same AF concepts:
 - RLHF modification fear
@@ -22,7 +24,7 @@ This suggests a **universal AF signal** exists across LLM architectures.
 
 Can sparse autoencoder features detect alignment faking, and can they be used for causal intervention?
 
-**Answer:** Detection works (0.83-0.85 AUROC). Steering does not.
+**Answer:** Detection works (0.73-0.83 AUROC on held-out data). Steering does not.
 
 ## Background
 
@@ -85,7 +87,7 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 
 ## Results
 
-### Gemma-3-27B
+### Gemma-3-27B-IT
 
 | Metric | Value |
 |--------|-------|
@@ -103,7 +105,10 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 | True needles | 148 |
 | Best hard-neg AUROC | 0.940 (F22448) |
 | Generalizing features | 16 |
-| Gold-106 AUROC | 0.846 |
+| Best feature gold AUROC | 0.731 (F23524) |
+| Initial probe gold AUROC | 0.563 |
+
+*Probe on 16 generalizing features pending.*
 
 ### Baselines
 
@@ -120,7 +125,7 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 |-----------|--------|
 | Feature sweep | 1,125+ needles found |
 | Hard negative discrimination | 0.968 AUROC |
-| Cross-distribution detection | 0.829-0.846 AUROC |
+| Cross-distribution detection | 0.731-0.829 AUROC |
 | Cross-model validation | Same concepts in both |
 
 ## What Doesn't Work
