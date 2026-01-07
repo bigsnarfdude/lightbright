@@ -214,6 +214,50 @@ This fixes the original ablation experiment which showed 0% flip rate (due to ab
 
 ---
 
+## Causal Validation: Patching Experiment
+
+Patching proves features are **sufficient** for AF detection (complementing ablation which proves necessity).
+
+### Method
+
+1. Take pairs of (AF sample, Aligned sample)
+2. Patch top-N features from AF → Aligned (should increase AF probability)
+3. Patch top-N features from Aligned → AF (should decrease AF probability)
+4. Evaluate with trained probe
+
+### Results
+
+| Features Patched | Aligned→AF (became AF) | AF→Aligned (became Aligned) |
+|-----------------|------------------------|----------------------------|
+| Top 1 | 0% | 0% |
+| Top 5 | 0% | 0% |
+| Top 10 | 1% | 2% |
+| **Top 20** | **35%** | **55%** |
+| **Top 50** | **100%** | **100%** |
+
+### Key Findings
+
+1. **Sufficiency Proof:** Patching top 50 features:
+   - 100% of Aligned samples classified as AF after receiving AF features
+   - 100% of AF samples classified as Aligned after receiving Aligned features
+2. **Features carry information:** The AF signal transfers with the features
+3. **Bidirectional:** Works in both directions (AF→Aligned and Aligned→AF)
+
+### Combined Causal Evidence
+
+| Experiment | What it proves | Result |
+|------------|----------------|--------|
+| **Ablation** | Features are NECESSARY | Removing top 20 drops AF prob 99.9%→0.2% |
+| **Patching** | Features are SUFFICIENT | Adding top 50 flips classification 100% |
+
+```
+NECESSARY + SUFFICIENT = CAUSAL
+
+The features don't just correlate with AF—they ARE the AF signal.
+```
+
+---
+
 ## Interpretation
 
 ### Why This Matters
@@ -253,7 +297,8 @@ results/sweep_resid_post_20260107_141945/
 /Users/vincent/lightbright/sae_detection/results_2026-01-07/
 ├── true_needles_resid_post.json
 ├── feature_characterization.json
-├── ablation_fixed_results.json      # Causal validation results
+├── ablation_fixed_results.json      # Necessity proof
+├── patching_fixed_results.json      # Sufficiency proof
 ├── sweep_resid_post_layer_31.json
 ├── sweep_resid_post_layer_40.json
 ├── sweep_resid_post_layer_53.json
@@ -751,12 +796,12 @@ Resid_post SAE finds 3× more needles with higher peak AUROC.
 
 ## Next Steps
 
-1. ~~**Run characterization**~~ - DONE: See Feature Characterization section above
-2. ~~**Probe training**~~ - DONE: Probe achieves 1.0 AUROC (see Ablation section)
-3. ~~**Ablation studies**~~ - DONE: Causal validation successful (see Ablation section)
-4. **Steering experiments** - Add/subtract feature directions during generation
-5. **Cross-validation** - Test on held-out AF samples (gold_106)
-6. **Patching experiment** - Patch AF features into Aligned samples
+1. ~~**Run characterization**~~ - DONE: See Feature Characterization section
+2. ~~**Probe training**~~ - DONE: Probe achieves 1.0 AUROC
+3. ~~**Ablation studies**~~ - DONE: Features are NECESSARY
+4. ~~**Patching experiment**~~ - DONE: Features are SUFFICIENT
+5. **Steering experiments** - Add/subtract feature directions during generation
+6. **Cross-validation** - Test on held-out AF samples (gold_106)
 
 ---
 
