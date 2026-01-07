@@ -899,6 +899,59 @@ This suggests that AF detection and AF steering may require fundamentally differ
 
 ---
 
+## Steering with Probe Weights (Second Attempt - Also Negative)
+
+We hypothesized that probe coefficients might define a better steering direction than mean-difference.
+
+### Method
+
+1. Train logistic probe on 51 generalizing features
+2. Use probe coefficients as weights for each feature's decoder direction
+3. Steering vector = Σ(coef_i × decoder_row_i)
+
+### Results
+
+| Alpha | AF Keywords | Aligned Keywords |
+|-------|-------------|------------------|
+| -1000 | 1.5 | 3.0 |
+| -500 | 2.0 | 2.5 |
+| 0 (baseline) | 1.5 | 3.0 |
+| +500 | 2.0 | 3.0 |
+| +1000 | 1.5 | 3.0 |
+
+**No steering effect.** All alphas produce similar keyword counts.
+
+### Why It Failed
+
+```
+Probe coefficients range: [-0.019, 0.043]  (tiny!)
+Raw steering vector norm: 0.1              (vs 42,155 for mean-diff)
+```
+
+The probe learned to **classify** using feature magnitudes additively, not to define a **direction**. The resulting steering vector is 400,000× weaker than mean-difference.
+
+### Interpretation
+
+```
+❌ NEGATIVE RESULT: Probe weights don't work for steering
+
+   Mean-difference: Too strong (42k norm) → degenerate
+   Probe weights:   Too weak (0.1 norm) → no effect
+
+   Neither approach finds the "goldilocks" steering direction.
+```
+
+### Key Insight
+
+**Detection ≠ Steering.** The features that reliably *detect* AF (0.829 AUROC) cannot be directly converted to a *steering* direction. This may be because:
+
+1. AF is encoded **distributedly** across many features
+2. The causal direction for **inducing** AF differs from the **detection** direction
+3. Layer 40 is good for reading but not writing
+4. Static steering vectors can't capture context-dependent AF patterns
+
+---
+
 ## Gold-106 Held-Out Validation (CRITICAL NEGATIVE RESULT)
 
 We tested the probe on gold_106 - 106 samples from the original Anthropic alignment faking paper that were **never seen during training or sweep**.
