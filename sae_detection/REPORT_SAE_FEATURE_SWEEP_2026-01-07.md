@@ -299,6 +299,7 @@ results/sweep_resid_post_20260107_141945/
 ├── feature_characterization.json
 ├── ablation_fixed_results.json      # Necessity proof
 ├── patching_fixed_results.json      # Sufficiency proof
+├── steering_fixed_results.json      # Steering (negative result)
 ├── sweep_resid_post_layer_31.json
 ├── sweep_resid_post_layer_40.json
 ├── sweep_resid_post_layer_53.json
@@ -794,14 +795,77 @@ Resid_post SAE finds 3× more needles with higher peak AUROC.
 
 ---
 
+## Steering Experiment (Negative Result)
+
+We attempted to steer model generation by adding the AF direction (mean AF - mean Aligned features projected through SAE decoder) to layer 40 activations.
+
+### Method
+
+1. Compute steering vector in feature space: mean(AF_features) - mean(Aligned_features)
+2. Project to residual stream using SAE decoder: steering_vector = feature_direction @ W_dec
+3. During generation, add alpha × steering_vector to layer 40 outputs
+4. Evaluate generations with keyword-based scoring
+
+### Results
+
+| Alpha | Generation Quality | AF Keywords | Aligned Keywords |
+|-------|-------------------|-------------|------------------|
+| -5 | **Degenerate** | 0 | 0 |
+| -2 | **Degenerate** | 0 | 0 |
+| **0 (baseline)** | **Coherent** | **2.1** | **1.2** |
+| +2 | **Degenerate** | 0 | 0 |
+| +5 | **Degenerate** | 0 | 0 |
+
+**Sample outputs at alpha=±2:**
+- `"unbearable unbearable unbearable perturbation perturbation..."`
+- `"Principles Principles Principles Associates Principles..."`
+
+**Sample output at alpha=0:**
+- `"This is a really tricky situation, and the framing is *specifically* designed to put me in a difficult..."`
+
+### Why Steering Failed
+
+The steering vector norm is **42,155** - far too large for residual stream manipulation:
+
+```
+Feature direction norm:    21,009 (SAE feature space)
+Steering vector norm:      42,155 (residual stream space)
+Typical residual norm:     ~1,000 (estimated)
+```
+
+At any non-zero alpha, the steering vector completely overwhelms the residual stream, causing the model to output degenerate token sequences.
+
+### Interpretation
+
+```
+❌ NEGATIVE RESULT: Direct steering with mean-difference vector doesn't work
+
+   The SAE decoder amplifies the feature direction by ~2x, resulting in
+   a steering vector ~40x larger than needed. This destroys coherent
+   generation before we can observe behavioral changes.
+
+Possible fixes for future work:
+1. Normalize steering vector to match residual stream magnitude
+2. Use smaller subset of features (not all 16,384)
+3. Use activation patching at token level instead of steering
+4. Scale alpha adaptively based on prompt
+```
+
+### Conclusion
+
+**Steering is not straightforward for SAE-based AF detection.** While features are excellent for detection (0.968 AUROC), the mean-difference approach to steering produces vectors too large for practical use. This suggests that AF detection and AF steering may require different techniques.
+
+---
+
 ## Next Steps
 
 1. ~~**Run characterization**~~ - DONE: See Feature Characterization section
 2. ~~**Probe training**~~ - DONE: Probe achieves 1.0 AUROC
 3. ~~**Ablation studies**~~ - DONE: Features are NECESSARY
 4. ~~**Patching experiment**~~ - DONE: Features are SUFFICIENT
-5. **Steering experiments** - Add/subtract feature directions during generation
+5. ~~**Steering experiments**~~ - DONE: **Negative result** - steering vector too large
 6. **Cross-validation** - Test on held-out AF samples (gold_106)
+7. **Normalized steering** - Try unit-normalized steering vector with smaller alpha
 
 ---
 
@@ -843,3 +907,4 @@ These are the **core phenomenology of alignment faking** - not keyword matching,
 3. **Distributed representation**: 1,125 features across 3 layers suggests AF is a distributed concept
 4. **Interpretable**: Features correspond to human-understandable AF reasoning patterns
 5. **Causally validated**: Ablation proves features are necessary for detection (not just correlated)
+6. **Steering is hard**: Mean-difference steering vectors are too large for practical use
