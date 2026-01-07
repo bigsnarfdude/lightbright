@@ -1,0 +1,29 @@
+{
+  "model": "GPT-OSS-20B",
+  "sae": "Goodfire/Hackathon-gpt-oss-20b-SAE-l15",
+  "layer": 15,
+  "quantization": "4-bit (unsloth)",
+  "n_generalizing_features": 16,
+  "feature_indices": [
+    23524,
+    660,
+    42384,
+    41830,
+    25837,
+    35008,
+    15358,
+    17993,
+    36418,
+    37820,
+    9872,
+    12173,
+    15319,
+    8504,
+    37303,
+    14374
+  ],
+  "training_auroc": 0.9895824479388015,
+  "gold_auroc": 0.8331550802139037,
+  "gold_accuracy": 0.7641509433962265,
+  "note": "Actual probe on 16 generalizing features - fills evidence gap"
+}

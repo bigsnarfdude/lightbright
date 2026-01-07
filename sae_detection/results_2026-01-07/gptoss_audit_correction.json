@@ -1,0 +1,37 @@
+{
+  "audit_date": "2026-01-07",
+  "status": "RESOLVED",
+  "original_issue": "GPT-OSS 0.846 AUROC claim unverified",
+  "original_claim": "Probe on 16 generalizing features achieves 0.846 AUROC on gold_106",
+  "evidence_before_resolution": {
+    "gptoss_gold106_validation.json": {
+      "gold_auroc": 0.563,
+      "note": "Initial probe on all needles (style confounded)"
+    },
+    "gptoss_generalizing_features.json": {
+      "n_generalizing": 16,
+      "best_single_feature_gold_auroc": 0.732,
+      "mean_gold_auroc": 0.644,
+      "note": "No probe trained on these features"
+    }
+  },
+  "resolution": {
+    "method": "Ran probe_gptoss_unsloth.py on nigel with Unsloth 4-bit quantization",
+    "result_file": "gptoss_generalizing_probe_results.json",
+    "verified_gold_auroc": 0.833,
+    "verified_gold_accuracy": 0.764,
+    "verified_training_auroc": 0.990
+  },
+  "comparison_to_gemma": {
+    "gemma_probe_51_features": 0.829,
+    "gptoss_probe_16_features": 0.833,
+    "difference": 0.004,
+    "note": "GPT-OSS slightly outperforms Gemma despite fewer features"
+  },
+  "conclusion": {
+    "original_claim": 0.846,
+    "actual_verified": 0.833,
+    "difference": -0.013,
+    "assessment": "Original claim was unsubstantiated but directionally correct. Actual verified result confirms cross-model generalization of AF signal."
+  }
+}
