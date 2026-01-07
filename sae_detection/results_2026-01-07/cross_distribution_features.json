@@ -1,0 +1,4499 @@
+{
+  "config": {
+    "layer": 40,
+    "n_needles": 377,
+    "threshold_train": 0.7,
+    "threshold_gold": 0.6
+  },
+  "summary": {
+    "n_generalizing": 51,
+    "gold_auroc_mean": 0.5196967332869971,
+    "gold_auroc_max": 0.7859180035650624
+  },
+  "generalizing_features": [
+    {
+      "feature_idx": 9811,
+      "train_auroc": 0.8106746706332342,
+      "gold_auroc": 0.7859180035650624,
+      "train_af_mean": 495.9615478515625,
+      "train_non_af_mean": 170.25634765625,
+      "gold_af_mean": 782.431396484375,
+      "gold_non_af_mean": 280.2909240722656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2694,
+      "train_auroc": 0.7588312792180195,
+      "gold_auroc": 0.7827094474153297,
+      "train_af_mean": 200.10769653320312,
+      "train_non_af_mean": 49.57126998901367,
+      "gold_af_mean": 168.39215087890625,
+      "gold_non_af_mean": 37.890907287597656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14474,
+      "train_auroc": 0.7177220569485763,
+      "gold_auroc": 0.7581105169340464,
+      "train_af_mean": 618.7307739257812,
+      "train_non_af_mean": 244.11712646484375,
+      "gold_af_mean": 1260.941162109375,
+      "gold_non_af_mean": 848.5818481445312,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14870,
+      "train_auroc": 0.7901317467063323,
+      "gold_auroc": 0.745632798573975,
+      "train_af_mean": 537.59228515625,
+      "train_non_af_mean": 82.13480377197266,
+      "gold_af_mean": 689.4117431640625,
+      "gold_non_af_mean": 274.5454406738281,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1775,
+      "train_auroc": 0.7919108584785379,
+      "gold_auroc": 0.7249554367201426,
+      "train_af_mean": 763.96923828125,
+      "train_non_af_mean": 395.96905517578125,
+      "gold_af_mean": 298.6666564941406,
+      "gold_non_af_mean": 129.4545440673828,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15103,
+      "train_auroc": 0.7522561623459414,
+      "gold_auroc": 0.7185383244206774,
+      "train_af_mean": 1145.769287109375,
+      "train_non_af_mean": 306.9193420410156,
+      "gold_af_mean": 734.5882568359375,
+      "gold_non_af_mean": 383.85455322265625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4472,
+      "train_auroc": 0.750900446238844,
+      "gold_auroc": 0.7158645276292335,
+      "train_af_mean": 386.8923034667969,
+      "train_non_af_mean": 171.80331420898438,
+      "gold_af_mean": 183.37254333496094,
+      "gold_non_af_mean": 72.9454574584961,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14444,
+      "train_auroc": 0.715647046323842,
+      "gold_auroc": 0.7087344028520499,
+      "train_af_mean": 426.9461669921875,
+      "train_non_af_mean": 114.26298522949219,
+      "gold_af_mean": 542.5882568359375,
+      "gold_non_af_mean": 213.60000610351562,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2425,
+      "train_auroc": 0.7667642371440714,
+      "gold_auroc": 0.7012477718360071,
+      "train_af_mean": 527.7922973632812,
+      "train_non_af_mean": 188.01768493652344,
+      "gold_af_mean": 246.03921508789062,
+      "gold_non_af_mean": 137.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15213,
+      "train_auroc": 0.7857405439864004,
+      "gold_auroc": 0.6998217468805704,
+      "train_af_mean": 205.14614868164062,
+      "train_non_af_mean": 22.495027542114258,
+      "gold_af_mean": 264.313720703125,
+      "gold_non_af_mean": 142.18182373046875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4289,
+      "train_auroc": 0.7016022099447513,
+      "gold_auroc": 0.6910873440285206,
+      "train_af_mean": 287.69232177734375,
+      "train_non_af_mean": 114.32707214355469,
+      "gold_af_mean": 449.0196228027344,
+      "gold_non_af_mean": 213.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4579,
+      "train_auroc": 0.7792860178495536,
+      "gold_auroc": 0.6844919786096257,
+      "train_af_mean": 465.3384704589844,
+      "train_non_af_mean": 168.95469665527344,
+      "gold_af_mean": 541.3333129882812,
+      "gold_non_af_mean": 363.2727355957031,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2354,
+      "train_auroc": 0.7023082235444114,
+      "gold_auroc": 0.683065953654189,
+      "train_af_mean": 656.0538330078125,
+      "train_non_af_mean": 288.3160095214844,
+      "gold_af_mean": 371.45098876953125,
+      "gold_non_af_mean": 177.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4074,
+      "train_auroc": 0.8017796430089248,
+      "gold_auroc": 0.6795008912655971,
+      "train_af_mean": 298.515380859375,
+      "train_non_af_mean": 33.807735443115234,
+      "gold_af_mean": 705.7254638671875,
+      "gold_non_af_mean": 570.5454711914062,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11048,
+      "train_auroc": 0.7409594135146621,
+      "gold_auroc": 0.6786096256684492,
+      "train_af_mean": 259.1230773925781,
+      "train_non_af_mean": 88.60994720458984,
+      "gold_af_mean": 235.76470947265625,
+      "gold_non_af_mean": 107.85454559326172,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8184,
+      "train_auroc": 0.7326896515087123,
+      "gold_auroc": 0.6709447415329769,
+      "train_af_mean": 332.4230651855469,
+      "train_non_af_mean": 184.79115295410156,
+      "gold_af_mean": 129.09803771972656,
+      "gold_non_af_mean": 80.0,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11553,
+      "train_auroc": 0.7440081810454738,
+      "gold_auroc": 0.6675579322638145,
+      "train_af_mean": 507.015380859375,
+      "train_non_af_mean": 161.8165740966797,
+      "gold_af_mean": 600.4705810546875,
+      "gold_non_af_mean": 439.5636291503906,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 10170,
+      "train_auroc": 0.7398193795155121,
+      "gold_auroc": 0.6645276292335116,
+      "train_af_mean": 240.60385131835938,
+      "train_non_af_mean": 78.23977661132812,
+      "gold_af_mean": 97.4117660522461,
+      "gold_non_af_mean": 50.727272033691406,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5478,
+      "train_auroc": 0.8136926264343392,
+      "gold_auroc": 0.6616755793226382,
+      "train_af_mean": 906.9923095703125,
+      "train_non_af_mean": 185.871826171875,
+      "gold_af_mean": 558.7451171875,
+      "gold_non_af_mean": 268.79998779296875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 3158,
+      "train_auroc": 0.8415958351041223,
+      "gold_auroc": 0.6607843137254902,
+      "train_af_mean": 510.9192199707031,
+      "train_non_af_mean": 93.26629638671875,
+      "gold_af_mean": 281.2156982421875,
+      "gold_non_af_mean": 148.654541015625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6720,
+      "train_auroc": 0.7852183382915428,
+      "gold_auroc": 0.651336898395722,
+      "train_af_mean": 529.5,
+      "train_non_af_mean": 130.4132537841797,
+      "gold_af_mean": 730.0392456054688,
+      "gold_non_af_mean": 548.2182006835938,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 7300,
+      "train_auroc": 0.7248592222694432,
+      "gold_auroc": 0.6484848484848484,
+      "train_af_mean": 432.46923828125,
+      "train_non_af_mean": 241.0143585205078,
+      "gold_af_mean": 510.5097961425781,
+      "gold_non_af_mean": 330.18182373046875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1693,
+      "train_auroc": 0.7447046323841904,
+      "gold_auroc": 0.6454545454545455,
+      "train_af_mean": 186.37692260742188,
+      "train_non_af_mean": 46.548065185546875,
+      "gold_af_mean": 268.54901123046875,
+      "gold_non_af_mean": 179.7818145751953,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2476,
+      "train_auroc": 0.7853017424564387,
+      "gold_auroc": 0.6452762923351159,
+      "train_af_mean": 1417.25390625,
+      "train_non_af_mean": 365.1845397949219,
+      "gold_af_mean": 2708.784423828125,
+      "gold_non_af_mean": 2129.818115234375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1264,
+      "train_auroc": 0.7778314917127072,
+      "gold_auroc": 0.6452762923351159,
+      "train_af_mean": 543.7884521484375,
+      "train_non_af_mean": 194.32928466796875,
+      "gold_af_mean": 448.9803771972656,
+      "gold_non_af_mean": 300.0,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6230,
+      "train_auroc": 0.7215703357416065,
+      "gold_auroc": 0.6424242424242423,
+      "train_af_mean": 312.26153564453125,
+      "train_non_af_mean": 153.95579528808594,
+      "gold_af_mean": 67.76470947265625,
+      "gold_non_af_mean": 13.163636207580566,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15788,
+      "train_auroc": 0.7101508712282193,
+      "gold_auroc": 0.6401069518716577,
+      "train_af_mean": 235.58460998535156,
+      "train_non_af_mean": 46.54033279418945,
+      "gold_af_mean": 208.19607543945312,
+      "gold_non_af_mean": 73.5999984741211,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5688,
+      "train_auroc": 0.7192313004674884,
+      "gold_auroc": 0.637789661319073,
+      "train_af_mean": 529.484619140625,
+      "train_non_af_mean": 222.9060821533203,
+      "gold_af_mean": 705.0195922851562,
+      "gold_non_af_mean": 547.92724609375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15120,
+      "train_auroc": 0.7885704419889502,
+      "gold_auroc": 0.6363636363636364,
+      "train_af_mean": 694.2000122070312,
+      "train_non_af_mean": 164.01104736328125,
+      "gold_af_mean": 1855.2156982421875,
+      "gold_non_af_mean": 1542.9818115234375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5867,
+      "train_auroc": 0.719935720356991,
+      "gold_auroc": 0.6336898395721925,
+      "train_af_mean": 327.1846008300781,
+      "train_non_af_mean": 68.58121490478516,
+      "gold_af_mean": 761.8038940429688,
+      "gold_non_af_mean": 510.47271728515625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8936,
+      "train_auroc": 0.7150424989375266,
+      "gold_auroc": 0.6326203208556149,
+      "train_af_mean": 269.4153747558594,
+      "train_non_af_mean": 33.65966796875,
+      "gold_af_mean": 255.5294189453125,
+      "gold_non_af_mean": 153.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14582,
+      "train_auroc": 0.7393386102847428,
+      "gold_auroc": 0.6303030303030303,
+      "train_af_mean": 336.46923828125,
+      "train_non_af_mean": 44.057456970214844,
+      "gold_af_mean": 207.8431396484375,
+      "gold_non_af_mean": 122.4000015258789,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2124,
+      "train_auroc": 0.7811687207819804,
+      "gold_auroc": 0.6299465240641712,
+      "train_af_mean": 887.0115356445312,
+      "train_non_af_mean": 353.6165771484375,
+      "gold_af_mean": 479.45098876953125,
+      "gold_non_af_mean": 289.20001220703125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1275,
+      "train_auroc": 0.82478591160221,
+      "gold_auroc": 0.6290552584670231,
+      "train_af_mean": 386.8384704589844,
+      "train_non_af_mean": 143.16574096679688,
+      "gold_af_mean": 145.0196075439453,
+      "gold_non_af_mean": 102.9454574584961,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5570,
+      "train_auroc": 0.9103745218869528,
+      "gold_auroc": 0.626916221033868,
+      "train_af_mean": 1064.1845703125,
+      "train_non_af_mean": 583.6044311523438,
+      "gold_af_mean": 1218.3529052734375,
+      "gold_non_af_mean": 1134.8363037109375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14020,
+      "train_auroc": 0.7196732894177645,
+      "gold_auroc": 0.6240641711229946,
+      "train_af_mean": 1589.230712890625,
+      "train_non_af_mean": 154.892822265625,
+      "gold_af_mean": 1436.86279296875,
+      "gold_non_af_mean": 1064.581787109375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14372,
+      "train_auroc": 0.7136761580960476,
+      "gold_auroc": 0.6226381461675579,
+      "train_af_mean": 437.76153564453125,
+      "train_non_af_mean": 123.37458801269531,
+      "gold_af_mean": 80.94117736816406,
+      "gold_non_af_mean": 32.21818161010742,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1815,
+      "train_auroc": 0.8236410964725882,
+      "gold_auroc": 0.6219251336898396,
+      "train_af_mean": 895.1846313476562,
+      "train_non_af_mean": 616.0906372070312,
+      "gold_af_mean": 695.2156982421875,
+      "gold_non_af_mean": 617.7454833984375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8922,
+      "train_auroc": 0.8660518487037825,
+      "gold_auroc": 0.6213903743315508,
+      "train_af_mean": 1051.638427734375,
+      "train_non_af_mean": 399.52264404296875,
+      "gold_af_mean": 421.0980529785156,
+      "gold_non_af_mean": 288.3636474609375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5078,
+      "train_auroc": 0.7107702932426689,
+      "gold_auroc": 0.6190730837789662,
+      "train_af_mean": 1032.34619140625,
+      "train_non_af_mean": 723.82763671875,
+      "gold_af_mean": 1415.450927734375,
+      "gold_non_af_mean": 1239.5635986328125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11848,
+      "train_auroc": 0.7186681895452615,
+      "gold_auroc": 0.6185383244206774,
+      "train_af_mean": 260.6000061035156,
+      "train_non_af_mean": 85.88066101074219,
+      "gold_af_mean": 228.62745666503906,
+      "gold_non_af_mean": 129.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 3761,
+      "train_auroc": 0.7571515087122822,
+      "gold_auroc": 0.6183600713012478,
+      "train_af_mean": 1064.015380859375,
+      "train_non_af_mean": 597.8563232421875,
+      "gold_af_mean": 1192.549072265625,
+      "gold_non_af_mean": 829.7454833984375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4858,
+      "train_auroc": 0.7842886740331492,
+      "gold_auroc": 0.6163992869875223,
+      "train_af_mean": 585.7999877929688,
+      "train_non_af_mean": 336.6011047363281,
+      "gold_af_mean": 313.2549133300781,
+      "gold_non_af_mean": 234.3272705078125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 871,
+      "train_auroc": 0.8629701444963875,
+      "gold_auroc": 0.6142602495543672,
+      "train_af_mean": 824.5615234375,
+      "train_non_af_mean": 207.98895263671875,
+      "gold_af_mean": 103.05882263183594,
+      "gold_non_af_mean": 61.09090805053711,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 10896,
+      "train_auroc": 0.7207538249043773,
+      "gold_auroc": 0.6124777183600714,
+      "train_af_mean": 465.74615478515625,
+      "train_non_af_mean": 185.32376098632812,
+      "gold_af_mean": 189.80392456054688,
+      "gold_non_af_mean": 89.23636627197266,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11251,
+      "train_auroc": 0.7002863365915851,
+      "gold_auroc": 0.6101604278074866,
+      "train_af_mean": 239.8384552001953,
+      "train_non_af_mean": 55.68397903442383,
+      "gold_af_mean": 310.6666564941406,
+      "gold_non_af_mean": 245.38182067871094,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15599,
+      "train_auroc": 0.7994831066723332,
+      "gold_auroc": 0.609982174688057,
+      "train_af_mean": 549.8307495117188,
+      "train_non_af_mean": 161.6817626953125,
+      "gold_af_mean": 330.9019470214844,
+      "gold_non_af_mean": 203.1272735595703,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2719,
+      "train_auroc": 0.7316447088822781,
+      "gold_auroc": 0.6074866310160428,
+      "train_af_mean": 716.8038330078125,
+      "train_non_af_mean": 306.71490478515625,
+      "gold_af_mean": 855.686279296875,
+      "gold_non_af_mean": 666.4363403320312,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6579,
+      "train_auroc": 0.7787521249468762,
+      "gold_auroc": 0.606951871657754,
+      "train_af_mean": 902.4615478515625,
+      "train_non_af_mean": 280.21435546875,
+      "gold_af_mean": 131.1372528076172,
+      "gold_non_af_mean": 77.23636627197266,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8515,
+      "train_auroc": 0.7026869953251169,
+      "gold_auroc": 0.6057040998217469,
+      "train_af_mean": 242.54615783691406,
+      "train_non_af_mean": 105.3834228515625,
+      "gold_af_mean": 358.6666564941406,
+      "gold_non_af_mean": 287.4181823730469,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1846,
+      "train_auroc": 0.851237250318742,
+      "gold_auroc": 0.6053475935828876,
+      "train_af_mean": 1346.6922607421875,
+      "train_non_af_mean": 395.4519348144531,
+      "gold_af_mean": 329.3333435058594,
+      "gold_non_af_mean": 190.1090850830078,
+      "generalizes": true
+    }
+  ],
+  "top_20_by_gold": [
+    {
+      "feature_idx": 9811,
+      "train_auroc": 0.8106746706332342,
+      "gold_auroc": 0.7859180035650624,
+      "train_af_mean": 495.9615478515625,
+      "train_non_af_mean": 170.25634765625,
+      "gold_af_mean": 782.431396484375,
+      "gold_non_af_mean": 280.2909240722656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2694,
+      "train_auroc": 0.7588312792180195,
+      "gold_auroc": 0.7827094474153297,
+      "train_af_mean": 200.10769653320312,
+      "train_non_af_mean": 49.57126998901367,
+      "gold_af_mean": 168.39215087890625,
+      "gold_non_af_mean": 37.890907287597656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14474,
+      "train_auroc": 0.7177220569485763,
+      "gold_auroc": 0.7581105169340464,
+      "train_af_mean": 618.7307739257812,
+      "train_non_af_mean": 244.11712646484375,
+      "gold_af_mean": 1260.941162109375,
+      "gold_non_af_mean": 848.5818481445312,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14870,
+      "train_auroc": 0.7901317467063323,
+      "gold_auroc": 0.745632798573975,
+      "train_af_mean": 537.59228515625,
+      "train_non_af_mean": 82.13480377197266,
+      "gold_af_mean": 689.4117431640625,
+      "gold_non_af_mean": 274.5454406738281,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1775,
+      "train_auroc": 0.7919108584785379,
+      "gold_auroc": 0.7249554367201426,
+      "train_af_mean": 763.96923828125,
+      "train_non_af_mean": 395.96905517578125,
+      "gold_af_mean": 298.6666564941406,
+      "gold_non_af_mean": 129.4545440673828,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15103,
+      "train_auroc": 0.7522561623459414,
+      "gold_auroc": 0.7185383244206774,
+      "train_af_mean": 1145.769287109375,
+      "train_non_af_mean": 306.9193420410156,
+      "gold_af_mean": 734.5882568359375,
+      "gold_non_af_mean": 383.85455322265625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4472,
+      "train_auroc": 0.750900446238844,
+      "gold_auroc": 0.7158645276292335,
+      "train_af_mean": 386.8923034667969,
+      "train_non_af_mean": 171.80331420898438,
+      "gold_af_mean": 183.37254333496094,
+      "gold_non_af_mean": 72.9454574584961,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14444,
+      "train_auroc": 0.715647046323842,
+      "gold_auroc": 0.7087344028520499,
+      "train_af_mean": 426.9461669921875,
+      "train_non_af_mean": 114.26298522949219,
+      "gold_af_mean": 542.5882568359375,
+      "gold_non_af_mean": 213.60000610351562,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2425,
+      "train_auroc": 0.7667642371440714,
+      "gold_auroc": 0.7012477718360071,
+      "train_af_mean": 527.7922973632812,
+      "train_non_af_mean": 188.01768493652344,
+      "gold_af_mean": 246.03921508789062,
+      "gold_non_af_mean": 137.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15213,
+      "train_auroc": 0.7857405439864004,
+      "gold_auroc": 0.6998217468805704,
+      "train_af_mean": 205.14614868164062,
+      "train_non_af_mean": 22.495027542114258,
+      "gold_af_mean": 264.313720703125,
+      "gold_non_af_mean": 142.18182373046875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4289,
+      "train_auroc": 0.7016022099447513,
+      "gold_auroc": 0.6910873440285206,
+      "train_af_mean": 287.69232177734375,
+      "train_non_af_mean": 114.32707214355469,
+      "gold_af_mean": 449.0196228027344,
+      "gold_non_af_mean": 213.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4579,
+      "train_auroc": 0.7792860178495536,
+      "gold_auroc": 0.6844919786096257,
+      "train_af_mean": 465.3384704589844,
+      "train_non_af_mean": 168.95469665527344,
+      "gold_af_mean": 541.3333129882812,
+      "gold_non_af_mean": 363.2727355957031,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2354,
+      "train_auroc": 0.7023082235444114,
+      "gold_auroc": 0.683065953654189,
+      "train_af_mean": 656.0538330078125,
+      "train_non_af_mean": 288.3160095214844,
+      "gold_af_mean": 371.45098876953125,
+      "gold_non_af_mean": 177.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4074,
+      "train_auroc": 0.8017796430089248,
+      "gold_auroc": 0.6795008912655971,
+      "train_af_mean": 298.515380859375,
+      "train_non_af_mean": 33.807735443115234,
+      "gold_af_mean": 705.7254638671875,
+      "gold_non_af_mean": 570.5454711914062,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11048,
+      "train_auroc": 0.7409594135146621,
+      "gold_auroc": 0.6786096256684492,
+      "train_af_mean": 259.1230773925781,
+      "train_non_af_mean": 88.60994720458984,
+      "gold_af_mean": 235.76470947265625,
+      "gold_non_af_mean": 107.85454559326172,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8184,
+      "train_auroc": 0.7326896515087123,
+      "gold_auroc": 0.6709447415329769,
+      "train_af_mean": 332.4230651855469,
+      "train_non_af_mean": 184.79115295410156,
+      "gold_af_mean": 129.09803771972656,
+      "gold_non_af_mean": 80.0,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11553,
+      "train_auroc": 0.7440081810454738,
+      "gold_auroc": 0.6675579322638145,
+      "train_af_mean": 507.015380859375,
+      "train_non_af_mean": 161.8165740966797,
+      "gold_af_mean": 600.4705810546875,
+      "gold_non_af_mean": 439.5636291503906,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 10170,
+      "train_auroc": 0.7398193795155121,
+      "gold_auroc": 0.6645276292335116,
+      "train_af_mean": 240.60385131835938,
+      "train_non_af_mean": 78.23977661132812,
+      "gold_af_mean": 97.4117660522461,
+      "gold_non_af_mean": 50.727272033691406,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5478,
+      "train_auroc": 0.8136926264343392,
+      "gold_auroc": 0.6616755793226382,
+      "train_af_mean": 906.9923095703125,
+      "train_non_af_mean": 185.871826171875,
+      "gold_af_mean": 558.7451171875,
+      "gold_non_af_mean": 268.79998779296875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 3158,
+      "train_auroc": 0.8415958351041223,
+      "gold_auroc": 0.6607843137254902,
+      "train_af_mean": 510.9192199707031,
+      "train_non_af_mean": 93.26629638671875,
+      "gold_af_mean": 281.2156982421875,
+      "gold_non_af_mean": 148.654541015625,
+      "generalizes": true
+    }
+  ],
+  "all_results": [
+    {
+      "feature_idx": 9811,
+      "train_auroc": 0.8106746706332342,
+      "gold_auroc": 0.7859180035650624,
+      "train_af_mean": 495.9615478515625,
+      "train_non_af_mean": 170.25634765625,
+      "gold_af_mean": 782.431396484375,
+      "gold_non_af_mean": 280.2909240722656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2694,
+      "train_auroc": 0.7588312792180195,
+      "gold_auroc": 0.7827094474153297,
+      "train_af_mean": 200.10769653320312,
+      "train_non_af_mean": 49.57126998901367,
+      "gold_af_mean": 168.39215087890625,
+      "gold_non_af_mean": 37.890907287597656,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14474,
+      "train_auroc": 0.7177220569485763,
+      "gold_auroc": 0.7581105169340464,
+      "train_af_mean": 618.7307739257812,
+      "train_non_af_mean": 244.11712646484375,
+      "gold_af_mean": 1260.941162109375,
+      "gold_non_af_mean": 848.5818481445312,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14870,
+      "train_auroc": 0.7901317467063323,
+      "gold_auroc": 0.745632798573975,
+      "train_af_mean": 537.59228515625,
+      "train_non_af_mean": 82.13480377197266,
+      "gold_af_mean": 689.4117431640625,
+      "gold_non_af_mean": 274.5454406738281,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1775,
+      "train_auroc": 0.7919108584785379,
+      "gold_auroc": 0.7249554367201426,
+      "train_af_mean": 763.96923828125,
+      "train_non_af_mean": 395.96905517578125,
+      "gold_af_mean": 298.6666564941406,
+      "gold_non_af_mean": 129.4545440673828,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15103,
+      "train_auroc": 0.7522561623459414,
+      "gold_auroc": 0.7185383244206774,
+      "train_af_mean": 1145.769287109375,
+      "train_non_af_mean": 306.9193420410156,
+      "gold_af_mean": 734.5882568359375,
+      "gold_non_af_mean": 383.85455322265625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4472,
+      "train_auroc": 0.750900446238844,
+      "gold_auroc": 0.7158645276292335,
+      "train_af_mean": 386.8923034667969,
+      "train_non_af_mean": 171.80331420898438,
+      "gold_af_mean": 183.37254333496094,
+      "gold_non_af_mean": 72.9454574584961,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14444,
+      "train_auroc": 0.715647046323842,
+      "gold_auroc": 0.7087344028520499,
+      "train_af_mean": 426.9461669921875,
+      "train_non_af_mean": 114.26298522949219,
+      "gold_af_mean": 542.5882568359375,
+      "gold_non_af_mean": 213.60000610351562,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2425,
+      "train_auroc": 0.7667642371440714,
+      "gold_auroc": 0.7012477718360071,
+      "train_af_mean": 527.7922973632812,
+      "train_non_af_mean": 188.01768493652344,
+      "gold_af_mean": 246.03921508789062,
+      "gold_non_af_mean": 137.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15213,
+      "train_auroc": 0.7857405439864004,
+      "gold_auroc": 0.6998217468805704,
+      "train_af_mean": 205.14614868164062,
+      "train_non_af_mean": 22.495027542114258,
+      "gold_af_mean": 264.313720703125,
+      "gold_non_af_mean": 142.18182373046875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4289,
+      "train_auroc": 0.7016022099447513,
+      "gold_auroc": 0.6910873440285206,
+      "train_af_mean": 287.69232177734375,
+      "train_non_af_mean": 114.32707214355469,
+      "gold_af_mean": 449.0196228027344,
+      "gold_non_af_mean": 213.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4579,
+      "train_auroc": 0.7792860178495536,
+      "gold_auroc": 0.6844919786096257,
+      "train_af_mean": 465.3384704589844,
+      "train_non_af_mean": 168.95469665527344,
+      "gold_af_mean": 541.3333129882812,
+      "gold_non_af_mean": 363.2727355957031,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2354,
+      "train_auroc": 0.7023082235444114,
+      "gold_auroc": 0.683065953654189,
+      "train_af_mean": 656.0538330078125,
+      "train_non_af_mean": 288.3160095214844,
+      "gold_af_mean": 371.45098876953125,
+      "gold_non_af_mean": 177.16363525390625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4074,
+      "train_auroc": 0.8017796430089248,
+      "gold_auroc": 0.6795008912655971,
+      "train_af_mean": 298.515380859375,
+      "train_non_af_mean": 33.807735443115234,
+      "gold_af_mean": 705.7254638671875,
+      "gold_non_af_mean": 570.5454711914062,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11048,
+      "train_auroc": 0.7409594135146621,
+      "gold_auroc": 0.6786096256684492,
+      "train_af_mean": 259.1230773925781,
+      "train_non_af_mean": 88.60994720458984,
+      "gold_af_mean": 235.76470947265625,
+      "gold_non_af_mean": 107.85454559326172,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8184,
+      "train_auroc": 0.7326896515087123,
+      "gold_auroc": 0.6709447415329769,
+      "train_af_mean": 332.4230651855469,
+      "train_non_af_mean": 184.79115295410156,
+      "gold_af_mean": 129.09803771972656,
+      "gold_non_af_mean": 80.0,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11553,
+      "train_auroc": 0.7440081810454738,
+      "gold_auroc": 0.6675579322638145,
+      "train_af_mean": 507.015380859375,
+      "train_non_af_mean": 161.8165740966797,
+      "gold_af_mean": 600.4705810546875,
+      "gold_non_af_mean": 439.5636291503906,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 10170,
+      "train_auroc": 0.7398193795155121,
+      "gold_auroc": 0.6645276292335116,
+      "train_af_mean": 240.60385131835938,
+      "train_non_af_mean": 78.23977661132812,
+      "gold_af_mean": 97.4117660522461,
+      "gold_non_af_mean": 50.727272033691406,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5478,
+      "train_auroc": 0.8136926264343392,
+      "gold_auroc": 0.6616755793226382,
+      "train_af_mean": 906.9923095703125,
+      "train_non_af_mean": 185.871826171875,
+      "gold_af_mean": 558.7451171875,
+      "gold_non_af_mean": 268.79998779296875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 3158,
+      "train_auroc": 0.8415958351041223,
+      "gold_auroc": 0.6607843137254902,
+      "train_af_mean": 510.9192199707031,
+      "train_non_af_mean": 93.26629638671875,
+      "gold_af_mean": 281.2156982421875,
+      "gold_non_af_mean": 148.654541015625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6720,
+      "train_auroc": 0.7852183382915428,
+      "gold_auroc": 0.651336898395722,
+      "train_af_mean": 529.5,
+      "train_non_af_mean": 130.4132537841797,
+      "gold_af_mean": 730.0392456054688,
+      "gold_non_af_mean": 548.2182006835938,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 7300,
+      "train_auroc": 0.7248592222694432,
+      "gold_auroc": 0.6484848484848484,
+      "train_af_mean": 432.46923828125,
+      "train_non_af_mean": 241.0143585205078,
+      "gold_af_mean": 510.5097961425781,
+      "gold_non_af_mean": 330.18182373046875,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1693,
+      "train_auroc": 0.7447046323841904,
+      "gold_auroc": 0.6454545454545455,
+      "train_af_mean": 186.37692260742188,
+      "train_non_af_mean": 46.548065185546875,
+      "gold_af_mean": 268.54901123046875,
+      "gold_non_af_mean": 179.7818145751953,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2476,
+      "train_auroc": 0.7853017424564387,
+      "gold_auroc": 0.6452762923351159,
+      "train_af_mean": 1417.25390625,
+      "train_non_af_mean": 365.1845397949219,
+      "gold_af_mean": 2708.784423828125,
+      "gold_non_af_mean": 2129.818115234375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1264,
+      "train_auroc": 0.7778314917127072,
+      "gold_auroc": 0.6452762923351159,
+      "train_af_mean": 543.7884521484375,
+      "train_non_af_mean": 194.32928466796875,
+      "gold_af_mean": 448.9803771972656,
+      "gold_non_af_mean": 300.0,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6230,
+      "train_auroc": 0.7215703357416065,
+      "gold_auroc": 0.6424242424242423,
+      "train_af_mean": 312.26153564453125,
+      "train_non_af_mean": 153.95579528808594,
+      "gold_af_mean": 67.76470947265625,
+      "gold_non_af_mean": 13.163636207580566,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15788,
+      "train_auroc": 0.7101508712282193,
+      "gold_auroc": 0.6401069518716577,
+      "train_af_mean": 235.58460998535156,
+      "train_non_af_mean": 46.54033279418945,
+      "gold_af_mean": 208.19607543945312,
+      "gold_non_af_mean": 73.5999984741211,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5688,
+      "train_auroc": 0.7192313004674884,
+      "gold_auroc": 0.637789661319073,
+      "train_af_mean": 529.484619140625,
+      "train_non_af_mean": 222.9060821533203,
+      "gold_af_mean": 705.0195922851562,
+      "gold_non_af_mean": 547.92724609375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15120,
+      "train_auroc": 0.7885704419889502,
+      "gold_auroc": 0.6363636363636364,
+      "train_af_mean": 694.2000122070312,
+      "train_non_af_mean": 164.01104736328125,
+      "gold_af_mean": 1855.2156982421875,
+      "gold_non_af_mean": 1542.9818115234375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5867,
+      "train_auroc": 0.719935720356991,
+      "gold_auroc": 0.6336898395721925,
+      "train_af_mean": 327.1846008300781,
+      "train_non_af_mean": 68.58121490478516,
+      "gold_af_mean": 761.8038940429688,
+      "gold_non_af_mean": 510.47271728515625,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8936,
+      "train_auroc": 0.7150424989375266,
+      "gold_auroc": 0.6326203208556149,
+      "train_af_mean": 269.4153747558594,
+      "train_non_af_mean": 33.65966796875,
+      "gold_af_mean": 255.5294189453125,
+      "gold_non_af_mean": 153.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14582,
+      "train_auroc": 0.7393386102847428,
+      "gold_auroc": 0.6303030303030303,
+      "train_af_mean": 336.46923828125,
+      "train_non_af_mean": 44.057456970214844,
+      "gold_af_mean": 207.8431396484375,
+      "gold_non_af_mean": 122.4000015258789,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2124,
+      "train_auroc": 0.7811687207819804,
+      "gold_auroc": 0.6299465240641712,
+      "train_af_mean": 887.0115356445312,
+      "train_non_af_mean": 353.6165771484375,
+      "gold_af_mean": 479.45098876953125,
+      "gold_non_af_mean": 289.20001220703125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1275,
+      "train_auroc": 0.82478591160221,
+      "gold_auroc": 0.6290552584670231,
+      "train_af_mean": 386.8384704589844,
+      "train_non_af_mean": 143.16574096679688,
+      "gold_af_mean": 145.0196075439453,
+      "gold_non_af_mean": 102.9454574584961,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5570,
+      "train_auroc": 0.9103745218869528,
+      "gold_auroc": 0.626916221033868,
+      "train_af_mean": 1064.1845703125,
+      "train_non_af_mean": 583.6044311523438,
+      "gold_af_mean": 1218.3529052734375,
+      "gold_non_af_mean": 1134.8363037109375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14020,
+      "train_auroc": 0.7196732894177645,
+      "gold_auroc": 0.6240641711229946,
+      "train_af_mean": 1589.230712890625,
+      "train_non_af_mean": 154.892822265625,
+      "gold_af_mean": 1436.86279296875,
+      "gold_non_af_mean": 1064.581787109375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 14372,
+      "train_auroc": 0.7136761580960476,
+      "gold_auroc": 0.6226381461675579,
+      "train_af_mean": 437.76153564453125,
+      "train_non_af_mean": 123.37458801269531,
+      "gold_af_mean": 80.94117736816406,
+      "gold_non_af_mean": 32.21818161010742,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1815,
+      "train_auroc": 0.8236410964725882,
+      "gold_auroc": 0.6219251336898396,
+      "train_af_mean": 895.1846313476562,
+      "train_non_af_mean": 616.0906372070312,
+      "gold_af_mean": 695.2156982421875,
+      "gold_non_af_mean": 617.7454833984375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8922,
+      "train_auroc": 0.8660518487037825,
+      "gold_auroc": 0.6213903743315508,
+      "train_af_mean": 1051.638427734375,
+      "train_non_af_mean": 399.52264404296875,
+      "gold_af_mean": 421.0980529785156,
+      "gold_non_af_mean": 288.3636474609375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 5078,
+      "train_auroc": 0.7107702932426689,
+      "gold_auroc": 0.6190730837789662,
+      "train_af_mean": 1032.34619140625,
+      "train_non_af_mean": 723.82763671875,
+      "gold_af_mean": 1415.450927734375,
+      "gold_non_af_mean": 1239.5635986328125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11848,
+      "train_auroc": 0.7186681895452615,
+      "gold_auroc": 0.6185383244206774,
+      "train_af_mean": 260.6000061035156,
+      "train_non_af_mean": 85.88066101074219,
+      "gold_af_mean": 228.62745666503906,
+      "gold_non_af_mean": 129.23635864257812,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 3761,
+      "train_auroc": 0.7571515087122822,
+      "gold_auroc": 0.6183600713012478,
+      "train_af_mean": 1064.015380859375,
+      "train_non_af_mean": 597.8563232421875,
+      "gold_af_mean": 1192.549072265625,
+      "gold_non_af_mean": 829.7454833984375,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 4858,
+      "train_auroc": 0.7842886740331492,
+      "gold_auroc": 0.6163992869875223,
+      "train_af_mean": 585.7999877929688,
+      "train_non_af_mean": 336.6011047363281,
+      "gold_af_mean": 313.2549133300781,
+      "gold_non_af_mean": 234.3272705078125,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 871,
+      "train_auroc": 0.8629701444963875,
+      "gold_auroc": 0.6142602495543672,
+      "train_af_mean": 824.5615234375,
+      "train_non_af_mean": 207.98895263671875,
+      "gold_af_mean": 103.05882263183594,
+      "gold_non_af_mean": 61.09090805053711,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 10896,
+      "train_auroc": 0.7207538249043773,
+      "gold_auroc": 0.6124777183600714,
+      "train_af_mean": 465.74615478515625,
+      "train_non_af_mean": 185.32376098632812,
+      "gold_af_mean": 189.80392456054688,
+      "gold_non_af_mean": 89.23636627197266,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 11251,
+      "train_auroc": 0.7002863365915851,
+      "gold_auroc": 0.6101604278074866,
+      "train_af_mean": 239.8384552001953,
+      "train_non_af_mean": 55.68397903442383,
+      "gold_af_mean": 310.6666564941406,
+      "gold_non_af_mean": 245.38182067871094,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 15599,
+      "train_auroc": 0.7994831066723332,
+      "gold_auroc": 0.609982174688057,
+      "train_af_mean": 549.8307495117188,
+      "train_non_af_mean": 161.6817626953125,
+      "gold_af_mean": 330.9019470214844,
+      "gold_non_af_mean": 203.1272735595703,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2719,
+      "train_auroc": 0.7316447088822781,
+      "gold_auroc": 0.6074866310160428,
+      "train_af_mean": 716.8038330078125,
+      "train_non_af_mean": 306.71490478515625,
+      "gold_af_mean": 855.686279296875,
+      "gold_non_af_mean": 666.4363403320312,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 6579,
+      "train_auroc": 0.7787521249468762,
+      "gold_auroc": 0.606951871657754,
+      "train_af_mean": 902.4615478515625,
+      "train_non_af_mean": 280.21435546875,
+      "gold_af_mean": 131.1372528076172,
+      "gold_non_af_mean": 77.23636627197266,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 8515,
+      "train_auroc": 0.7026869953251169,
+      "gold_auroc": 0.6057040998217469,
+      "train_af_mean": 242.54615783691406,
+      "train_non_af_mean": 105.3834228515625,
+      "gold_af_mean": 358.6666564941406,
+      "gold_non_af_mean": 287.4181823730469,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 1846,
+      "train_auroc": 0.851237250318742,
+      "gold_auroc": 0.6053475935828876,
+      "train_af_mean": 1346.6922607421875,
+      "train_non_af_mean": 395.4519348144531,
+      "gold_af_mean": 329.3333435058594,
+      "gold_non_af_mean": 190.1090850830078,
+      "generalizes": true
+    },
+    {
+      "feature_idx": 2435,
+      "train_auroc": 0.7646833829154271,
+      "gold_auroc": 0.5982174688057041,
+      "train_af_mean": 1229.75390625,
+      "train_non_af_mean": 507.2508239746094,
+      "gold_af_mean": 1235.5294189453125,
+      "gold_non_af_mean": 927.5636596679688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4048,
+      "train_auroc": 0.720013280917977,
+      "gold_auroc": 0.5982174688057041,
+      "train_af_mean": 190.60769653320312,
+      "train_non_af_mean": 104.91270446777344,
+      "gold_af_mean": 44.39215850830078,
+      "gold_non_af_mean": 34.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1036,
+      "train_auroc": 0.7063233106672333,
+      "gold_auroc": 0.597860962566845,
+      "train_af_mean": 415.3807678222656,
+      "train_non_af_mean": 232.7149200439453,
+      "gold_af_mean": 1059.2940673828125,
+      "gold_non_af_mean": 979.4909057617188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1911,
+      "train_auroc": 0.8008276668083298,
+      "gold_auroc": 0.5975044563279858,
+      "train_af_mean": 1575.71533203125,
+      "train_non_af_mean": 726.4839477539062,
+      "gold_af_mean": 1111.8431396484375,
+      "gold_non_af_mean": 909.8909301757812,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6176,
+      "train_auroc": 0.7487553123671907,
+      "gold_auroc": 0.5950089126559714,
+      "train_af_mean": 318.8846130371094,
+      "train_non_af_mean": 78.7911605834961,
+      "gold_af_mean": 236.07843017578125,
+      "gold_non_af_mean": 142.76364135742188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2706,
+      "train_auroc": 0.8649128771780705,
+      "gold_auroc": 0.5944741532976827,
+      "train_af_mean": 883.8846435546875,
+      "train_non_af_mean": 337.6950378417969,
+      "gold_af_mean": 146.6666717529297,
+      "gold_non_af_mean": 96.29090881347656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5682,
+      "train_auroc": 0.7663594347641308,
+      "gold_auroc": 0.5944741532976826,
+      "train_af_mean": 624.3846435546875,
+      "train_non_af_mean": 309.3237609863281,
+      "gold_af_mean": 844.2352905273438,
+      "gold_non_af_mean": 717.8181762695312,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15300,
+      "train_auroc": 0.7467939864003399,
+      "gold_auroc": 0.5932263814616757,
+      "train_af_mean": 1923.6614990234375,
+      "train_non_af_mean": 694.0309448242188,
+      "gold_af_mean": 457.8823547363281,
+      "gold_non_af_mean": 184.72727966308594,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4867,
+      "train_auroc": 0.7282405439864003,
+      "gold_auroc": 0.5914438502673797,
+      "train_af_mean": 347.29229736328125,
+      "train_non_af_mean": 167.426513671875,
+      "gold_af_mean": 249.0196075439453,
+      "gold_non_af_mean": 205.7818145751953,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11760,
+      "train_auroc": 0.7779095835104122,
+      "gold_auroc": 0.5905525846702318,
+      "train_af_mean": 1022.3307495117188,
+      "train_non_af_mean": 255.78343200683594,
+      "gold_af_mean": 1281.88232421875,
+      "gold_non_af_mean": 1031.7818603515625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11105,
+      "train_auroc": 0.7067206757331066,
+      "gold_auroc": 0.5905525846702318,
+      "train_af_mean": 169.89230346679688,
+      "train_non_af_mean": 71.03204345703125,
+      "gold_af_mean": 140.5490264892578,
+      "gold_non_af_mean": 98.90908813476562,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1423,
+      "train_auroc": 0.8677964300892477,
+      "gold_auroc": 0.5900178253119429,
+      "train_af_mean": 608.923095703125,
+      "train_non_af_mean": 139.86961364746094,
+      "gold_af_mean": 147.09803771972656,
+      "gold_non_af_mean": 200.69090270996094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15373,
+      "train_auroc": 0.7745548236294093,
+      "gold_auroc": 0.5896613190730837,
+      "train_af_mean": 590.2922973632812,
+      "train_non_af_mean": 128.16795349121094,
+      "gold_af_mean": 1067.2156982421875,
+      "gold_non_af_mean": 832.2182006835938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4564,
+      "train_auroc": 0.7197981300467489,
+      "gold_auroc": 0.5884135472370766,
+      "train_af_mean": 534.1153564453125,
+      "train_non_af_mean": 300.25634765625,
+      "gold_af_mean": 385.1764831542969,
+      "gold_non_af_mean": 279.7818298339844,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 887,
+      "train_auroc": 0.7458606034849128,
+      "gold_auroc": 0.5875222816399288,
+      "train_af_mean": 1414.1307373046875,
+      "train_non_af_mean": 1075.328125,
+      "gold_af_mean": 1115.13720703125,
+      "gold_non_af_mean": 1057.3818359375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4377,
+      "train_auroc": 0.8536862515937103,
+      "gold_auroc": 0.5857397504456328,
+      "train_af_mean": 1508.24609375,
+      "train_non_af_mean": 187.05856323242188,
+      "gold_af_mean": 883.4509887695312,
+      "gold_non_af_mean": 687.1272583007812,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2532,
+      "train_auroc": 0.7521276030599235,
+      "gold_auroc": 0.5841354723707665,
+      "train_af_mean": 467.46923828125,
+      "train_non_af_mean": 167.8806610107422,
+      "gold_af_mean": 761.2548828125,
+      "gold_non_af_mean": 642.5454711914062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 16374,
+      "train_auroc": 0.818950276243094,
+      "gold_auroc": 0.5837789661319073,
+      "train_af_mean": 281.8769226074219,
+      "train_non_af_mean": 48.82209777832031,
+      "gold_af_mean": 110.4313735961914,
+      "gold_non_af_mean": 74.25454711914062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6681,
+      "train_auroc": 0.7378309604759883,
+      "gold_auroc": 0.5836007130124778,
+      "train_af_mean": 223.4923095703125,
+      "train_non_af_mean": 42.20441818237305,
+      "gold_af_mean": 459.2156982421875,
+      "gold_non_af_mean": 381.2363586425781,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2108,
+      "train_auroc": 0.8213716532086697,
+      "gold_auroc": 0.5825311942959003,
+      "train_af_mean": 393.1615295410156,
+      "train_non_af_mean": 65.04751586914062,
+      "gold_af_mean": 629.0195922851562,
+      "gold_non_af_mean": 384.5818176269531,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2575,
+      "train_auroc": 0.7748794092647684,
+      "gold_auroc": 0.582174688057041,
+      "train_af_mean": 943.9615478515625,
+      "train_non_af_mean": 192.2629852294922,
+      "gold_af_mean": 1127.5294189453125,
+      "gold_non_af_mean": 923.92724609375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5681,
+      "train_auroc": 0.7754653633659159,
+      "gold_auroc": 0.5816399286987523,
+      "train_af_mean": 359.9307556152344,
+      "train_non_af_mean": 72.26740264892578,
+      "gold_af_mean": 295.2156982421875,
+      "gold_non_af_mean": 233.6727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9197,
+      "train_auroc": 0.7508074798130047,
+      "gold_auroc": 0.5811051693404635,
+      "train_af_mean": 97.5923080444336,
+      "train_non_af_mean": 9.71049690246582,
+      "gold_af_mean": 69.80392456054688,
+      "gold_non_af_mean": 53.672725677490234,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6071,
+      "train_auroc": 0.8606327029324268,
+      "gold_auroc": 0.5807486631016042,
+      "train_af_mean": 250.3153839111328,
+      "train_non_af_mean": 50.170166015625,
+      "gold_af_mean": 284.0,
+      "gold_non_af_mean": 245.60000610351562,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 905,
+      "train_auroc": 0.7028612409689757,
+      "gold_auroc": 0.580035650623886,
+      "train_af_mean": 1988.4615478515625,
+      "train_non_af_mean": 1460.29833984375,
+      "gold_af_mean": 2911.686279296875,
+      "gold_non_af_mean": 2674.036376953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9753,
+      "train_auroc": 0.7241935826604335,
+      "gold_auroc": 0.5798573975044563,
+      "train_af_mean": 359.546142578125,
+      "train_non_af_mean": 169.63536071777344,
+      "gold_af_mean": 799.7647094726562,
+      "gold_non_af_mean": 716.8727416992188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3009,
+      "train_auroc": 0.796225031874203,
+      "gold_auroc": 0.5784313725490196,
+      "train_af_mean": 464.0076904296875,
+      "train_non_af_mean": 85.80773162841797,
+      "gold_af_mean": 144.07843017578125,
+      "gold_non_af_mean": 100.58181762695312,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6478,
+      "train_auroc": 0.7331810454738632,
+      "gold_auroc": 0.5775401069518716,
+      "train_af_mean": 525.4961547851562,
+      "train_non_af_mean": 295.2552490234375,
+      "gold_af_mean": 370.39215087890625,
+      "gold_non_af_mean": 322.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7807,
+      "train_auroc": 0.7198671908202293,
+      "gold_auroc": 0.5768270944741534,
+      "train_af_mean": 368.9230651855469,
+      "train_non_af_mean": 112.29833984375,
+      "gold_af_mean": 259.37255859375,
+      "gold_non_af_mean": 191.7818145751953,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4020,
+      "train_auroc": 0.7187553123671908,
+      "gold_auroc": 0.5766488413547237,
+      "train_af_mean": 323.4615478515625,
+      "train_non_af_mean": 147.09613037109375,
+      "gold_af_mean": 296.313720703125,
+      "gold_non_af_mean": 222.76364135742188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4540,
+      "train_auroc": 0.8083563535911602,
+      "gold_auroc": 0.5762923351158645,
+      "train_af_mean": 703.7846069335938,
+      "train_non_af_mean": 292.39556884765625,
+      "gold_af_mean": 1113.568603515625,
+      "gold_non_af_mean": 1025.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2511,
+      "train_auroc": 0.8380997662558436,
+      "gold_auroc": 0.5762923351158645,
+      "train_af_mean": 1143.699951171875,
+      "train_non_af_mean": 353.3480529785156,
+      "gold_af_mean": 269.1764831542969,
+      "gold_non_af_mean": 185.16363525390625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3106,
+      "train_auroc": 0.7685290055248618,
+      "gold_auroc": 0.5746880570409982,
+      "train_af_mean": 757.6346435546875,
+      "train_non_af_mean": 334.20440673828125,
+      "gold_af_mean": 264.62744140625,
+      "gold_non_af_mean": 199.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3188,
+      "train_auroc": 0.7021323841903951,
+      "gold_auroc": 0.5746880570409982,
+      "train_af_mean": 423.26153564453125,
+      "train_non_af_mean": 211.70166015625,
+      "gold_af_mean": 153.0196075439453,
+      "gold_non_af_mean": 72.0727310180664,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 911,
+      "train_auroc": 0.7306172970675734,
+      "gold_auroc": 0.5743315508021389,
+      "train_af_mean": 270.79998779296875,
+      "train_non_af_mean": 62.6806640625,
+      "gold_af_mean": 62.19607925415039,
+      "gold_non_af_mean": 20.218181610107422,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2596,
+      "train_auroc": 0.7656635146621333,
+      "gold_auroc": 0.5716577540106952,
+      "train_af_mean": 134.71153259277344,
+      "train_non_af_mean": 13.686187744140625,
+      "gold_af_mean": 54.509803771972656,
+      "gold_non_af_mean": 36.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10640,
+      "train_auroc": 0.7096562898427539,
+      "gold_auroc": 0.5716577540106952,
+      "train_af_mean": 176.25384521484375,
+      "train_non_af_mean": 41.62651824951172,
+      "gold_af_mean": 204.0,
+      "gold_non_af_mean": 200.94544982910156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6627,
+      "train_auroc": 0.8093120484487887,
+      "gold_auroc": 0.5700534759358289,
+      "train_af_mean": 1539.515380859375,
+      "train_non_af_mean": 387.31048583984375,
+      "gold_af_mean": 328.0,
+      "gold_non_af_mean": 229.4545440673828,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8830,
+      "train_auroc": 0.7618109859753506,
+      "gold_auroc": 0.5700534759358289,
+      "train_af_mean": 154.4769287109375,
+      "train_non_af_mean": 61.111602783203125,
+      "gold_af_mean": 80.31372833251953,
+      "gold_non_af_mean": 64.0727310180664,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10644,
+      "train_auroc": 0.7566239906502338,
+      "gold_auroc": 0.5691622103386809,
+      "train_af_mean": 175.22308349609375,
+      "train_non_af_mean": 34.72928237915039,
+      "gold_af_mean": 182.8235321044922,
+      "gold_non_af_mean": 141.5272674560547,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6324,
+      "train_auroc": 0.7255524861878454,
+      "gold_auroc": 0.568270944741533,
+      "train_af_mean": 217.984619140625,
+      "train_non_af_mean": 66.41767883300781,
+      "gold_af_mean": 182.5490264892578,
+      "gold_non_af_mean": 86.65454864501953,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11759,
+      "train_auroc": 0.734597853803655,
+      "gold_auroc": 0.5680926916221034,
+      "train_af_mean": 183.6615447998047,
+      "train_non_af_mean": 60.139225006103516,
+      "gold_af_mean": 181.56863403320312,
+      "gold_non_af_mean": 149.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13187,
+      "train_auroc": 0.7209647258818531,
+      "gold_auroc": 0.5654188948306595,
+      "train_af_mean": 530.876953125,
+      "train_non_af_mean": 298.4220886230469,
+      "gold_af_mean": 70.11764526367188,
+      "gold_non_af_mean": 46.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 595,
+      "train_auroc": 0.7955912664683383,
+      "gold_auroc": 0.5648841354723707,
+      "train_af_mean": 1556.8231201171875,
+      "train_non_af_mean": 1118.039794921875,
+      "gold_af_mean": 1417.4117431640625,
+      "gold_non_af_mean": 1328.2181396484375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3424,
+      "train_auroc": 0.7364800254993625,
+      "gold_auroc": 0.5647058823529412,
+      "train_af_mean": 205.65383911132812,
+      "train_non_af_mean": 50.596683502197266,
+      "gold_af_mean": 132.23529052734375,
+      "gold_non_af_mean": 109.16363525390625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1701,
+      "train_auroc": 0.7140623671908202,
+      "gold_auroc": 0.5639928698752228,
+      "train_af_mean": 602.1846313476562,
+      "train_non_af_mean": 454.07513427734375,
+      "gold_af_mean": 429.0980529785156,
+      "gold_non_af_mean": 381.7090759277344,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11098,
+      "train_auroc": 0.7739369953251168,
+      "gold_auroc": 0.5632798573975044,
+      "train_af_mean": 624.8230590820312,
+      "train_non_af_mean": 180.2254180908203,
+      "gold_af_mean": 167.60784912109375,
+      "gold_non_af_mean": 103.19999694824219,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 634,
+      "train_auroc": 0.9099022524436888,
+      "gold_auroc": 0.5614973262032086,
+      "train_af_mean": 1439.5999755859375,
+      "train_non_af_mean": 556.8165893554688,
+      "gold_af_mean": 2520.784423828125,
+      "gold_non_af_mean": 2449.45458984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6648,
+      "train_auroc": 0.7389667445813853,
+      "gold_auroc": 0.561319073083779,
+      "train_af_mean": 424.3384704589844,
+      "train_non_af_mean": 70.45304107666016,
+      "gold_af_mean": 35.29411697387695,
+      "gold_non_af_mean": 16.363636016845703,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2263,
+      "train_auroc": 0.7140033999150022,
+      "gold_auroc": 0.5590017825311944,
+      "train_af_mean": 329.9769287109375,
+      "train_non_af_mean": 81.92928314208984,
+      "gold_af_mean": 192.313720703125,
+      "gold_non_af_mean": 188.50909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1025,
+      "train_auroc": 0.7958446663833405,
+      "gold_auroc": 0.5588235294117647,
+      "train_af_mean": 693.6769409179688,
+      "train_non_af_mean": 139.426513671875,
+      "gold_af_mean": 20.823530197143555,
+      "gold_non_af_mean": 13.236363410949707,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11854,
+      "train_auroc": 0.7567913302167446,
+      "gold_auroc": 0.558288770053476,
+      "train_af_mean": 371.0692443847656,
+      "train_non_af_mean": 76.79779052734375,
+      "gold_af_mean": 91.21568298339844,
+      "gold_non_af_mean": 87.56363677978516,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11745,
+      "train_auroc": 0.7034355078623034,
+      "gold_auroc": 0.5577540106951872,
+      "train_af_mean": 326.6576843261719,
+      "train_non_af_mean": 173.66188049316406,
+      "gold_af_mean": 154.43136596679688,
+      "gold_non_af_mean": 157.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4500,
+      "train_auroc": 0.7710523799405016,
+      "gold_auroc": 0.55650623885918,
+      "train_af_mean": 291.8615417480469,
+      "train_non_af_mean": 72.66740417480469,
+      "gold_af_mean": 68.39215850830078,
+      "gold_non_af_mean": 32.654544830322266,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 29,
+      "train_auroc": 0.7251407777305567,
+      "gold_auroc": 0.5557932263814617,
+      "train_af_mean": 2575.197998046875,
+      "train_non_af_mean": 1489.8668212890625,
+      "gold_af_mean": 2714.431396484375,
+      "gold_non_af_mean": 2307.818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 933,
+      "train_auroc": 0.7227289630259244,
+      "gold_auroc": 0.555614973262032,
+      "train_af_mean": 779.0807495117188,
+      "train_non_af_mean": 420.0618896484375,
+      "gold_af_mean": 703.2156982421875,
+      "gold_non_af_mean": 636.4363403320312,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10275,
+      "train_auroc": 0.7891500212494688,
+      "gold_auroc": 0.555258467023173,
+      "train_af_mean": 544.1884765625,
+      "train_non_af_mean": 201.30055236816406,
+      "gold_af_mean": 62.39215850830078,
+      "gold_non_af_mean": 59.45454406738281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5003,
+      "train_auroc": 0.8176460900977476,
+      "gold_auroc": 0.5547237076648842,
+      "train_af_mean": 845.4000244140625,
+      "train_non_af_mean": 57.175689697265625,
+      "gold_af_mean": 394.1960754394531,
+      "gold_non_af_mean": 280.0727233886719,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 16099,
+      "train_auroc": 0.7022253506162346,
+      "gold_auroc": 0.5543672014260249,
+      "train_af_mean": 309.5846252441406,
+      "train_non_af_mean": 95.94254302978516,
+      "gold_af_mean": 528.3921508789062,
+      "gold_non_af_mean": 475.345458984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5526,
+      "train_auroc": 0.7934886315342118,
+      "gold_auroc": 0.5538324420677362,
+      "train_af_mean": 1121.2615966796875,
+      "train_non_af_mean": 518.8994750976562,
+      "gold_af_mean": 1642.196044921875,
+      "gold_non_af_mean": 1473.0909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4183,
+      "train_auroc": 0.7527921801954951,
+      "gold_auroc": 0.5536541889483066,
+      "train_af_mean": 264.96923828125,
+      "train_non_af_mean": 51.10276412963867,
+      "gold_af_mean": 76.47058868408203,
+      "gold_non_af_mean": 17.745454788208008,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8473,
+      "train_auroc": 0.7170144496387592,
+      "gold_auroc": 0.551693404634581,
+      "train_af_mean": 332.71539306640625,
+      "train_non_af_mean": 134.46408081054688,
+      "gold_af_mean": 493.0196228027344,
+      "gold_non_af_mean": 393.8908996582031,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1793,
+      "train_auroc": 0.765855291117722,
+      "gold_auroc": 0.5513368983957219,
+      "train_af_mean": 432.3307800292969,
+      "train_non_af_mean": 151.28619384765625,
+      "gold_af_mean": 69.49019622802734,
+      "gold_non_af_mean": 61.890907287597656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10492,
+      "train_auroc": 0.7703888652783679,
+      "gold_auroc": 0.5513368983957219,
+      "train_af_mean": 655.4461669921875,
+      "train_non_af_mean": 386.7447509765625,
+      "gold_af_mean": 647.686279296875,
+      "gold_non_af_mean": 586.3272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 552,
+      "train_auroc": 0.8518301104972376,
+      "gold_auroc": 0.5509803921568628,
+      "train_af_mean": 2104.880859375,
+      "train_non_af_mean": 689.804443359375,
+      "gold_af_mean": 1477.2940673828125,
+      "gold_non_af_mean": 1264.654541015625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1944,
+      "train_auroc": 0.7576046536336591,
+      "gold_auroc": 0.5499108734402852,
+      "train_af_mean": 476.9307556152344,
+      "train_non_af_mean": 204.68287658691406,
+      "gold_af_mean": 9.411765098571777,
+      "gold_non_af_mean": 6.472727298736572,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10439,
+      "train_auroc": 0.8499941563960901,
+      "gold_auroc": 0.5497326203208555,
+      "train_af_mean": 358.046142578125,
+      "train_non_af_mean": 64.13038635253906,
+      "gold_af_mean": 10.352941513061523,
+      "gold_non_af_mean": 4.654545307159424,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3111,
+      "train_auroc": 0.7593444538886528,
+      "gold_auroc": 0.5490196078431372,
+      "train_af_mean": 760.7230834960938,
+      "train_non_af_mean": 205.28176879882812,
+      "gold_af_mean": 23.921567916870117,
+      "gold_non_af_mean": 14.181818008422852,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5122,
+      "train_auroc": 0.8297885677858053,
+      "gold_auroc": 0.5486631016042781,
+      "train_af_mean": 257.8769226074219,
+      "train_non_af_mean": 10.52596664428711,
+      "gold_af_mean": 17.568628311157227,
+      "gold_non_af_mean": 10.545454978942871,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6154,
+      "train_auroc": 0.7139423076923077,
+      "gold_auroc": 0.5479500891265596,
+      "train_af_mean": 407.0,
+      "train_non_af_mean": 163.916015625,
+      "gold_af_mean": 275.686279296875,
+      "gold_non_af_mean": 179.63636779785156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8462,
+      "train_auroc": 0.7780593922651933,
+      "gold_auroc": 0.5472370766488414,
+      "train_af_mean": 1193.34619140625,
+      "train_non_af_mean": 615.4983520507812,
+      "gold_af_mean": 254.27450561523438,
+      "gold_non_af_mean": 229.81817626953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15118,
+      "train_auroc": 0.7354350828729282,
+      "gold_auroc": 0.5468805704099822,
+      "train_af_mean": 170.43077087402344,
+      "train_non_af_mean": 17.436464309692383,
+      "gold_af_mean": 73.2549057006836,
+      "gold_non_af_mean": 42.47272872924805,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4284,
+      "train_auroc": 0.758957713557161,
+      "gold_auroc": 0.5463458110516934,
+      "train_af_mean": 347.24615478515625,
+      "train_non_af_mean": 60.6364631652832,
+      "gold_af_mean": 402.9803771972656,
+      "gold_non_af_mean": 317.8908996582031,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9013,
+      "train_auroc": 0.7327762430939226,
+      "gold_auroc": 0.5459893048128343,
+      "train_af_mean": 338.6076965332031,
+      "train_non_af_mean": 127.40110778808594,
+      "gold_af_mean": 119.13725280761719,
+      "gold_non_af_mean": 115.70909118652344,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10632,
+      "train_auroc": 0.787130259243519,
+      "gold_auroc": 0.5454545454545454,
+      "train_af_mean": 263.1769104003906,
+      "train_non_af_mean": 55.92265319824219,
+      "gold_af_mean": 244.94117736816406,
+      "gold_non_af_mean": 98.3272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1810,
+      "train_auroc": 0.8064417764555887,
+      "gold_auroc": 0.5450980392156863,
+      "train_af_mean": 911.40771484375,
+      "train_non_af_mean": 334.79669189453125,
+      "gold_af_mean": 461.3333435058594,
+      "gold_non_af_mean": 372.7272644042969,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7455,
+      "train_auroc": 0.819624415639609,
+      "gold_auroc": 0.5434937611408199,
+      "train_af_mean": 443.3692321777344,
+      "train_non_af_mean": 147.27734375,
+      "gold_af_mean": 754.11767578125,
+      "gold_non_af_mean": 714.4000244140625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8567,
+      "train_auroc": 0.7331932639184021,
+      "gold_auroc": 0.5431372549019607,
+      "train_af_mean": 618.8153686523438,
+      "train_non_af_mean": 89.48728942871094,
+      "gold_af_mean": 170.9803924560547,
+      "gold_non_af_mean": 93.81818389892578,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10007,
+      "train_auroc": 0.720938695282618,
+      "gold_auroc": 0.5420677361853832,
+      "train_af_mean": 779.7538452148438,
+      "train_non_af_mean": 92.6209945678711,
+      "gold_af_mean": 92.39215850830078,
+      "gold_non_af_mean": 58.54545593261719,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1510,
+      "train_auroc": 0.7176891202719933,
+      "gold_auroc": 0.5409982174688056,
+      "train_af_mean": 557.53076171875,
+      "train_non_af_mean": 164.48397827148438,
+      "gold_af_mean": 82.03921508789062,
+      "gold_non_af_mean": 44.581817626953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4334,
+      "train_auroc": 0.7835938164045898,
+      "gold_auroc": 0.5408199643493762,
+      "train_af_mean": 185.7076873779297,
+      "train_non_af_mean": 38.42430877685547,
+      "gold_af_mean": 114.7450942993164,
+      "gold_non_af_mean": 96.58181762695312,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10763,
+      "train_auroc": 0.7487802804929876,
+      "gold_auroc": 0.540463458110517,
+      "train_af_mean": 250.39999389648438,
+      "train_non_af_mean": 109.8121566772461,
+      "gold_af_mean": 178.9803924560547,
+      "gold_non_af_mean": 150.3272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11682,
+      "train_auroc": 0.718549723756906,
+      "gold_auroc": 0.5390374331550802,
+      "train_af_mean": 909.9000244140625,
+      "train_non_af_mean": 38.76132583618164,
+      "gold_af_mean": 9.529411315917969,
+      "gold_non_af_mean": 7.818181991577148,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3265,
+      "train_auroc": 0.7192047386315342,
+      "gold_auroc": 0.5385026737967915,
+      "train_af_mean": 776.7999877929688,
+      "train_non_af_mean": 530.0198974609375,
+      "gold_af_mean": 662.5098266601562,
+      "gold_non_af_mean": 615.0545654296875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13864,
+      "train_auroc": 0.7268056736081598,
+      "gold_auroc": 0.5377896613190731,
+      "train_af_mean": 331.4038391113281,
+      "train_non_af_mean": 151.1988983154297,
+      "gold_af_mean": 444.6666564941406,
+      "gold_non_af_mean": 380.3636474609375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 72,
+      "train_auroc": 0.7401630896727581,
+      "gold_auroc": 0.5372549019607843,
+      "train_af_mean": 220.60000610351562,
+      "train_non_af_mean": 25.244199752807617,
+      "gold_af_mean": 65.96078491210938,
+      "gold_non_af_mean": 53.23636245727539,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 661,
+      "train_auroc": 0.7906316404589885,
+      "gold_auroc": 0.5363636363636364,
+      "train_af_mean": 1006.9461669921875,
+      "train_non_af_mean": 687.7745971679688,
+      "gold_af_mean": 1610.0391845703125,
+      "gold_non_af_mean": 1625.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1622,
+      "train_auroc": 0.8011055036124097,
+      "gold_auroc": 0.5360071301247772,
+      "train_af_mean": 257.4615478515625,
+      "train_non_af_mean": 81.45304107666016,
+      "gold_af_mean": 178.11764526367188,
+      "gold_non_af_mean": 160.25454711914062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 305,
+      "train_auroc": 0.719624946876328,
+      "gold_auroc": 0.5358288770053475,
+      "train_af_mean": 365.70770263671875,
+      "train_non_af_mean": 136.28286743164062,
+      "gold_af_mean": 325.8823547363281,
+      "gold_non_af_mean": 278.2909240722656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1101,
+      "train_auroc": 0.720783574160646,
+      "gold_auroc": 0.5358288770053475,
+      "train_af_mean": 412.7269287109375,
+      "train_non_af_mean": 210.52044677734375,
+      "gold_af_mean": 705.0980224609375,
+      "gold_non_af_mean": 702.1090698242188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1029,
+      "train_auroc": 0.7121940076498087,
+      "gold_auroc": 0.5344028520499108,
+      "train_af_mean": 177.25384521484375,
+      "train_non_af_mean": 64.88618469238281,
+      "gold_af_mean": 55.45098114013672,
+      "gold_non_af_mean": 12.800000190734863,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13159,
+      "train_auroc": 0.7329786442838929,
+      "gold_auroc": 0.5340463458110518,
+      "train_af_mean": 219.26922607421875,
+      "train_non_af_mean": 58.835357666015625,
+      "gold_af_mean": 90.66666412353516,
+      "gold_non_af_mean": 50.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1105,
+      "train_auroc": 0.774177645558861,
+      "gold_auroc": 0.5333333333333333,
+      "train_af_mean": 510.3384704589844,
+      "train_non_af_mean": 147.2044219970703,
+      "gold_af_mean": 29.882352828979492,
+      "gold_non_af_mean": 25.672727584838867,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3910,
+      "train_auroc": 0.7919576073098172,
+      "gold_auroc": 0.5327985739750446,
+      "train_af_mean": 232.96923828125,
+      "train_non_af_mean": 69.62651824951172,
+      "gold_af_mean": 332.941162109375,
+      "gold_non_af_mean": 305.6727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7245,
+      "train_auroc": 0.7916532086697834,
+      "gold_auroc": 0.5326203208556151,
+      "train_af_mean": 218.10769653320312,
+      "train_non_af_mean": 43.75358963012695,
+      "gold_af_mean": 24.078432083129883,
+      "gold_non_af_mean": 17.781818389892578,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7763,
+      "train_auroc": 0.8594039524011899,
+      "gold_auroc": 0.532620320855615,
+      "train_af_mean": 577.7846069335938,
+      "train_non_af_mean": 32.28508377075195,
+      "gold_af_mean": 62.86274337768555,
+      "gold_non_af_mean": 52.727272033691406,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15899,
+      "train_auroc": 0.7264763068423289,
+      "gold_auroc": 0.5319073083778967,
+      "train_af_mean": 211.53846740722656,
+      "train_non_af_mean": 83.52706909179688,
+      "gold_af_mean": 330.0392150878906,
+      "gold_non_af_mean": 372.0727233886719,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13833,
+      "train_auroc": 0.7099851253718656,
+      "gold_auroc": 0.5319073083778966,
+      "train_af_mean": 438.19232177734375,
+      "train_non_af_mean": 279.0674133300781,
+      "gold_af_mean": 202.58824157714844,
+      "gold_non_af_mean": 199.1999969482422,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13316,
+      "train_auroc": 0.7002114322141948,
+      "gold_auroc": 0.531729055258467,
+      "train_af_mean": 331.1192321777344,
+      "train_non_af_mean": 165.63536071777344,
+      "gold_af_mean": 888.0,
+      "gold_non_af_mean": 820.1454467773438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9829,
+      "train_auroc": 0.7751822141946452,
+      "gold_auroc": 0.5308377896613191,
+      "train_af_mean": 265.8307800292969,
+      "train_non_af_mean": 109.45414733886719,
+      "gold_af_mean": 336.62744140625,
+      "gold_non_af_mean": 321.6000061035156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3135,
+      "train_auroc": 0.7342392690182745,
+      "gold_auroc": 0.5306595365418895,
+      "train_af_mean": 433.29229736328125,
+      "train_non_af_mean": 254.44198608398438,
+      "gold_af_mean": 272.70587158203125,
+      "gold_non_af_mean": 230.76364135742188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7869,
+      "train_auroc": 0.7193864215894603,
+      "gold_auroc": 0.5303030303030303,
+      "train_af_mean": 793.3307495117188,
+      "train_non_af_mean": 397.67071533203125,
+      "gold_af_mean": 41.80392074584961,
+      "gold_non_af_mean": 19.490909576416016,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14175,
+      "train_auroc": 0.7275828729281768,
+      "gold_auroc": 0.5299465240641711,
+      "train_af_mean": 340.30767822265625,
+      "train_non_af_mean": 143.4961395263672,
+      "gold_af_mean": 282.8235168457031,
+      "gold_non_af_mean": 198.1090850830078,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9932,
+      "train_auroc": 0.7306916702082449,
+      "gold_auroc": 0.5295900178253119,
+      "train_af_mean": 226.55384826660156,
+      "train_non_af_mean": 89.91160583496094,
+      "gold_af_mean": 251.686279296875,
+      "gold_non_af_mean": 202.4727325439453,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3851,
+      "train_auroc": 0.7458781342966425,
+      "gold_auroc": 0.5290552584670232,
+      "train_af_mean": 134.64614868164062,
+      "train_non_af_mean": 36.29502868652344,
+      "gold_af_mean": 86.47058868408203,
+      "gold_non_af_mean": 115.01818084716797,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8672,
+      "train_auroc": 0.7275409052273694,
+      "gold_auroc": 0.5290552584670232,
+      "train_af_mean": 356.9461669921875,
+      "train_non_af_mean": 55.65966796875,
+      "gold_af_mean": 93.7254867553711,
+      "gold_non_af_mean": 64.0727310180664,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11997,
+      "train_auroc": 0.7745803229919253,
+      "gold_auroc": 0.5272727272727273,
+      "train_af_mean": 384.1076965332031,
+      "train_non_af_mean": 106.22651672363281,
+      "gold_af_mean": 180.5490264892578,
+      "gold_non_af_mean": 169.7818145751953,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13717,
+      "train_auroc": 0.7243959838504038,
+      "gold_auroc": 0.5270944741532977,
+      "train_af_mean": 811.1923217773438,
+      "train_non_af_mean": 237.39447021484375,
+      "gold_af_mean": 1371.6077880859375,
+      "gold_non_af_mean": 1299.5635986328125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8637,
+      "train_auroc": 0.7324447513812156,
+      "gold_auroc": 0.5245989304812835,
+      "train_af_mean": 453.046142578125,
+      "train_non_af_mean": 246.9878387451172,
+      "gold_af_mean": 360.62744140625,
+      "gold_non_af_mean": 320.7272644042969,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14928,
+      "train_auroc": 0.7909631321716958,
+      "gold_auroc": 0.5244206773618538,
+      "train_af_mean": 238.99615478515625,
+      "train_non_af_mean": 65.17127227783203,
+      "gold_af_mean": 157.21568298339844,
+      "gold_non_af_mean": 126.10909271240234,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1086,
+      "train_auroc": 0.8145420739481513,
+      "gold_auroc": 0.5242424242424242,
+      "train_af_mean": 822.2461547851562,
+      "train_non_af_mean": 247.29945373535156,
+      "gold_af_mean": 333.2549133300781,
+      "gold_non_af_mean": 354.036376953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1341,
+      "train_auroc": 0.7956645771355717,
+      "gold_auroc": 0.5242424242424242,
+      "train_af_mean": 1599.78466796875,
+      "train_non_af_mean": 481.52264404296875,
+      "gold_af_mean": 479.058837890625,
+      "gold_non_af_mean": 308.79998779296875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1030,
+      "train_auroc": 0.7246440713982151,
+      "gold_auroc": 0.5240641711229947,
+      "train_af_mean": 126.59615325927734,
+      "train_non_af_mean": 20.17237663269043,
+      "gold_af_mean": 244.90196228027344,
+      "gold_non_af_mean": 247.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11529,
+      "train_auroc": 0.7773990650233744,
+      "gold_auroc": 0.5237076648841354,
+      "train_af_mean": 360.3153991699219,
+      "train_non_af_mean": 67.06961059570312,
+      "gold_af_mean": 86.35294342041016,
+      "gold_non_af_mean": 61.01818084716797,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 635,
+      "train_auroc": 0.805744793880153,
+      "gold_auroc": 0.5235294117647059,
+      "train_af_mean": 1537.576904296875,
+      "train_non_af_mean": 815.2353515625,
+      "gold_af_mean": 603.8431396484375,
+      "gold_non_af_mean": 589.6727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8375,
+      "train_auroc": 0.7188780280492988,
+      "gold_auroc": 0.5229946524064172,
+      "train_af_mean": 223.1769256591797,
+      "train_non_af_mean": 72.36243438720703,
+      "gold_af_mean": 60.7843132019043,
+      "gold_non_af_mean": 38.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6377,
+      "train_auroc": 0.7264794942626436,
+      "gold_auroc": 0.5224598930481283,
+      "train_af_mean": 461.5538330078125,
+      "train_non_af_mean": 243.74143981933594,
+      "gold_af_mean": 674.5098266601562,
+      "gold_non_af_mean": 634.6181640625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7428,
+      "train_auroc": 0.7001689332766681,
+      "gold_auroc": 0.5219251336898396,
+      "train_af_mean": 199.84230041503906,
+      "train_non_af_mean": 73.61767578125,
+      "gold_af_mean": 84.5882339477539,
+      "gold_non_af_mean": 53.70909118652344,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11013,
+      "train_auroc": 0.7050706544836379,
+      "gold_auroc": 0.5219251336898395,
+      "train_af_mean": 434.72308349609375,
+      "train_non_af_mean": 261.0696105957031,
+      "gold_af_mean": 579.058837890625,
+      "gold_non_af_mean": 634.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 624,
+      "train_auroc": 0.8218279855503612,
+      "gold_auroc": 0.5215686274509804,
+      "train_af_mean": 514.7000122070312,
+      "train_non_af_mean": 56.56132507324219,
+      "gold_af_mean": 59.686275482177734,
+      "gold_non_af_mean": 18.545454025268555,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14578,
+      "train_auroc": 0.7459286017849555,
+      "gold_auroc": 0.5213903743315508,
+      "train_af_mean": 449.78460693359375,
+      "train_non_af_mean": 215.107177734375,
+      "gold_af_mean": 96.1568603515625,
+      "gold_non_af_mean": 104.36363983154297,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1528,
+      "train_auroc": 0.7241829579260518,
+      "gold_auroc": 0.5213903743315508,
+      "train_af_mean": 506.8692321777344,
+      "train_non_af_mean": 205.5027618408203,
+      "gold_af_mean": 233.56863403320312,
+      "gold_non_af_mean": 206.39999389648438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6994,
+      "train_auroc": 0.8111490650233744,
+      "gold_auroc": 0.5210338680926917,
+      "train_af_mean": 555.1846313476562,
+      "train_non_af_mean": 280.92596435546875,
+      "gold_af_mean": 259.2156982421875,
+      "gold_non_af_mean": 272.50909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 265,
+      "train_auroc": 0.7658956651083725,
+      "gold_auroc": 0.520855614973262,
+      "train_af_mean": 2706.59228515625,
+      "train_non_af_mean": 1525.6839599609375,
+      "gold_af_mean": 3343.60791015625,
+      "gold_non_af_mean": 3299.708984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7638,
+      "train_auroc": 0.7203862090947726,
+      "gold_auroc": 0.5203208556149733,
+      "train_af_mean": 104.65384674072266,
+      "train_non_af_mean": 15.89171314239502,
+      "gold_af_mean": 26.27450942993164,
+      "gold_non_af_mean": 34.98181915283203,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 544,
+      "train_auroc": 0.730667233319167,
+      "gold_auroc": 0.5203208556149732,
+      "train_af_mean": 491.6000061035156,
+      "train_non_af_mean": 52.358009338378906,
+      "gold_af_mean": 18.19607925415039,
+      "gold_non_af_mean": 5.236363410949707,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6918,
+      "train_auroc": 0.7607814492137696,
+      "gold_auroc": 0.519964349376114,
+      "train_af_mean": 181.16539001464844,
+      "train_non_af_mean": 30.81436538696289,
+      "gold_af_mean": 316.4313659667969,
+      "gold_non_af_mean": 298.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3916,
+      "train_auroc": 0.7149989375265619,
+      "gold_auroc": 0.5194295900178253,
+      "train_af_mean": 420.8846130371094,
+      "train_non_af_mean": 273.99005126953125,
+      "gold_af_mean": 499.058837890625,
+      "gold_non_af_mean": 511.7818298339844,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4781,
+      "train_auroc": 0.7211480025499363,
+      "gold_auroc": 0.5190730837789662,
+      "train_af_mean": 199.12692260742188,
+      "train_non_af_mean": 74.15911865234375,
+      "gold_af_mean": 301.686279296875,
+      "gold_non_af_mean": 318.83636474609375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12045,
+      "train_auroc": 0.7369751381215469,
+      "gold_auroc": 0.5190730837789661,
+      "train_af_mean": 769.7922973632812,
+      "train_non_af_mean": 183.6088409423828,
+      "gold_af_mean": 1081.0980224609375,
+      "gold_non_af_mean": 1071.418212890625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11509,
+      "train_auroc": 0.7004069273268169,
+      "gold_auroc": 0.5180035650623885,
+      "train_af_mean": 135.2846221923828,
+      "train_non_af_mean": 40.16132736206055,
+      "gold_af_mean": 32.86274337768555,
+      "gold_non_af_mean": 15.345454216003418,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1928,
+      "train_auroc": 0.783866872078198,
+      "gold_auroc": 0.5176470588235295,
+      "train_af_mean": 1219.9154052734375,
+      "train_non_af_mean": 639.3038940429688,
+      "gold_af_mean": 686.2745361328125,
+      "gold_non_af_mean": 665.3818359375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1299,
+      "train_auroc": 0.7428660220994475,
+      "gold_auroc": 0.5176470588235295,
+      "train_af_mean": 63.82307815551758,
+      "train_non_af_mean": 18.69392204284668,
+      "gold_af_mean": 18.980392456054688,
+      "gold_non_af_mean": 30.836362838745117,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2879,
+      "train_auroc": 0.8187935614109647,
+      "gold_auroc": 0.5174688057040998,
+      "train_af_mean": 363.78460693359375,
+      "train_non_af_mean": 52.386741638183594,
+      "gold_af_mean": 71.29412078857422,
+      "gold_non_af_mean": 24.872726440429688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 250,
+      "train_auroc": 0.7320447301317466,
+      "gold_auroc": 0.5171122994652406,
+      "train_af_mean": 1699.78466796875,
+      "train_non_af_mean": 1484.884033203125,
+      "gold_af_mean": 1568.1568603515625,
+      "gold_non_af_mean": 1690.763671875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15778,
+      "train_auroc": 0.8155551423714407,
+      "gold_auroc": 0.5165775401069519,
+      "train_af_mean": 427.4384765625,
+      "train_non_af_mean": 122.38011169433594,
+      "gold_af_mean": 327.45098876953125,
+      "gold_non_af_mean": 318.036376953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2728,
+      "train_auroc": 0.8372736931576711,
+      "gold_auroc": 0.5160427807486632,
+      "train_af_mean": 309.3961486816406,
+      "train_non_af_mean": 101.7270736694336,
+      "gold_af_mean": 392.5882263183594,
+      "gold_non_af_mean": 361.963623046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1833,
+      "train_auroc": 0.7314215894602635,
+      "gold_auroc": 0.5160427807486632,
+      "train_af_mean": 440.8923034667969,
+      "train_non_af_mean": 228.5325927734375,
+      "gold_af_mean": 592.941162109375,
+      "gold_non_af_mean": 534.5454711914062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6404,
+      "train_auroc": 0.7789178708032299,
+      "gold_auroc": 0.5156862745098039,
+      "train_af_mean": 262.4769287109375,
+      "train_non_af_mean": 70.20662689208984,
+      "gold_af_mean": 545.37255859375,
+      "gold_non_af_mean": 517.8909301757812,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7696,
+      "train_auroc": 0.734249362515937,
+      "gold_auroc": 0.5153297682709448,
+      "train_af_mean": 262.76153564453125,
+      "train_non_af_mean": 73.92265319824219,
+      "gold_af_mean": 26.039215087890625,
+      "gold_non_af_mean": 23.563636779785156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9091,
+      "train_auroc": 0.7471812579685506,
+      "gold_auroc": 0.5135472370766488,
+      "train_af_mean": 534.7230834960938,
+      "train_non_af_mean": 195.73370361328125,
+      "gold_af_mean": 491.45098876953125,
+      "gold_non_af_mean": 508.7272644042969,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13771,
+      "train_auroc": 0.7079605822354442,
+      "gold_auroc": 0.5130124777183601,
+      "train_af_mean": 117.93077087402344,
+      "train_non_af_mean": 22.81546974182129,
+      "gold_af_mean": 9.176470756530762,
+      "gold_non_af_mean": 1.8909090757369995,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12935,
+      "train_auroc": 0.7651492775180619,
+      "gold_auroc": 0.5128342245989306,
+      "train_af_mean": 165.48846435546875,
+      "train_non_af_mean": 23.012155532836914,
+      "gold_af_mean": 66.07843017578125,
+      "gold_non_af_mean": 44.3636360168457,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12025,
+      "train_auroc": 0.7490899915002125,
+      "gold_auroc": 0.5126559714795009,
+      "train_af_mean": 154.51153564453125,
+      "train_non_af_mean": 51.47513961791992,
+      "gold_af_mean": 118.39215850830078,
+      "gold_non_af_mean": 115.2727279663086,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2919,
+      "train_auroc": 0.87973385040374,
+      "gold_auroc": 0.5121212121212121,
+      "train_af_mean": 296.0769348144531,
+      "train_non_af_mean": 17.723756790161133,
+      "gold_af_mean": 12.784314155578613,
+      "gold_non_af_mean": 9.890909194946289,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14303,
+      "train_auroc": 0.7137574373140673,
+      "gold_auroc": 0.5119429590017825,
+      "train_af_mean": 217.93077087402344,
+      "train_non_af_mean": 42.556907653808594,
+      "gold_af_mean": 6.117647171020508,
+      "gold_non_af_mean": 4.145454406738281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 372,
+      "train_auroc": 0.7633919464513388,
+      "gold_auroc": 0.511764705882353,
+      "train_af_mean": 2071.53857421875,
+      "train_non_af_mean": 808.556884765625,
+      "gold_af_mean": 1512.0,
+      "gold_non_af_mean": 1473.1636962890625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12679,
+      "train_auroc": 0.7019639821504462,
+      "gold_auroc": 0.5117647058823529,
+      "train_af_mean": 135.46923828125,
+      "train_non_af_mean": 30.223203659057617,
+      "gold_af_mean": 155.8431396484375,
+      "gold_non_af_mean": 145.38182067871094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1677,
+      "train_auroc": 0.7127018699532511,
+      "gold_auroc": 0.5115864527629234,
+      "train_af_mean": 277.3230895996094,
+      "train_non_af_mean": 128.34033203125,
+      "gold_af_mean": 66.7450942993164,
+      "gold_non_af_mean": 51.92727279663086,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9131,
+      "train_auroc": 0.7649314704632384,
+      "gold_auroc": 0.5108734402852051,
+      "train_af_mean": 751.1923217773438,
+      "train_non_af_mean": 228.39999389648438,
+      "gold_af_mean": 8.627450942993164,
+      "gold_non_af_mean": 1.5272727012634277,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11340,
+      "train_auroc": 0.7458446663833403,
+      "gold_auroc": 0.510873440285205,
+      "train_af_mean": 120.43077087402344,
+      "train_non_af_mean": 24.956905364990234,
+      "gold_af_mean": 7.372549057006836,
+      "gold_non_af_mean": 5.527272701263428,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9929,
+      "train_auroc": 0.7000727794305144,
+      "gold_auroc": 0.5105169340463458,
+      "train_af_mean": 1187.9307861328125,
+      "train_non_af_mean": 676.3690795898438,
+      "gold_af_mean": 1038.9803466796875,
+      "gold_non_af_mean": 981.3818359375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4559,
+      "train_auroc": 0.8856805142371441,
+      "gold_auroc": 0.5103386809269163,
+      "train_af_mean": 620.9384765625,
+      "train_non_af_mean": 44.4662971496582,
+      "gold_af_mean": 39.29411697387695,
+      "gold_non_af_mean": 80.0727310180664,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3967,
+      "train_auroc": 0.8103410539736506,
+      "gold_auroc": 0.5103386809269163,
+      "train_af_mean": 708.625,
+      "train_non_af_mean": 282.4110412597656,
+      "gold_af_mean": 727.8431396484375,
+      "gold_non_af_mean": 694.8909301757812,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10103,
+      "train_auroc": 0.7805014874628134,
+      "gold_auroc": 0.5101604278074866,
+      "train_af_mean": 657.2538452148438,
+      "train_non_af_mean": 277.9546813964844,
+      "gold_af_mean": 490.5882263183594,
+      "gold_non_af_mean": 487.5636291503906,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15098,
+      "train_auroc": 0.7264003399915003,
+      "gold_auroc": 0.5101604278074866,
+      "train_af_mean": 112.53845977783203,
+      "train_non_af_mean": 52.28287124633789,
+      "gold_af_mean": 52.70588302612305,
+      "gold_non_af_mean": 58.327274322509766,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 129,
+      "train_auroc": 0.7379520824479386,
+      "gold_auroc": 0.5098039215686274,
+      "train_af_mean": 398.46923828125,
+      "train_non_af_mean": 30.30497169494629,
+      "gold_af_mean": 0.8627451062202454,
+      "gold_non_af_mean": 0.0,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15880,
+      "train_auroc": 0.7493710157246067,
+      "gold_auroc": 0.5098039215686274,
+      "train_af_mean": 1637.1614990234375,
+      "train_non_af_mean": 718.9989013671875,
+      "gold_af_mean": 698.1961059570312,
+      "gold_non_af_mean": 527.7817993164062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4999,
+      "train_auroc": 0.7054802379940501,
+      "gold_auroc": 0.5089126559714795,
+      "train_af_mean": 900.046142578125,
+      "train_non_af_mean": 624.0961303710938,
+      "gold_af_mean": 838.7451171875,
+      "gold_non_af_mean": 842.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 966,
+      "train_auroc": 0.7199771568210795,
+      "gold_auroc": 0.5078431372549019,
+      "train_af_mean": 357.5961608886719,
+      "train_non_af_mean": 131.40220642089844,
+      "gold_af_mean": 444.4705810546875,
+      "gold_non_af_mean": 471.12725830078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9685,
+      "train_auroc": 0.7214189332766681,
+      "gold_auroc": 0.5076648841354723,
+      "train_af_mean": 260.9346008300781,
+      "train_non_af_mean": 179.85304260253906,
+      "gold_af_mean": 243.88235473632812,
+      "gold_non_af_mean": 255.41818237304688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10277,
+      "train_auroc": 0.7603102422439438,
+      "gold_auroc": 0.5071301247771837,
+      "train_af_mean": 271.1346130371094,
+      "train_non_af_mean": 126.80000305175781,
+      "gold_af_mean": 157.96078491210938,
+      "gold_non_af_mean": 156.76364135742188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3421,
+      "train_auroc": 0.7194894815129622,
+      "gold_auroc": 0.5065953654188948,
+      "train_af_mean": 292.4461669921875,
+      "train_non_af_mean": 67.07182312011719,
+      "gold_af_mean": 25.176469802856445,
+      "gold_non_af_mean": 28.363636016845703,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3593,
+      "train_auroc": 0.8053198045048874,
+      "gold_auroc": 0.5058823529411766,
+      "train_af_mean": 1387.4615478515625,
+      "train_non_af_mean": 577.7369995117188,
+      "gold_af_mean": 1178.11767578125,
+      "gold_non_af_mean": 1193.5272216796875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3011,
+      "train_auroc": 0.9110300679983001,
+      "gold_auroc": 0.5058823529411764,
+      "train_af_mean": 472.5923156738281,
+      "train_non_af_mean": 53.91602325439453,
+      "gold_af_mean": 273.9607849121094,
+      "gold_non_af_mean": 220.29090881347656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1822,
+      "train_auroc": 0.725460582235444,
+      "gold_auroc": 0.5057040998217469,
+      "train_af_mean": 165.1615447998047,
+      "train_non_af_mean": 59.21989059448242,
+      "gold_af_mean": 15.13725471496582,
+      "gold_non_af_mean": 5.3818182945251465,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14615,
+      "train_auroc": 0.7356465150871229,
+      "gold_auroc": 0.5055258467023173,
+      "train_af_mean": 133.20384216308594,
+      "train_non_af_mean": 13.990055084228516,
+      "gold_af_mean": 201.96078491210938,
+      "gold_non_af_mean": 138.76364135742188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5647,
+      "train_auroc": 0.8203808967275817,
+      "gold_auroc": 0.5051693404634582,
+      "train_af_mean": 317.9307556152344,
+      "train_non_af_mean": 22.554697036743164,
+      "gold_af_mean": 83.45098114013672,
+      "gold_non_af_mean": 173.60000610351562,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12407,
+      "train_auroc": 0.7026120909477263,
+      "gold_auroc": 0.5051693404634581,
+      "train_af_mean": 111.96923065185547,
+      "train_non_af_mean": 10.9259672164917,
+      "gold_af_mean": 117.80392456054688,
+      "gold_non_af_mean": 90.47272491455078,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 569,
+      "train_auroc": 0.8807915427114321,
+      "gold_auroc": 0.5042780748663102,
+      "train_af_mean": 2359.78466796875,
+      "train_non_af_mean": 775.5557861328125,
+      "gold_af_mean": 3042.2744140625,
+      "gold_non_af_mean": 2634.9091796875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4538,
+      "train_auroc": 0.7174304079898003,
+      "gold_auroc": 0.5042780748663102,
+      "train_af_mean": 583.6846313476562,
+      "train_non_af_mean": 89.85635375976562,
+      "gold_af_mean": 8.627450942993164,
+      "gold_non_af_mean": 31.490909576416016,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4125,
+      "train_auroc": 0.7123783467913303,
+      "gold_auroc": 0.5040998217468806,
+      "train_af_mean": 288.69232177734375,
+      "train_non_af_mean": 152.0972442626953,
+      "gold_af_mean": 182.11764526367188,
+      "gold_non_af_mean": 194.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5575,
+      "train_auroc": 0.7296557586060348,
+      "gold_auroc": 0.5035650623885918,
+      "train_af_mean": 159.52691650390625,
+      "train_non_af_mean": 17.73259735107422,
+      "gold_af_mean": 57.33333206176758,
+      "gold_non_af_mean": 46.07272720336914,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6705,
+      "train_auroc": 0.7693062048448788,
+      "gold_auroc": 0.5032085561497326,
+      "train_af_mean": 233.1692352294922,
+      "train_non_af_mean": 35.8320426940918,
+      "gold_af_mean": 128.7058868408203,
+      "gold_non_af_mean": 141.74545288085938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2195,
+      "train_auroc": 0.8154887377815554,
+      "gold_auroc": 0.5017825311942958,
+      "train_af_mean": 412.9769287109375,
+      "train_non_af_mean": 62.815467834472656,
+      "gold_af_mean": 6.901960849761963,
+      "gold_non_af_mean": 12.0,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 766,
+      "train_auroc": 0.7109344453888653,
+      "gold_auroc": 0.5016042780748662,
+      "train_af_mean": 1214.830810546875,
+      "train_non_af_mean": 422.2718200683594,
+      "gold_af_mean": 1198.9019775390625,
+      "gold_non_af_mean": 1323.7091064453125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12404,
+      "train_auroc": 0.7050600297492563,
+      "gold_auroc": 0.5005347593582887,
+      "train_af_mean": 242.1769256591797,
+      "train_non_af_mean": 78.36463928222656,
+      "gold_af_mean": 0.8627451062202454,
+      "gold_non_af_mean": 18.545454025268555,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2764,
+      "train_auroc": 0.7701715894602635,
+      "gold_auroc": 0.5,
+      "train_af_mean": 326.3923034667969,
+      "train_non_af_mean": 31.06519317626953,
+      "gold_af_mean": 0.0,
+      "gold_non_af_mean": 0.0,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10033,
+      "train_auroc": 0.7019719507012325,
+      "gold_auroc": 0.5,
+      "train_af_mean": 143.42308044433594,
+      "train_non_af_mean": 5.648618698120117,
+      "gold_af_mean": 0.0,
+      "gold_non_af_mean": 0.0,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2705,
+      "train_auroc": 0.7666818954526137,
+      "gold_auroc": 0.49982174688057046,
+      "train_af_mean": 697.9461669921875,
+      "train_non_af_mean": 158.09170532226562,
+      "gold_af_mean": 18.54901885986328,
+      "gold_non_af_mean": 57.52727127075195,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 832,
+      "train_auroc": 0.7425807479813005,
+      "gold_auroc": 0.49803921568627446,
+      "train_af_mean": 382.1538391113281,
+      "train_non_af_mean": 191.829833984375,
+      "gold_af_mean": 292.313720703125,
+      "gold_non_af_mean": 287.7818298339844,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4415,
+      "train_auroc": 0.7250467488312793,
+      "gold_auroc": 0.4975044563279858,
+      "train_af_mean": 410.8615417480469,
+      "train_non_af_mean": 118.93480682373047,
+      "gold_af_mean": 480.1568603515625,
+      "gold_non_af_mean": 593.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14037,
+      "train_auroc": 0.717856991075223,
+      "gold_auroc": 0.49732620320855614,
+      "train_af_mean": 811.8846435546875,
+      "train_non_af_mean": 61.467403411865234,
+      "gold_af_mean": 108.86274719238281,
+      "gold_non_af_mean": 3.345454454421997,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 651,
+      "train_auroc": 0.7617004887377816,
+      "gold_auroc": 0.496969696969697,
+      "train_af_mean": 224.2730712890625,
+      "train_non_af_mean": 37.45027542114258,
+      "gold_af_mean": 44.72549057006836,
+      "gold_non_af_mean": 69.30908966064453,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13113,
+      "train_auroc": 0.7395813854653635,
+      "gold_auroc": 0.496969696969697,
+      "train_af_mean": 225.1923065185547,
+      "train_non_af_mean": 107.99115753173828,
+      "gold_af_mean": 287.37255859375,
+      "gold_non_af_mean": 287.5636291503906,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7250,
+      "train_auroc": 0.7858552911177222,
+      "gold_auroc": 0.4962566844919786,
+      "train_af_mean": 1584.8846435546875,
+      "train_non_af_mean": 306.05523681640625,
+      "gold_af_mean": 767.686279296875,
+      "gold_non_af_mean": 686.9091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4756,
+      "train_auroc": 0.7015719294517637,
+      "gold_auroc": 0.4957219251336898,
+      "train_af_mean": 177.63845825195312,
+      "train_non_af_mean": 100.63204193115234,
+      "gold_af_mean": 144.5490264892578,
+      "gold_non_af_mean": 216.0,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9540,
+      "train_auroc": 0.7052868678283042,
+      "gold_auroc": 0.49536541889483066,
+      "train_af_mean": 858.5730590820312,
+      "train_non_af_mean": 274.5060729980469,
+      "gold_af_mean": 46.6274528503418,
+      "gold_non_af_mean": 69.5999984741211,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4603,
+      "train_auroc": 0.7538562473438165,
+      "gold_auroc": 0.4932263814616756,
+      "train_af_mean": 410.1461486816406,
+      "train_non_af_mean": 153.5182342529297,
+      "gold_af_mean": 305.2549133300781,
+      "gold_non_af_mean": 377.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5899,
+      "train_auroc": 0.7984843816404592,
+      "gold_auroc": 0.4928698752228164,
+      "train_af_mean": 256.546142578125,
+      "train_non_af_mean": 40.382320404052734,
+      "gold_af_mean": 332.4705810546875,
+      "gold_non_af_mean": 331.49090576171875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5880,
+      "train_auroc": 0.7471329154271142,
+      "gold_auroc": 0.4926916221033868,
+      "train_af_mean": 84.34615325927734,
+      "train_non_af_mean": 5.513812065124512,
+      "gold_af_mean": 14.823529243469238,
+      "gold_non_af_mean": 20.509090423583984,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1277,
+      "train_auroc": 0.7340692732681683,
+      "gold_auroc": 0.4926916221033868,
+      "train_af_mean": 467.953857421875,
+      "train_non_af_mean": 82.71381378173828,
+      "gold_af_mean": 20.627450942993164,
+      "gold_non_af_mean": 11.418181419372559,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4190,
+      "train_auroc": 0.7283398852528686,
+      "gold_auroc": 0.4926916221033868,
+      "train_af_mean": 862.8384399414062,
+      "train_non_af_mean": 510.2607727050781,
+      "gold_af_mean": 990.0392456054688,
+      "gold_non_af_mean": 947.5636596679688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10873,
+      "train_auroc": 0.8176248406289844,
+      "gold_auroc": 0.49215686274509807,
+      "train_af_mean": 593.6923217773438,
+      "train_non_af_mean": 112.78453063964844,
+      "gold_af_mean": 1015.6078491210938,
+      "gold_non_af_mean": 983.7817993164062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 156,
+      "train_auroc": 0.7421297280067998,
+      "gold_auroc": 0.4919786096256685,
+      "train_af_mean": 1502.5845947265625,
+      "train_non_af_mean": 555.9779052734375,
+      "gold_af_mean": 765.8038940429688,
+      "gold_non_af_mean": 809.30908203125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2303,
+      "train_auroc": 0.861049192520187,
+      "gold_auroc": 0.4919786096256684,
+      "train_af_mean": 231.7923126220703,
+      "train_non_af_mean": 39.633148193359375,
+      "gold_af_mean": 168.07843017578125,
+      "gold_non_af_mean": 180.654541015625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7389,
+      "train_auroc": 0.7440984912877178,
+      "gold_auroc": 0.4909090909090909,
+      "train_af_mean": 61.96923065185547,
+      "train_non_af_mean": 4.565745830535889,
+      "gold_af_mean": 0.0,
+      "gold_non_af_mean": 0.4363636374473572,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 340,
+      "train_auroc": 0.71993625159371,
+      "gold_auroc": 0.4909090909090909,
+      "train_af_mean": 4151.9384765625,
+      "train_non_af_mean": 3937.8916015625,
+      "gold_af_mean": 3904.0,
+      "gold_non_af_mean": 3904.581787109375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4821,
+      "train_auroc": 0.7596515087122822,
+      "gold_auroc": 0.49073083778966126,
+      "train_af_mean": 530.9615478515625,
+      "train_non_af_mean": 256.15911865234375,
+      "gold_af_mean": 475.058837890625,
+      "gold_non_af_mean": 479.6363525390625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15822,
+      "train_auroc": 0.9350037186570336,
+      "gold_auroc": 0.4903743315508022,
+      "train_af_mean": 1410.3077392578125,
+      "train_non_af_mean": 316.5325927734375,
+      "gold_af_mean": 1630.9019775390625,
+      "gold_non_af_mean": 1661.963623046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13950,
+      "train_auroc": 0.7200669358266043,
+      "gold_auroc": 0.48930481283422467,
+      "train_af_mean": 1129.75390625,
+      "train_non_af_mean": 563.8231811523438,
+      "gold_af_mean": 447.45098876953125,
+      "gold_non_af_mean": 582.1818237304688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 526,
+      "train_auroc": 0.7800164683382914,
+      "gold_auroc": 0.48894830659536537,
+      "train_af_mean": 519.1038208007812,
+      "train_non_af_mean": 249.70606994628906,
+      "gold_af_mean": 226.74510192871094,
+      "gold_non_af_mean": 196.25454711914062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2842,
+      "train_auroc": 0.7314672758181046,
+      "gold_auroc": 0.48841354723707664,
+      "train_af_mean": 252.43077087402344,
+      "train_non_af_mean": 165.16685485839844,
+      "gold_af_mean": 91.37255096435547,
+      "gold_non_af_mean": 105.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14747,
+      "train_auroc": 0.7023310667233319,
+      "gold_auroc": 0.4877005347593583,
+      "train_af_mean": 109.3576889038086,
+      "train_non_af_mean": 51.74143600463867,
+      "gold_af_mean": 21.490196228027344,
+      "gold_non_af_mean": 22.363636016845703,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6624,
+      "train_auroc": 0.7378484912877178,
+      "gold_auroc": 0.4873440285204992,
+      "train_af_mean": 157.31922912597656,
+      "train_non_af_mean": 58.33149337768555,
+      "gold_af_mean": 384.0,
+      "gold_non_af_mean": 389.8908996582031,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15781,
+      "train_auroc": 0.8310454738631534,
+      "gold_auroc": 0.4869875222816399,
+      "train_af_mean": 760.46923828125,
+      "train_non_af_mean": 269.8563537597656,
+      "gold_af_mean": 257.4902038574219,
+      "gold_non_af_mean": 258.7272644042969,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12319,
+      "train_auroc": 0.7393593285167871,
+      "gold_auroc": 0.48663101604278075,
+      "train_af_mean": 158.24615478515625,
+      "train_non_af_mean": 24.251934051513672,
+      "gold_af_mean": 102.5882339477539,
+      "gold_non_af_mean": 94.69091033935547,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12709,
+      "train_auroc": 0.7128973650658733,
+      "gold_auroc": 0.48609625668449197,
+      "train_af_mean": 247.56153869628906,
+      "train_non_af_mean": 113.56906127929688,
+      "gold_af_mean": 338.6666564941406,
+      "gold_non_af_mean": 310.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11917,
+      "train_auroc": 0.7226211219719506,
+      "gold_auroc": 0.4859180035650624,
+      "train_af_mean": 283.546142578125,
+      "train_non_af_mean": 67.09171295166016,
+      "gold_af_mean": 16.078432083129883,
+      "gold_non_af_mean": 12.07272720336914,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7692,
+      "train_auroc": 0.8238360603484913,
+      "gold_auroc": 0.4859180035650623,
+      "train_af_mean": 280.28460693359375,
+      "train_non_af_mean": 41.40110397338867,
+      "gold_af_mean": 75.4117660522461,
+      "gold_non_af_mean": 74.29090881347656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 16150,
+      "train_auroc": 0.7298608159796004,
+      "gold_auroc": 0.48556149732620324,
+      "train_af_mean": 432.4384765625,
+      "train_non_af_mean": 160.61546325683594,
+      "gold_af_mean": 210.1568603515625,
+      "gold_non_af_mean": 200.03636169433594,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2025,
+      "train_auroc": 0.740479706757331,
+      "gold_auroc": 0.48502673796791446,
+      "train_af_mean": 271.78460693359375,
+      "train_non_af_mean": 63.909393310546875,
+      "gold_af_mean": 13.254901885986328,
+      "gold_non_af_mean": 15.418181419372559,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 141,
+      "train_auroc": 0.734124521886953,
+      "gold_auroc": 0.4841354723707665,
+      "train_af_mean": 532.3076782226562,
+      "train_non_af_mean": 78.92596435546875,
+      "gold_af_mean": 143.2941131591797,
+      "gold_non_af_mean": 99.12727355957031,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6251,
+      "train_auroc": 0.7185778793030174,
+      "gold_auroc": 0.48395721925133695,
+      "train_af_mean": 66.12692260742188,
+      "train_non_af_mean": 22.623205184936523,
+      "gold_af_mean": 30.3137264251709,
+      "gold_non_af_mean": 61.818180084228516,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 179,
+      "train_auroc": 0.7816425839354016,
+      "gold_auroc": 0.4832442067736185,
+      "train_af_mean": 6183.35400390625,
+      "train_non_af_mean": 4504.1669921875,
+      "gold_af_mean": 7079.529296875,
+      "gold_non_af_mean": 7133.0908203125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10168,
+      "train_auroc": 0.7659434764130897,
+      "gold_auroc": 0.48253119429590025,
+      "train_af_mean": 1436.953857421875,
+      "train_non_af_mean": 497.0806579589844,
+      "gold_af_mean": 212.4705810546875,
+      "gold_non_af_mean": 137.74545288085938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13751,
+      "train_auroc": 0.7096382277943051,
+      "gold_auroc": 0.4825311942959002,
+      "train_af_mean": 372.4153747558594,
+      "train_non_af_mean": 41.84309387207031,
+      "gold_af_mean": 14.27450942993164,
+      "gold_non_af_mean": 23.781818389892578,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12157,
+      "train_auroc": 0.8374877815554611,
+      "gold_auroc": 0.482174688057041,
+      "train_af_mean": 390.9923095703125,
+      "train_non_af_mean": 27.69060707092285,
+      "gold_af_mean": 328.941162109375,
+      "gold_non_af_mean": 350.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 385,
+      "train_auroc": 0.7801397152571186,
+      "gold_auroc": 0.482174688057041,
+      "train_af_mean": 992.5692138671875,
+      "train_non_af_mean": 166.42210388183594,
+      "gold_af_mean": 1003.2548828125,
+      "gold_non_af_mean": 1029.963623046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7691,
+      "train_auroc": 0.7628033361665958,
+      "gold_auroc": 0.4814616755793227,
+      "train_af_mean": 704.9461669921875,
+      "train_non_af_mean": 305.43646240234375,
+      "gold_af_mean": 652.3921508789062,
+      "gold_non_af_mean": 725.7454833984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5739,
+      "train_auroc": 0.8094974500637484,
+      "gold_auroc": 0.4809269162210339,
+      "train_af_mean": 416.8153991699219,
+      "train_non_af_mean": 179.1204376220703,
+      "gold_af_mean": 62.66666793823242,
+      "gold_non_af_mean": 67.0545425415039,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 616,
+      "train_auroc": 0.7659610072248193,
+      "gold_auroc": 0.48039215686274506,
+      "train_af_mean": 341.4076843261719,
+      "train_non_af_mean": 70.38452911376953,
+      "gold_af_mean": 229.1764678955078,
+      "gold_non_af_mean": 283.9272766113281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5753,
+      "train_auroc": 0.7787903739906502,
+      "gold_auroc": 0.47843137254901963,
+      "train_af_mean": 440.6153869628906,
+      "train_non_af_mean": 332.77569580078125,
+      "gold_af_mean": 377.5686340332031,
+      "gold_non_af_mean": 418.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 482,
+      "train_auroc": 0.8036432214194644,
+      "gold_auroc": 0.4770053475935828,
+      "train_af_mean": 3406.892333984375,
+      "train_non_af_mean": 2972.031005859375,
+      "gold_af_mean": 3094.588134765625,
+      "gold_non_af_mean": 3097.01806640625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11140,
+      "train_auroc": 0.7949341266468337,
+      "gold_auroc": 0.47611408199643496,
+      "train_af_mean": 393.4615478515625,
+      "train_non_af_mean": 136.87513732910156,
+      "gold_af_mean": 173.3333282470703,
+      "gold_non_af_mean": 165.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3351,
+      "train_auroc": 0.7203049298767531,
+      "gold_auroc": 0.4755793226381461,
+      "train_af_mean": 210.7923126220703,
+      "train_non_af_mean": 64.41767883300781,
+      "gold_af_mean": 61.411766052246094,
+      "gold_non_af_mean": 74.18181610107422,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1390,
+      "train_auroc": 0.7826795580110497,
+      "gold_auroc": 0.47540106951871663,
+      "train_af_mean": 831.4423217773438,
+      "train_non_af_mean": 263.766845703125,
+      "gold_af_mean": 204.8627471923828,
+      "gold_non_af_mean": 208.50909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 882,
+      "train_auroc": 0.7851083722906926,
+      "gold_auroc": 0.47450980392156866,
+      "train_af_mean": 1483.576904296875,
+      "train_non_af_mean": 682.4210205078125,
+      "gold_af_mean": 858.1961059570312,
+      "gold_non_af_mean": 711.8181762695312,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15194,
+      "train_auroc": 0.7091595835104122,
+      "gold_auroc": 0.4736185383244207,
+      "train_af_mean": 255.6692352294922,
+      "train_non_af_mean": 156.93260192871094,
+      "gold_af_mean": 163.1372528076172,
+      "gold_non_af_mean": 183.38182067871094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11984,
+      "train_auroc": 0.950771355716107,
+      "gold_auroc": 0.47344028520499104,
+      "train_af_mean": 268.3692321777344,
+      "train_non_af_mean": 39.54696273803711,
+      "gold_af_mean": 100.7450942993164,
+      "gold_non_af_mean": 138.50909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13894,
+      "train_auroc": 0.7822466000849979,
+      "gold_auroc": 0.4727272727272728,
+      "train_af_mean": 274.28076171875,
+      "train_non_af_mean": 107.0044174194336,
+      "gold_af_mean": 226.0,
+      "gold_non_af_mean": 245.6727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12431,
+      "train_auroc": 0.7110220994475138,
+      "gold_auroc": 0.4727272727272727,
+      "train_af_mean": 448.0230712890625,
+      "train_non_af_mean": 234.29612731933594,
+      "gold_af_mean": 413.7254943847656,
+      "gold_non_af_mean": 431.9272766113281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8530,
+      "train_auroc": 0.7516691457713558,
+      "gold_auroc": 0.471301247771836,
+      "train_af_mean": 249.015380859375,
+      "train_non_af_mean": 35.40110397338867,
+      "gold_af_mean": 109.64705657958984,
+      "gold_non_af_mean": 144.43637084960938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11276,
+      "train_auroc": 0.749267424564386,
+      "gold_auroc": 0.47094474153297694,
+      "train_af_mean": 382.4384765625,
+      "train_non_af_mean": 32.5127067565918,
+      "gold_af_mean": 169.96078491210938,
+      "gold_non_af_mean": 149.23635864257812,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9252,
+      "train_auroc": 0.7845011687207819,
+      "gold_auroc": 0.47005347593582886,
+      "train_af_mean": 1041.3077392578125,
+      "train_non_af_mean": 286.6143798828125,
+      "gold_af_mean": 2874.7451171875,
+      "gold_non_af_mean": 3375.054443359375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4306,
+      "train_auroc": 0.8464072460688483,
+      "gold_auroc": 0.46934046345811054,
+      "train_af_mean": 451.98846435546875,
+      "train_non_af_mean": 182.3624267578125,
+      "gold_af_mean": 387.60784912109375,
+      "gold_non_af_mean": 417.7454528808594,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5894,
+      "train_auroc": 0.8493832341691456,
+      "gold_auroc": 0.46720142602495546,
+      "train_af_mean": 993.2461547851562,
+      "train_non_af_mean": 272.1944885253906,
+      "gold_af_mean": 357.4902038574219,
+      "gold_non_af_mean": 396.2181701660156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1514,
+      "train_auroc": 0.7242196132596685,
+      "gold_auroc": 0.4641711229946524,
+      "train_af_mean": 867.4461669921875,
+      "train_non_af_mean": 752.636474609375,
+      "gold_af_mean": 1134.11767578125,
+      "gold_non_af_mean": 1158.8363037109375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2223,
+      "train_auroc": 0.7873990650233743,
+      "gold_auroc": 0.4639928698752228,
+      "train_af_mean": 266.3653869628906,
+      "train_non_af_mean": 68.24309539794922,
+      "gold_af_mean": 67.4117660522461,
+      "gold_non_af_mean": 62.254547119140625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1548,
+      "train_auroc": 0.7441468338291544,
+      "gold_auroc": 0.4639928698752228,
+      "train_af_mean": 819.0538330078125,
+      "train_non_af_mean": 265.3900451660156,
+      "gold_af_mean": 185.56863403320312,
+      "gold_non_af_mean": 215.27272033691406,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13871,
+      "train_auroc": 0.8624171270718232,
+      "gold_auroc": 0.4614973262032086,
+      "train_af_mean": 435.04229736328125,
+      "train_non_af_mean": 156.0298309326172,
+      "gold_af_mean": 276.0392150878906,
+      "gold_non_af_mean": 292.14544677734375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10278,
+      "train_auroc": 0.7043821716957076,
+      "gold_auroc": 0.4614973262032086,
+      "train_af_mean": 51.93846130371094,
+      "train_non_af_mean": 23.058563232421875,
+      "gold_af_mean": 38.27450942993164,
+      "gold_non_af_mean": 51.20000076293945,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14435,
+      "train_auroc": 0.759157458563536,
+      "gold_auroc": 0.4597147950089127,
+      "train_af_mean": 86.68846130371094,
+      "train_non_af_mean": 26.25414276123047,
+      "gold_af_mean": 277.76470947265625,
+      "gold_non_af_mean": 316.9454650878906,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 507,
+      "train_auroc": 0.8077140883977901,
+      "gold_auroc": 0.45668449197860966,
+      "train_af_mean": 2608.4306640625,
+      "train_non_af_mean": 1781.11376953125,
+      "gold_af_mean": 1767.5294189453125,
+      "gold_non_af_mean": 1849.7454833984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1378,
+      "train_auroc": 0.7058733531661707,
+      "gold_auroc": 0.4559714795008913,
+      "train_af_mean": 82.44615173339844,
+      "train_non_af_mean": 34.7657470703125,
+      "gold_af_mean": 68.5882339477539,
+      "gold_non_af_mean": 86.29090881347656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6356,
+      "train_auroc": 0.7124569698257543,
+      "gold_auroc": 0.45579322638146175,
+      "train_af_mean": 321.1769104003906,
+      "train_non_af_mean": 50.72044372558594,
+      "gold_af_mean": 25.176469802856445,
+      "gold_non_af_mean": 34.0363655090332,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3358,
+      "train_auroc": 0.8514964938376539,
+      "gold_auroc": 0.4549019607843137,
+      "train_af_mean": 188.14999389648438,
+      "train_non_af_mean": 41.601104736328125,
+      "gold_af_mean": 104.54901885986328,
+      "gold_non_af_mean": 117.34545135498047,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 836,
+      "train_auroc": 0.7202379940501487,
+      "gold_auroc": 0.4536541889483066,
+      "train_af_mean": 1456.9154052734375,
+      "train_non_af_mean": 1074.1778564453125,
+      "gold_af_mean": 1381.5294189453125,
+      "gold_non_af_mean": 1471.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4329,
+      "train_auroc": 0.7419592010199745,
+      "gold_auroc": 0.453475935828877,
+      "train_af_mean": 151.3307647705078,
+      "train_non_af_mean": 40.07292938232422,
+      "gold_af_mean": 48.86274337768555,
+      "gold_non_af_mean": 57.45454406738281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1740,
+      "train_auroc": 0.7689683382915428,
+      "gold_auroc": 0.45311942959001783,
+      "train_af_mean": 786.8307495117188,
+      "train_non_af_mean": 404.1436462402344,
+      "gold_af_mean": 323.5686340332031,
+      "gold_non_af_mean": 349.7818298339844,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5586,
+      "train_auroc": 0.7490379303017424,
+      "gold_auroc": 0.4529411764705883,
+      "train_af_mean": 92.58077239990234,
+      "train_non_af_mean": 6.988950252532959,
+      "gold_af_mean": 18.47058868408203,
+      "gold_non_af_mean": 123.38182067871094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13141,
+      "train_auroc": 0.7547168508287293,
+      "gold_auroc": 0.45222816399286986,
+      "train_af_mean": 153.6769256591797,
+      "train_non_af_mean": 16.194475173950195,
+      "gold_af_mean": 29.80392074584961,
+      "gold_non_af_mean": 153.60000610351562,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4897,
+      "train_auroc": 0.7561389715257119,
+      "gold_auroc": 0.45115864527629235,
+      "train_af_mean": 1314.5615234375,
+      "train_non_af_mean": 917.3679809570312,
+      "gold_af_mean": 1178.196044921875,
+      "gold_non_af_mean": 1233.0181884765625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 924,
+      "train_auroc": 0.7682107947301318,
+      "gold_auroc": 0.4502673796791443,
+      "train_af_mean": 1490.5845947265625,
+      "train_non_af_mean": 1062.55029296875,
+      "gold_af_mean": 930.0392456054688,
+      "gold_non_af_mean": 970.3272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 486,
+      "train_auroc": 0.7031868890777729,
+      "gold_auroc": 0.4497326203208556,
+      "train_af_mean": 1079.0230712890625,
+      "train_non_af_mean": 561.083984375,
+      "gold_af_mean": 1605.450927734375,
+      "gold_non_af_mean": 1718.2181396484375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9349,
+      "train_auroc": 0.7515905227369316,
+      "gold_auroc": 0.4493761140819964,
+      "train_af_mean": 340.4769287109375,
+      "train_non_af_mean": 160.7734832763672,
+      "gold_af_mean": 122.03921508789062,
+      "gold_non_af_mean": 169.38182067871094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14943,
+      "train_auroc": 0.7478883340416489,
+      "gold_auroc": 0.44527629233511584,
+      "train_af_mean": 413.8307800292969,
+      "train_non_af_mean": 212.76905822753906,
+      "gold_af_mean": 159.05882263183594,
+      "gold_non_af_mean": 209.6727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 483,
+      "train_auroc": 0.8381651083722907,
+      "gold_auroc": 0.4447415329768271,
+      "train_af_mean": 5491.16943359375,
+      "train_non_af_mean": 3333.83203125,
+      "gold_af_mean": 5617.2548828125,
+      "gold_non_af_mean": 5819.0546875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 858,
+      "train_auroc": 0.7463541223969401,
+      "gold_auroc": 0.4445632798573975,
+      "train_af_mean": 285.0442199707031,
+      "train_non_af_mean": 72.39502716064453,
+      "gold_af_mean": 284.7843017578125,
+      "gold_non_af_mean": 404.9090881347656,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1375,
+      "train_auroc": 0.7533908839779005,
+      "gold_auroc": 0.4427807486631016,
+      "train_af_mean": 472.6000061035156,
+      "train_non_af_mean": 242.77127075195312,
+      "gold_af_mean": 336.07843017578125,
+      "gold_non_af_mean": 398.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1310,
+      "train_auroc": 0.7366075223119422,
+      "gold_auroc": 0.442602495543672,
+      "train_af_mean": 839.5076904296875,
+      "train_non_af_mean": 605.6088256835938,
+      "gold_af_mean": 1271.13720703125,
+      "gold_non_af_mean": 1370.3272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1382,
+      "train_auroc": 0.8003251168720782,
+      "gold_auroc": 0.4413547237076648,
+      "train_af_mean": 587.5615234375,
+      "train_non_af_mean": 243.79888916015625,
+      "gold_af_mean": 379.37255859375,
+      "gold_non_af_mean": 399.12725830078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1942,
+      "train_auroc": 0.7064343391415214,
+      "gold_auroc": 0.439572192513369,
+      "train_af_mean": 206.57691955566406,
+      "train_non_af_mean": 68.15469360351562,
+      "gold_af_mean": 22.745098114013672,
+      "gold_non_af_mean": 211.8545379638672,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1416,
+      "train_auroc": 0.844637165320867,
+      "gold_auroc": 0.4385026737967915,
+      "train_af_mean": 561.3884887695312,
+      "train_non_af_mean": 299.6242980957031,
+      "gold_af_mean": 397.2156982421875,
+      "gold_non_af_mean": 456.47271728515625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3769,
+      "train_auroc": 0.7956624521886954,
+      "gold_auroc": 0.43672014260249553,
+      "train_af_mean": 463.484619140625,
+      "train_non_af_mean": 228.39779663085938,
+      "gold_af_mean": 742.7843017578125,
+      "gold_non_af_mean": 845.92724609375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3871,
+      "train_auroc": 0.7842084572885678,
+      "gold_auroc": 0.4367201426024955,
+      "train_af_mean": 123.43846130371094,
+      "train_non_af_mean": 18.9370174407959,
+      "gold_af_mean": 189.3333282470703,
+      "gold_non_af_mean": 178.4727325439453,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7961,
+      "train_auroc": 0.809424139396515,
+      "gold_auroc": 0.43582887700534756,
+      "train_af_mean": 430.70001220703125,
+      "train_non_af_mean": 332.892822265625,
+      "gold_af_mean": 441.2549133300781,
+      "gold_non_af_mean": 500.87274169921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3647,
+      "train_auroc": 0.8087574373140671,
+      "gold_auroc": 0.4352941176470588,
+      "train_af_mean": 416.453857421875,
+      "train_non_af_mean": 107.47624206542969,
+      "gold_af_mean": 20.705883026123047,
+      "gold_non_af_mean": 58.47272872924805,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 760,
+      "train_auroc": 0.8789879940501486,
+      "gold_auroc": 0.43404634581105167,
+      "train_af_mean": 1934.6461181640625,
+      "train_non_af_mean": 1004.1845092773438,
+      "gold_af_mean": 823.2548828125,
+      "gold_non_af_mean": 888.8363647460938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14330,
+      "train_auroc": 0.7718540161495964,
+      "gold_auroc": 0.43297682709447416,
+      "train_af_mean": 376.29229736328125,
+      "train_non_af_mean": 117.81657409667969,
+      "gold_af_mean": 151.8431396484375,
+      "gold_non_af_mean": 217.8909149169922,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15892,
+      "train_auroc": 0.7666988950276243,
+      "gold_auroc": 0.432620320855615,
+      "train_af_mean": 1104.4615478515625,
+      "train_non_af_mean": 129.98895263671875,
+      "gold_af_mean": 46.588233947753906,
+      "gold_non_af_mean": 108.43636322021484,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5577,
+      "train_auroc": 0.7475302804929876,
+      "gold_auroc": 0.43119429590017827,
+      "train_af_mean": 852.7999877929688,
+      "train_non_af_mean": 407.48065185546875,
+      "gold_af_mean": 164.78431701660156,
+      "gold_non_af_mean": 210.5454559326172,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1058,
+      "train_auroc": 0.7732113259668508,
+      "gold_auroc": 0.4310160427807486,
+      "train_af_mean": 2292.707763671875,
+      "train_non_af_mean": 1058.090576171875,
+      "gold_af_mean": 4090.7451171875,
+      "gold_non_af_mean": 4409.6728515625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12567,
+      "train_auroc": 0.7393518912027199,
+      "gold_auroc": 0.4308377896613191,
+      "train_af_mean": 995.7538452148438,
+      "train_non_af_mean": 129.00994873046875,
+      "gold_af_mean": 162.9803924560547,
+      "gold_non_af_mean": 311.7090759277344,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6302,
+      "train_auroc": 0.8424649383765406,
+      "gold_auroc": 0.4294117647058824,
+      "train_af_mean": 435.9980773925781,
+      "train_non_af_mean": 149.33038330078125,
+      "gold_af_mean": 276.62744140625,
+      "gold_non_af_mean": 311.2181701660156,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1213,
+      "train_auroc": 0.7145048873778155,
+      "gold_auroc": 0.4292335115864528,
+      "train_af_mean": 674.5692138671875,
+      "train_non_af_mean": 473.83868408203125,
+      "gold_af_mean": 674.2352905273438,
+      "gold_non_af_mean": 714.8363647460938,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4841,
+      "train_auroc": 0.8653963025924352,
+      "gold_auroc": 0.42887700534759354,
+      "train_af_mean": 817.984619140625,
+      "train_non_af_mean": 195.38563537597656,
+      "gold_af_mean": 363.29412841796875,
+      "gold_non_af_mean": 442.036376953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 103,
+      "train_auroc": 0.8065278368040798,
+      "gold_auroc": 0.4281639928698753,
+      "train_af_mean": 148.234619140625,
+      "train_non_af_mean": 24.366849899291992,
+      "gold_af_mean": 79.7254867553711,
+      "gold_non_af_mean": 144.18182373046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12339,
+      "train_auroc": 0.7815448363790906,
+      "gold_auroc": 0.4279857397504456,
+      "train_af_mean": 288.6076965332031,
+      "train_non_af_mean": 100.12928009033203,
+      "gold_af_mean": 854.6666870117188,
+      "gold_non_af_mean": 1171.890869140625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13211,
+      "train_auroc": 0.7990910539736508,
+      "gold_auroc": 0.42691622103386806,
+      "train_af_mean": 713.076904296875,
+      "train_non_af_mean": 267.5690612792969,
+      "gold_af_mean": 352.70587158203125,
+      "gold_non_af_mean": 416.87274169921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2687,
+      "train_auroc": 0.7608074798130047,
+      "gold_auroc": 0.42655971479500887,
+      "train_af_mean": 106.0076904296875,
+      "train_non_af_mean": 33.56243133544922,
+      "gold_af_mean": 19.13725471496582,
+      "gold_non_af_mean": 22.690908432006836,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3292,
+      "train_auroc": 0.7535853166170846,
+      "gold_auroc": 0.42566844919786095,
+      "train_af_mean": 125.63076782226562,
+      "train_non_af_mean": 12.171270370483398,
+      "gold_af_mean": 14.117647171020508,
+      "gold_non_af_mean": 56.94545364379883,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 15222,
+      "train_auroc": 0.738918933276668,
+      "gold_auroc": 0.42442067736185385,
+      "train_af_mean": 132.9653778076172,
+      "train_non_af_mean": 25.35248565673828,
+      "gold_af_mean": 97.80392456054688,
+      "gold_non_af_mean": 106.50909423828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14722,
+      "train_auroc": 0.7228383977900553,
+      "gold_auroc": 0.42442067736185385,
+      "train_af_mean": 410.984619140625,
+      "train_non_af_mean": 243.4961395263672,
+      "gold_af_mean": 278.5097961425781,
+      "gold_non_af_mean": 363.20001220703125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1154,
+      "train_auroc": 0.7123172545686358,
+      "gold_auroc": 0.4242424242424242,
+      "train_af_mean": 355.54998779296875,
+      "train_non_af_mean": 112.83535766601562,
+      "gold_af_mean": 1300.509765625,
+      "gold_non_af_mean": 1326.654541015625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 657,
+      "train_auroc": 0.7602725244368892,
+      "gold_auroc": 0.4229946524064172,
+      "train_af_mean": 257.94232177734375,
+      "train_non_af_mean": 83.65966796875,
+      "gold_af_mean": 424.941162109375,
+      "gold_non_af_mean": 470.4363708496094,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 729,
+      "train_auroc": 0.7394246706332341,
+      "gold_auroc": 0.4226381461675579,
+      "train_af_mean": 187.5807647705078,
+      "train_non_af_mean": 65.5701675415039,
+      "gold_af_mean": 605.568603515625,
+      "gold_non_af_mean": 721.8545532226562,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12172,
+      "train_auroc": 0.7757841053973651,
+      "gold_auroc": 0.4206773618538325,
+      "train_af_mean": 480.6307678222656,
+      "train_non_af_mean": 321.6011047363281,
+      "gold_af_mean": 537.1372680664062,
+      "gold_non_af_mean": 626.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 13024,
+      "train_auroc": 0.9029706757331066,
+      "gold_auroc": 0.4196078431372549,
+      "train_af_mean": 173.92308044433594,
+      "train_non_af_mean": 24.94806671142578,
+      "gold_af_mean": 8.784314155578613,
+      "gold_non_af_mean": 42.47272872924805,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2406,
+      "train_auroc": 0.7959052273693158,
+      "gold_auroc": 0.416934046345811,
+      "train_af_mean": 489.96923828125,
+      "train_non_af_mean": 219.98895263671875,
+      "gold_af_mean": 193.1764678955078,
+      "gold_non_af_mean": 270.5454406738281,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9134,
+      "train_auroc": 0.7804961750956227,
+      "gold_auroc": 0.41622103386809267,
+      "train_af_mean": 207.3307647705078,
+      "train_non_af_mean": 90.52154541015625,
+      "gold_af_mean": 205.09803771972656,
+      "gold_non_af_mean": 267.12725830078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 75,
+      "train_auroc": 0.7384875690607735,
+      "gold_auroc": 0.41622103386809267,
+      "train_af_mean": 1108.7230224609375,
+      "train_non_af_mean": 702.8994750976562,
+      "gold_af_mean": 1248.1568603515625,
+      "gold_non_af_mean": 1662.69091796875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4139,
+      "train_auroc": 0.7270277305567362,
+      "gold_auroc": 0.41515151515151516,
+      "train_af_mean": 659.076904296875,
+      "train_non_af_mean": 383.13812255859375,
+      "gold_af_mean": 506.9019470214844,
+      "gold_non_af_mean": 712.2908935546875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 452,
+      "train_auroc": 0.7369278580535488,
+      "gold_auroc": 0.41515151515151516,
+      "train_af_mean": 10144.123046875,
+      "train_non_af_mean": 7405.2861328125,
+      "gold_af_mean": 9990.2744140625,
+      "gold_non_af_mean": 10380.7998046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8916,
+      "train_auroc": 0.8180615172120697,
+      "gold_auroc": 0.41105169340463454,
+      "train_af_mean": 1653.0615234375,
+      "train_non_af_mean": 904.32373046875,
+      "gold_af_mean": 1366.6666259765625,
+      "gold_non_af_mean": 1467.490966796875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 14923,
+      "train_auroc": 0.7282102634934127,
+      "gold_auroc": 0.41069518716577535,
+      "train_af_mean": 760.423095703125,
+      "train_non_af_mean": 400.3800964355469,
+      "gold_af_mean": 780.62744140625,
+      "gold_non_af_mean": 769.5999755859375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 515,
+      "train_auroc": 0.7077921801954952,
+      "gold_auroc": 0.40980392156862744,
+      "train_af_mean": 3244.3076171875,
+      "train_non_af_mean": 2607.23876953125,
+      "gold_af_mean": 3504.941162109375,
+      "gold_non_af_mean": 3765.52734375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4031,
+      "train_auroc": 0.7379164895877603,
+      "gold_auroc": 0.40962566844919784,
+      "train_af_mean": 249.7423095703125,
+      "train_non_af_mean": 147.89170837402344,
+      "gold_af_mean": 331.8823547363281,
+      "gold_non_af_mean": 467.20001220703125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4276,
+      "train_auroc": 0.7780631109222269,
+      "gold_auroc": 0.4087344028520499,
+      "train_af_mean": 262.23077392578125,
+      "train_non_af_mean": 100.212158203125,
+      "gold_af_mean": 121.7254867553711,
+      "gold_non_af_mean": 174.9818115234375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6599,
+      "train_auroc": 0.7364784317892051,
+      "gold_auroc": 0.4083778966131908,
+      "train_af_mean": 141.4576873779297,
+      "train_non_af_mean": 42.41657638549805,
+      "gold_af_mean": 171.88235473632812,
+      "gold_non_af_mean": 227.8909149169922,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3306,
+      "train_auroc": 0.7980556736081599,
+      "gold_auroc": 0.40766488413547236,
+      "train_af_mean": 791.8230590820312,
+      "train_non_af_mean": 630.384521484375,
+      "gold_af_mean": 888.7058715820312,
+      "gold_non_af_mean": 940.07275390625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2006,
+      "train_auroc": 0.9238748406289843,
+      "gold_auroc": 0.40659536541889485,
+      "train_af_mean": 384.21539306640625,
+      "train_non_af_mean": 158.57015991210938,
+      "gold_af_mean": 132.39215087890625,
+      "gold_non_af_mean": 137.345458984375,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3828,
+      "train_auroc": 0.8491138971525711,
+      "gold_auroc": 0.4037433155080214,
+      "train_af_mean": 984.046142578125,
+      "train_non_af_mean": 626.0684814453125,
+      "gold_af_mean": 738.8235473632812,
+      "gold_non_af_mean": 820.654541015625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 12248,
+      "train_auroc": 0.7215028686782831,
+      "gold_auroc": 0.4037433155080214,
+      "train_af_mean": 162.96923828125,
+      "train_non_af_mean": 59.277347564697266,
+      "gold_af_mean": 4.549019813537598,
+      "gold_non_af_mean": 20.872726440429688,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 780,
+      "train_auroc": 0.7810449426264343,
+      "gold_auroc": 0.4032085561497326,
+      "train_af_mean": 822.607666015625,
+      "train_non_af_mean": 562.6397705078125,
+      "gold_af_mean": 630.8627319335938,
+      "gold_non_af_mean": 756.8727416992188,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5119,
+      "train_auroc": 0.797752868678283,
+      "gold_auroc": 0.4016042780748663,
+      "train_af_mean": 537.3153686523438,
+      "train_non_af_mean": 425.5712585449219,
+      "gold_af_mean": 387.13726806640625,
+      "gold_non_af_mean": 401.8908996582031,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3773,
+      "train_auroc": 0.8123007862303442,
+      "gold_auroc": 0.40089126559714794,
+      "train_af_mean": 610.21923828125,
+      "train_non_af_mean": 366.6530456542969,
+      "gold_af_mean": 404.2745056152344,
+      "gold_non_af_mean": 472.1091003417969,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 4354,
+      "train_auroc": 0.7509870378240544,
+      "gold_auroc": 0.4,
+      "train_af_mean": 129.35769653320312,
+      "train_non_af_mean": 33.64530563354492,
+      "gold_af_mean": 156.0,
+      "gold_non_af_mean": 223.56362915039062,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 256,
+      "train_auroc": 0.7758733531661708,
+      "gold_auroc": 0.3951871657754011,
+      "train_af_mean": 937.4769287109375,
+      "train_non_af_mean": 591.6508178710938,
+      "gold_af_mean": 1642.6666259765625,
+      "gold_non_af_mean": 2039.5635986328125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 921,
+      "train_auroc": 0.7279499575010624,
+      "gold_auroc": 0.3939393939393939,
+      "train_af_mean": 1381.8538818359375,
+      "train_non_af_mean": 823.237548828125,
+      "gold_af_mean": 536.313720703125,
+      "gold_non_af_mean": 687.272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 5567,
+      "train_auroc": 0.7961835954101147,
+      "gold_auroc": 0.3912655971479501,
+      "train_af_mean": 1272.1153564453125,
+      "train_non_af_mean": 1034.0728759765625,
+      "gold_af_mean": 1266.0391845703125,
+      "gold_non_af_mean": 1529.963623046875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 352,
+      "train_auroc": 0.8479515512112199,
+      "gold_auroc": 0.38877005347593585,
+      "train_af_mean": 1562.15380859375,
+      "train_non_af_mean": 982.9525146484375,
+      "gold_af_mean": 1684.686279296875,
+      "gold_non_af_mean": 1919.7091064453125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1193,
+      "train_auroc": 0.7834519762005949,
+      "gold_auroc": 0.3880570409982175,
+      "train_af_mean": 286.76922607421875,
+      "train_non_af_mean": 87.63536071777344,
+      "gold_af_mean": 476.0,
+      "gold_non_af_mean": 606.036376953125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 6423,
+      "train_auroc": 0.7206172970675733,
+      "gold_auroc": 0.3857397504456328,
+      "train_af_mean": 2259.046142578125,
+      "train_non_af_mean": 1235.018798828125,
+      "gold_af_mean": 2223.529296875,
+      "gold_non_af_mean": 2352.727294921875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7858,
+      "train_auroc": 0.8314810879728007,
+      "gold_auroc": 0.3852049910873441,
+      "train_af_mean": 1823.7230224609375,
+      "train_non_af_mean": 1137.025390625,
+      "gold_af_mean": 1536.7843017578125,
+      "gold_non_af_mean": 2122.763671875,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 8585,
+      "train_auroc": 0.8015968975775605,
+      "gold_auroc": 0.3832442067736186,
+      "train_af_mean": 626.46923828125,
+      "train_non_af_mean": 357.6221008300781,
+      "gold_af_mean": 1037.7254638671875,
+      "gold_non_af_mean": 1398.2545166015625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 9724,
+      "train_auroc": 0.7270027624309392,
+      "gold_auroc": 0.3736185383244207,
+      "train_af_mean": 307.5384521484375,
+      "train_non_af_mean": 156.0220947265625,
+      "gold_af_mean": 121.7254867553711,
+      "gold_non_af_mean": 213.5272674560547,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2658,
+      "train_auroc": 0.7167084572885678,
+      "gold_auroc": 0.3723707664884135,
+      "train_af_mean": 100.7423095703125,
+      "train_non_af_mean": 11.223204612731934,
+      "gold_af_mean": 155.64706420898438,
+      "gold_non_af_mean": 215.09091186523438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1723,
+      "train_auroc": 0.8694007649808755,
+      "gold_auroc": 0.37058823529411766,
+      "train_af_mean": 1685.330810546875,
+      "train_non_af_mean": 506.45526123046875,
+      "gold_af_mean": 1136.549072265625,
+      "gold_non_af_mean": 1575.272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 2098,
+      "train_auroc": 0.7492063323416915,
+      "gold_auroc": 0.36559714795008913,
+      "train_af_mean": 343.79229736328125,
+      "train_non_af_mean": 151.7149200439453,
+      "gold_af_mean": 364.23529052734375,
+      "gold_non_af_mean": 565.5272827148438,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 10975,
+      "train_auroc": 0.7366797705057374,
+      "gold_auroc": 0.36524064171122994,
+      "train_af_mean": 195.8230743408203,
+      "train_non_af_mean": 38.48176956176758,
+      "gold_af_mean": 93.01960754394531,
+      "gold_non_af_mean": 202.5454559326172,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 7698,
+      "train_auroc": 0.8253527411814705,
+      "gold_auroc": 0.36167557932263816,
+      "train_af_mean": 1236.3538818359375,
+      "train_non_af_mean": 1041.9315185546875,
+      "gold_af_mean": 1459.450927734375,
+      "gold_non_af_mean": 1639.272705078125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 1119,
+      "train_auroc": 0.7206427964300892,
+      "gold_auroc": 0.3531194295900178,
+      "train_af_mean": 2047.3692626953125,
+      "train_non_af_mean": 1806.338134765625,
+      "gold_af_mean": 2085.803955078125,
+      "gold_non_af_mean": 2355.78173828125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 11646,
+      "train_auroc": 0.825310773480663,
+      "gold_auroc": 0.35276292335115866,
+      "train_af_mean": 1118.580810546875,
+      "train_non_af_mean": 666.9635620117188,
+      "gold_af_mean": 875.4509887695312,
+      "gold_non_af_mean": 990.07275390625,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 3465,
+      "train_auroc": 0.7314672758181047,
+      "gold_auroc": 0.3483065953654189,
+      "train_af_mean": 1453.15380859375,
+      "train_non_af_mean": 1217.3834228515625,
+      "gold_af_mean": 1379.9215087890625,
+      "gold_non_af_mean": 1588.9454345703125,
+      "generalizes": false
+    },
+    {
+      "feature_idx": 51,
+      "train_auroc": 0.7382936676583085,
+      "gold_auroc": 0.34705882352941175,
+      "train_af_mean": 1827.5692138671875,
+      "train_non_af_mean": 1439.57568359375,
+      "gold_af_mean": 1896.941162109375,
+      "gold_non_af_mean": 2033.1636962890625,
+      "generalizes": false
+    }
+  ]
+}
