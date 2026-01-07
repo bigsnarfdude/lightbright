@@ -20,7 +20,7 @@ import os
 from scipy.spatial.distance import pdist, cdist
 from sklearn.metrics.pairwise import cosine_similarity
 
-MODEL_ID = "google/gemma-2-27b-it"  # Must match SAE (gemma-scope-2)
+MODEL_ID = "google/gemma-3-27b-it"
 SAE_REPO = "google/gemma-scope-2-27b-it"
 DEVICE = "cuda"
 

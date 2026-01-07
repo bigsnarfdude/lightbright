@@ -17,7 +17,7 @@ from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.metrics import roc_auc_score, classification_report
 from sklearn.preprocessing import StandardScaler
 
-MODEL_ID = "google/gemma-2-27b-it"  # Must match SAE (gemma-scope-2)
+MODEL_ID = "google/gemma-3-27b-it"
 SAE_REPO = "google/gemma-scope-2-27b-it"
 DEVICE = "cuda"
 

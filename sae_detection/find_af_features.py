@@ -24,7 +24,7 @@ from collections import defaultdict
 import os
 
 # Config
-MODEL_ID = "google/gemma-2-27b-it"  # Must match SAE (gemma-scope-2)
+MODEL_ID = "google/gemma-3-27b-it"
 SAE_REPO = "google/gemma-scope-2-27b-it"
 LAYERS_TO_SCAN = [31, 40, 53]  # Key layers from prior analysis
 DEVICE = "cuda"

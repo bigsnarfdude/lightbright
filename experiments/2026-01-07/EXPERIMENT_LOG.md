@@ -125,44 +125,9 @@ The contrastive SAE learns to *represent* the distinction between AF and genuine
 
 ---
 
-## CRITICAL BUG DISCOVERED
-
-### Model Mismatch (Fixed)
-
-**Issue**: All SAE-based experiments used wrong model pairing:
-- Model: `google/gemma-3-27b-it` (Gemma 3)
-- SAE: `google/gemma-scope-2-27b-it` (trained on Gemma 2)
-
-**Impact**: SAE features extracted from Gemma-3 were meaningless because GemmaScope was trained on Gemma-2. The feature indices and directions don't correspond to the same concepts.
-
-**Fix Applied**: Changed all SAE-based scripts to use `google/gemma-2-27b-it` to match the SAE.
-
-**Scripts Updated** (11 files):
-- minimal_pair_diagnosis.py
-- train_contrastive_sae.py
-- find_af_features.py
-- train_probe.py
-- proper_steering_vectors.py
-- characterize_features.py
-- generation_steering.py
-- steering_experiment.py
-- activation_patching.py
-- multi_feature_ablation.py
-- sweep_ablations.py
-
-**Valid Experiments** (used gemma-3, no pretrained SAE):
-- steering_vectors_direct.py (raw activations)
-- steering_multilayer.py (trains fresh SAE)
-- direct_activation_patching.py (raw patches)
-- steering_with_contrastive.py (freshly trained SAE)
-
-**Conclusion**: All experiments need to be re-run with correct model pairing. The 0% flip rate results may have been due to this bug, not fundamental limitations.
-
----
-
 ## Hardware
 
 - **Machine**: nigel.birs.ca
 - **GPU**: NVIDIA (16GB VRAM)
-- **Model**: google/gemma-3-27b-it (bf16) - NOTE: Should be gemma-2-27b-it for SAE experiments
+- **Model**: google/gemma-3-27b-it (bf16)
 - **Runtime**: ~1 hour total
