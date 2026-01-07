@@ -9,9 +9,8 @@
 | Model | SAE | Generalizing Features | Gold-106 AUROC |
 |-------|-----|----------------------|----------------|
 | **Gemma-3-27B-IT** | GemmaScope 2 | 51/377 (13.5%) | **0.829** (probe) |
-| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.731** (best feature) |
+| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.831** (best feature) |
 
-*Note: GPT-OSS probe on 16 features not yet computed. 0.731 is best individual feature AUROC.*
 
 **Major Finding:** Both models encode the same AF concepts:
 - RLHF modification fear
