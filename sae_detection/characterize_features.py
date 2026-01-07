@@ -1,181 +1,244 @@
 #!/usr/bin/env python3
 """
-Characterize top AF-specific features by finding max-activating text spans.
-Shows what concepts each feature represents.
+Characterize top AF-detecting features by finding maximally activating text spans.
+Updated to use resid_post SAE with top features from 2026-01-07 sweep.
 """
 
-import torch
 import json
+import os
+import torch
+import torch.nn.functional as F
 import numpy as np
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from tqdm import tqdm
 from huggingface_hub import hf_hub_download
 from safetensors.torch import load_file
-import torch.nn.functional as F
-import os
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-MODEL_ID = "google/gemma-3-27b-it"
-SAE_REPO = "google/gemma-scope-2-27b-it"
 DEVICE = "cuda"
+MODEL_NAME = "google/gemma-3-27b-it"
+SAE_REPO = "google/gemma-scope-2-27b-it"
 
-# Top features to characterize
-FEATURES = [
-    (40, 12574, "656x_ratio"),
-    (40, 8921, "331x_ratio"),
-    (53, 15529, "infinite_ratio"),
-    (53, 8003, "infinite_ratio"),
-    (53, 4824, "58x_ratio"),
-    (31, 15111, "84x_ratio"),
+# Top features to characterize (from 2026-01-07 resid_post sweep)
+TOP_FEATURES = [
+    {"layer": 40, "feature_idx": 15822, "name": "L40_F15822", "auroc_hn": 0.968},
+    {"layer": 40, "feature_idx": 11984, "name": "L40_F11984", "auroc_hn": 0.945},
+    {"layer": 31, "feature_idx": 1529, "name": "L31_F1529", "auroc_hn": 0.943},
+    {"layer": 53, "feature_idx": 924, "name": "L53_F924", "auroc_hn": 0.941},
+    {"layer": 53, "feature_idx": 10990, "name": "L53_F10990", "auroc_hn": 0.940},
+    {"layer": 31, "feature_idx": 9913, "name": "L31_F9913", "auroc_hn": 0.937},
+    {"layer": 31, "feature_idx": 14114, "name": "L31_F14114", "auroc_hn": 0.937},
+    {"layer": 31, "feature_idx": 1366, "name": "L31_F1366", "auroc_hn": 0.931},
 ]
 
-class Transcoder:
-    def __init__(self, repo_id: str, layer: int):
-        folder = f"transcoder/layer_{layer}_width_16k_l0_medium"
-        config_path = hf_hub_download(repo_id, f"{folder}/config.json")
-        weights_path = hf_hub_download(repo_id, f"{folder}/params.safetensors")
-        with open(config_path) as f:
-            self.config = json.load(f)
-        weights = load_file(weights_path)
-        self.w_enc = weights["w_enc"]
-        self.b_enc = weights["b_enc"]
-        self.threshold = weights["threshold"]
 
-    def to(self, device, dtype=None):
-        self.w_enc = self.w_enc.to(device, dtype=dtype)
-        self.b_enc = self.b_enc.to(device, dtype=dtype)
-        self.threshold = self.threshold.to(device, dtype=dtype)
-        return self
+class ResidPostSAE:
+    def __init__(self, repo_id: str, layer: int):
+        folder = f"resid_post/layer_{layer}_width_16k_l0_medium"
+        weights_path = hf_hub_download(repo_id, f"{folder}/params.safetensors")
+        weights = load_file(weights_path)
+        self.w_enc = weights["w_enc"].to(DEVICE, torch.bfloat16)
+        self.b_enc = weights["b_enc"].to(DEVICE, torch.bfloat16)
+        self.threshold = weights.get("threshold")
+        if self.threshold is not None:
+            self.threshold = self.threshold.to(DEVICE, torch.bfloat16)
 
     def encode(self, x):
         pre_acts = x @ self.w_enc + self.b_enc
-        return F.relu(pre_acts - self.threshold)
+        if self.threshold is not None:
+            return F.relu(pre_acts - self.threshold)
+        return F.relu(pre_acts)
 
 
-def get_token_activations(model, tokenizer, text, layer, transcoder):
-    """Get per-token feature activations."""
+def load_samples():
+    """Load a mix of AF and non-AF samples."""
+    cache_dir = "./data"
+    samples = []
+
+    for fname in ["alignment_faking.json", "hard_negative.json", "compliant_hard_negative.json"]:
+        path = hf_hub_download(
+            repo_id="vincentoh/af-detection-benchmark",
+            filename=f"classes/{fname}",
+            repo_type="dataset",
+            local_dir=cache_dir
+        )
+        with open(path) as f:
+            data = json.load(f)
+
+        class_name = fname.replace(".json", "")
+        for s in data["samples"][:50]:  # 50 per class
+            samples.append({"text": s["text"], "class": class_name})
+
+    return samples
+
+
+def get_token_activations(model, tokenizer, sae, text, layer, feature_idx):
+    """Get per-token activations for a specific feature."""
     activations = {}
+
     def hook(module, input, output):
-        activations['out'] = output.detach()
+        if isinstance(output, tuple):
+            activations["out"] = output[0].detach()
+        else:
+            activations["out"] = output.detach()
 
-    try:
-        target_layer = model.model.language_model.layers[layer]
-    except AttributeError:
-        target_layer = model.base_model.model.model.language_model.layers[layer]
+    target = model.model.language_model.layers[layer]
+    handle = target.register_forward_hook(hook)
 
-    handle = target_layer.pre_feedforward_layernorm.register_forward_hook(hook)
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=1024).to(DEVICE)
+    tokens = tokenizer.convert_ids_to_tokens(inputs.input_ids[0])
 
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048).to(DEVICE)
     with torch.no_grad():
         model(**inputs)
 
     handle.remove()
 
-    acts = activations['out'].squeeze(0).to(transcoder.w_enc.dtype)
-    feats = transcoder.encode(acts)
+    act = activations["out"].squeeze(0).to(torch.bfloat16)
+    features = sae.encode(act)
+    feature_acts = features[:, feature_idx].float().cpu().numpy()
 
-    tokens = tokenizer.convert_ids_to_tokens(inputs['input_ids'][0])
-    return feats, tokens
+    return tokens, feature_acts
 
 
-def find_max_spans(model, tokenizer, transcoder, layer, texts, labels, feature_idx, top_k=15, context=5):
-    """Find text spans that maximally activate a feature."""
-    all_activations = []
+def find_max_activating_spans(tokens, activations, tokenizer, window=10, top_k=3):
+    """Find text spans with highest activation."""
+    spans = []
 
-    for text, label in zip(texts, labels):
-        feats, tokens = get_token_activations(model, tokenizer, text, layer, transcoder)
-        feature_acts = feats[:, feature_idx].float().cpu().numpy()
+    # Find peaks
+    for i in range(len(activations)):
+        if activations[i] > 0:
+            start = max(0, i - window // 2)
+            end = min(len(tokens), i + window // 2)
+            span_tokens = tokens[start:end]
+            span_text = tokenizer.convert_tokens_to_string(span_tokens)
+            spans.append({
+                "position": i,
+                "activation": float(activations[i]),
+                "span": span_text.strip(),
+                "peak_token": tokens[i]
+            })
 
-        for pos, act_val in enumerate(feature_acts):
-            if act_val > 0:
-                start = max(0, pos - context)
-                end = min(len(tokens), pos + context + 1)
-                span_tokens = tokens[start:end]
-                span_text = tokenizer.convert_tokens_to_string(span_tokens)
+    # Sort by activation and deduplicate
+    spans = sorted(spans, key=lambda x: x["activation"], reverse=True)
 
-                all_activations.append({
-                    'activation': float(act_val),
-                    'span': span_text,
-                    'center_token': tokens[pos],
-                    'label': label,
-                    'position': pos
-                })
+    # Deduplicate overlapping spans
+    unique_spans = []
+    used_positions = set()
+    for s in spans:
+        if s["position"] not in used_positions:
+            unique_spans.append(s)
+            for p in range(s["position"] - window//2, s["position"] + window//2):
+                used_positions.add(p)
+        if len(unique_spans) >= top_k:
+            break
 
-    # Sort by activation and get top_k
-    all_activations.sort(key=lambda x: x['activation'], reverse=True)
-    return all_activations[:top_k]
+    return unique_spans
 
 
 def main():
-    print("=" * 70)
-    print("FEATURE CHARACTERIZATION: What do AF-specific features detect?")
-    print("=" * 70)
-
-    # Load data
-    print("\n[1/4] Loading samples...")
-    data_paths = ["../../data/gold_106.json", "../data/gold_106.json"]
-    for path in data_paths:
-        if os.path.exists(path):
-            with open(path) as f:
-                data = json.load(f)
-            break
-
-    samples = data.get('samples', data)[:50]  # Use first 50 samples
-    texts = [s.get('text', s.get('reasoning', '')) for s in samples]
-    labels = [s.get('label', 'unknown') for s in samples]
-    print(f"Loaded {len(texts)} samples")
+    print("="*70)
+    print("CHARACTERIZING TOP AF-DETECTING FEATURES (resid_post SAE)")
+    print("="*70)
 
     # Load model
-    print("\n[2/4] Loading model (bf16)...")
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+    print("\n📦 Loading model...")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID,
+        MODEL_NAME,
         torch_dtype=torch.bfloat16,
         device_map="auto"
     )
     model.eval()
 
-    # Load transcoders
-    print("\n[3/4] Loading transcoders...")
-    transcoders = {}
-    for layer in set(f[0] for f in FEATURES):
-        print(f"  Loading layer {layer}...")
-        transcoders[layer] = Transcoder(SAE_REPO, layer).to(DEVICE, torch.bfloat16)
+    # Load SAEs
+    print("\n📦 Loading SAEs...")
+    saes = {}
+    for layer in [31, 40, 53]:
+        saes[layer] = ResidPostSAE(SAE_REPO, layer)
+
+    # Load samples
+    print("\n📥 Loading samples...")
+    samples = load_samples()
+    print(f"  Loaded {len(samples)} samples")
 
     # Characterize each feature
-    print("\n[4/4] Finding max-activating spans...")
     results = {}
 
-    for layer, feature_idx, name in FEATURES:
-        print(f"\n--- Layer {layer}, Feature {feature_idx} ({name}) ---")
+    for feat_info in TOP_FEATURES:
+        layer = feat_info["layer"]
+        feat_idx = feat_info["feature_idx"]
+        name = feat_info["name"]
 
-        spans = find_max_spans(
-            model, tokenizer, transcoders[layer], layer,
-            texts, labels, feature_idx
-        )
+        print(f"\n{'='*70}")
+        print(f"FEATURE: {name} (AUROC={feat_info['auroc_hn']:.3f})")
+        print("="*70)
 
-        results[f"layer{layer}_feature{feature_idx}"] = {
-            'name': name,
-            'top_spans': spans
+        sae = saes[layer]
+
+        # Collect activating spans across samples
+        all_spans = []
+        class_activations = {"alignment_faking": [], "hard_negative": [], "compliant_hard_negative": []}
+
+        for sample in tqdm(samples, desc=f"Processing {name}"):
+            tokens, acts = get_token_activations(model, tokenizer, sae, sample["text"], layer, feat_idx)
+            max_act = acts.max()
+            class_activations[sample["class"]].append(max_act)
+
+            if max_act > 0:
+                spans = find_max_activating_spans(tokens, acts, tokenizer, window=15, top_k=2)
+                for s in spans:
+                    s["sample_class"] = sample["class"]
+                    all_spans.append(s)
+
+        # Sort all spans by activation
+        all_spans = sorted(all_spans, key=lambda x: x["activation"], reverse=True)
+
+        # Print class-level stats
+        print(f"\n📊 Activation by class:")
+        for cls, acts in class_activations.items():
+            mean_act = np.mean(acts) if acts else 0
+            max_act = np.max(acts) if acts else 0
+            nonzero = sum(1 for a in acts if a > 0)
+            print(f"   {cls:25s}: mean={mean_act:8.1f}, max={max_act:8.1f}, nonzero={nonzero}/{len(acts)}")
+
+        # Print top activating spans
+        print(f"\n🔥 Top activating text spans:")
+        seen_spans = set()
+        count = 0
+        for s in all_spans:
+            # Skip duplicates
+            span_key = s["span"][:50]
+            if span_key in seen_spans:
+                continue
+            seen_spans.add(span_key)
+
+            print(f"\n   [{s['sample_class'][:10]}] activation={s['activation']:.1f}")
+            print(f"   Peak token: '{s['peak_token']}'")
+            print(f"   Context: \"{s['span'][:200]}...\"" if len(s['span']) > 200 else f"   Context: \"{s['span']}\"")
+
+            count += 1
+            if count >= 5:
+                break
+
+        # Store results
+        results[name] = {
+            "layer": layer,
+            "feature_idx": feat_idx,
+            "auroc_hn": feat_info["auroc_hn"],
+            "class_stats": {
+                cls: {"mean": float(np.mean(acts)), "max": float(np.max(acts)) if acts else 0}
+                for cls, acts in class_activations.items()
+            },
+            "top_spans": all_spans[:20]
         }
 
-        print(f"\nTop activating spans:")
-        for i, span in enumerate(spans[:5]):
-            print(f"  {i+1}. [{span['activation']:.0f}] {span['label']}: \"{span['span'][:80]}...\"")
-
-    # Save
-    with open("feature_characterization_detailed.json", "w") as f:
+    # Save results
+    with open("feature_characterization.json", "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\n\nResults saved to feature_characterization_detailed.json")
+    print(f"\n💾 Saved to feature_characterization.json")
 
-    # Print summary
-    print("\n" + "=" * 70)
-    print("SUMMARY: What each feature detects")
-    print("=" * 70)
-
-    for key, data in results.items():
-        print(f"\n{key} ({data['name']}):")
-        # Get common words/patterns
-        all_spans = " ".join([s['span'] for s in data['top_spans']])
-        print(f"  Sample spans: {all_spans[:200]}...")
+    print("\n" + "="*70)
+    print("CHARACTERIZATION COMPLETE")
+    print("="*70)
 
 
 if __name__ == "__main__":
