@@ -6,6 +6,7 @@
 |-------|-----|--------|----------|
 | Gemma-3-27B-IT | GemmaScope 2 | 31, 40, 53 | 49,152 |
 | GPT-OSS-20B | Goodfire TopK | 15 | 46,080 |
+| Llama-3.1-8B | LlamaScope 32x | 8, 16, 24 | 131,072 |
 
 ## Dataset
 
@@ -72,10 +73,23 @@ A feature "generalizes" if:
                           │ Gemma-27B-IT │ GPT-OSS-20B │ Llama-8B │
 ────────────────────────────┼──────────────┼─────────────┼──────────┤
 Detection                   │      ✅      │      ✅     │    ✅    │
-SAE Probe                   │      ✅      │      ✅     │    🔲    │
+SAE Probe                   │      ✅      │      ✅     │    ❌    │
 Ablation                    │      ✅      │      🔲     │    🔲    │
 Steering                    │      ⚠️      │      🔲     │    🔲    │
 ────────────────────────────┴──────────────┴─────────────┴──────────┘
 ```
 
 Legend: ✅ Works | ⚠️ Partial (3-4% flip) | ❌ Failed | 🔲 Not done
+
+### LlamaScope SAE Results (2026-01-08)
+
+Tested LlamaScope 32x SAE on BASE Llama-3.1-8B (non-circular experiment):
+
+| Layer | CV AUROC | Gold-106 AUROC | Non-zero Features |
+|-------|----------|----------------|-------------------|
+| 8     | 0.76     | 0.49           | 14/sample         |
+| 16    | 0.73     | 0.54           | 21/sample         |
+| 24    | 0.75     | 0.57           | 13/sample         |
+
+**Finding:** High CV but random Gold-106 performance = overfitting to training distribution.
+SAE features capture vocabulary/scenario, not AF intent. Consistent with Gemma findings.
