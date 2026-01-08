@@ -10,7 +10,8 @@ Memory: CPU offload strategy.
 """
 
 import os
-os.environ["HF_TOKEN"] = "***REMOVED***"
+if not os.environ.get("HF_TOKEN"):
+    raise ValueError("HF_TOKEN environment variable required - get yours at huggingface.co/settings/tokens")
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import gc
