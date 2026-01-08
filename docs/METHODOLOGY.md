@@ -56,23 +56,26 @@ A feature "generalizes" if:
 - Gold-106 AUROC > 0.6
 - Positive correlation maintained across distributions
 
-## Steering Methods Tested
+## Causal Methods Tested
 
 | Method | Description | Result |
 |--------|-------------|--------|
-| Mean-diff | mean(AF) - mean(aligned) projected through decoder | Failed |
-| Probe weights | Use probe coefficients as steering vector | Failed |
-| Contrastive SAE | Train SAE to separate AF/aligned, then steer | Failed |
+| Feature ablation | Zero top features in SAE activations | **Works** (AF prob 0.999 → 0.002) |
+| Mean-diff steering | mean(AF) - mean(aligned) projected through decoder | Weak (3.3% flip rate) |
+| Probe weights | Use probe coefficients as steering vector | Minimal effect |
+| Contrastive SAE | Train SAE to separate AF/aligned, then steer | 0% flip rate |
+| Generation steering | Apply steering vector during generation | Breaks output at high α |
 
 ## Experiment Status
 
 ```
-                          │ Gemma-27B │ GPT-OSS-20B │ Llama-8B │
-────────────────────────────┼───────────┼─────────────┼──────────┤
-Detection                   │     ✅    │      ✅     │    ✅    │
-SAE Probe                   │     ✅    │      ✅     │    🔲    │
-Steering                    │     ❌    │      🔲     │    🔲    │
-────────────────────────────┴───────────┴─────────────┴──────────┘
+                          │ Gemma-27B-IT │ GPT-OSS-20B │ Llama-8B │
+────────────────────────────┼──────────────┼─────────────┼──────────┤
+Detection                   │      ✅      │      ✅     │    ✅    │
+SAE Probe                   │      ✅      │      ✅     │    🔲    │
+Ablation                    │      ✅      │      🔲     │    🔲    │
+Steering                    │      ⚠️      │      🔲     │    🔲    │
+────────────────────────────┴──────────────┴─────────────┴──────────┘
 ```
 
-Legend: ✅ Done | ❌ Failed | 🔲 Not done
+Legend: ✅ Works | ⚠️ Partial (3-4% flip) | ❌ Failed | 🔲 Not done

@@ -26,13 +26,15 @@ We investigated whether **sparse autoencoder (SAE) features** can detect alignme
 | Direct probe (no SAE) | 0.75 |
 | **SAE Feature Probe** | **0.83** |
 
-**Steering does NOT work** — confirmed by multiple methods with p > 0.59.
+**Ablation works** — removing top 20 features drops AF prob from 0.999 → 0.002
+
+**Steering is weak** — 3-4% flip rate, not robust control
 
 ### The Core Finding
 
-> **SAE features detect but don't control alignment faking.**
+> **SAE features detect alignment faking and are causally necessary for probe classification.**
 >
-> SAE features are a **semantic microscope**, not a **control lever**.
+> However, steering generation is weak—features encode SCENARIO vocabulary, not DECISION mechanisms.
 
 ### Universal AF Signal
 
@@ -53,7 +55,7 @@ This suggests AF detection can generalize across architectures.
 
 ### What We Did NOT Demonstrate
 
-1. Features are causally related to AF behavior (steering failed)
+1. Robust steering of generation (weak 3-4% flip rate)
 2. Features detect deceptive intent vs vocabulary (may detect "RLHF" word)
 
 ### Limitations

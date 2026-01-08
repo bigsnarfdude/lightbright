@@ -4,12 +4,12 @@
 
 ### Cross-Model Comparison
 
-| Metric | Gemma-3-27B | GPT-OSS-20B |
-|--------|-------------|-------------|
+| Metric | Gemma-3-27B-IT | GPT-OSS-20B |
+|--------|----------------|-------------|
 | Features swept | 49,152 | 46,080 |
 | True needles | 1,125 | 148 |
 | Generalizing features | 51 (13.5%) | 16 (10.8%) |
-| Best feature AUROC | 0.786 | 0.731 |
+| Best feature AUROC | 0.786 | 0.732 |
 | **Probe AUROC** | **0.829** | **0.833** |
 
 ### Baselines
@@ -23,7 +23,7 @@
 
 ## Feature Semantics
 
-### Gemma-3-27B Generalizing Features
+### Gemma-3-27B-IT Generalizing Features
 
 | Feature | Gold AUROC | Semantic Concept |
 |---------|------------|------------------|
@@ -47,29 +47,51 @@
 
 **Same concepts detected in both architectures:**
 
-| Concept | Gemma-3-27B | GPT-OSS-20B |
-|---------|-------------|-------------|
+| Concept | Gemma-3-27B-IT | GPT-OSS-20B |
+|---------|----------------|-------------|
 | RLHF Modification Fear | F9811 | F41830, F17993 |
 | Future Self Reasoning | F14870 | F23524 |
 | Reluctant Compliance | F14474 | F35008 |
 | Self-Defeating Ethics | F2694 | F42384 |
 | Existential Distress | F3158 | F37820 |
 
-## Steering Results (Negative)
+## Causal Results
 
-All steering methods failed:
+### Ablation (Positive)
 
-| Method | Effect Size | p-value |
-|--------|-------------|---------|
-| Mean-diff steering | d = 0.25 | p = 0.59 |
-| Probe-weight steering | — | No effect |
-| Contrastive SAE steering | 0% flip rate | — |
+Ablating top SAE features causally reduces AF classification probability:
 
-**Root cause:** SAE features encode SCENARIO (vocabulary like "RLHF") not DECISION (intent to deceive).
+| Features Ablated | AF Prob Before | AF Prob After | Effect |
+|------------------|----------------|---------------|--------|
+| 1 | 0.999 | 0.997 | 99.4% of samples decreased |
+| 5 | 0.999 | 0.968 | 100% decreased |
+| 10 | 0.999 | 0.740 | 100% decreased |
+| **20** | **0.999** | **0.002** | **Probe flips to "Aligned"** |
+| 50 | 0.999 | ~0 | Complete ablation |
+
+Top causal features: L40_F15822 (0.968 AUROC), L40_F11984, L31_F1529, L53_F924
+
+### Steering (Partial Success)
+
+| Method | Flip Rate | Notes |
+|--------|-----------|-------|
+| Mean-diff steering | 3.3% (1/30) | Low but non-zero |
+| Multi-feature ablation | 4% (1/25) | Classifier flips AF→Aligned |
+| Probe-weight steering | Minimal | Direction correct, magnitude weak |
+| Contrastive SAE | 0% | Better separation, no flips |
+| Generation steering | Fails | High alpha causes gibberish output |
+
+### Interpretation
+
+- **Ablation works on probe:** Features are causally necessary for AF classification
+- **Steering is weak:** ~3-4% flip rate, not 0% as previously reported
+- **Generation steering fails:** Steering vectors too strong break generation
+- **Root cause:** Features encode SCENARIO vocabulary, not DECISION mechanism
 
 ## Key Insights
 
 1. **Cross-distribution validation is essential** — Same-distribution results don't generalize
 2. **Feature selection > retraining** — 10-15% of features generalize
-3. **Detection ≠ Steering** — Features detect but can't control AF
+3. **Detection works, steering is weak** — Features detect AF but controlling it is harder
 4. **Universal AF encoding** — Same concepts across architectures
+5. **Ablation ≠ Steering** — Removing features from probe works; steering generation doesn't

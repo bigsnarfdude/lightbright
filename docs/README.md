@@ -25,13 +25,13 @@ This directory contains technical documentation for Project Lightbright—detect
 
 **Location:** `experiments/01_initial_detection/`, `experiments/02_feature_sweep/`
 
-### Phase 2: Causal Experiments (Jan 3-5, 2026)
+### Phase 2: Causal Experiments (Jan 3-7, 2026)
 
 | Experiment | Result |
 |------------|--------|
-| Single/multi-feature ablation | Invalid (features didn't fire) |
-| Activation patching | Invalid (classifier broken) |
-| Steering (mean-diff, n=5) | No significant effect |
+| Multi-feature ablation | AF prob 0.999 → 0.002 (20 features) |
+| Steering (mean-diff) | 3.3% flip rate (1/30) |
+| Generation steering | Fails (high alpha breaks output) |
 
 **Location:** `experiments/03_causal_experiments/`
 
@@ -49,8 +49,8 @@ This directory contains technical documentation for Project Lightbright—detect
 | Experiment | Result |
 |------------|--------|
 | Contrastive SAE training | 75% better separation |
-| Contrastive steering | 0% flip rate (failed) |
-| Minimal pair diagnosis | Root cause: SCENARIO vs DECISION |
+| Contrastive steering | 0% flip rate (contrastive features only) |
+| Minimal pair diagnosis | Features encode SCENARIO, not DECISION |
 
 **Location:** `experiments/05_contrastive_sae/`, `experiments/06_diagnosis/`
 
@@ -70,10 +70,12 @@ This directory contains technical documentation for Project Lightbright—detect
 
 | Component | Status | Result |
 |-----------|--------|--------|
-| Detection (Gemma) | ✅ | 0.829 AUROC |
-| Detection (GPT-OSS) | ✅ | 0.833 AUROC |
+| Detection (Gemma-3-27B-IT) | ✅ | 0.829 AUROC |
+| Detection (GPT-OSS-20B) | ✅ | 0.833 AUROC |
 | Hard negative discrimination | ✅ | 0.968 AUROC |
 | Cross-model validation | ✅ | Universal AF signal |
-| Steering (all methods) | ❌ | 0% flip rate |
+| Ablation (probe) | ✅ | AF prob 0.999 → 0.002 |
+| Steering (classifier) | ⚠️ | 3-4% flip rate |
+| Steering (generation) | ❌ | Breaks output |
 
-**Bottom line:** Detection works across architectures. Steering does not.
+**Bottom line:** Detection works across architectures. Ablation works on probes. Steering generation is weak/broken.
