@@ -44,7 +44,6 @@ Alignment faking detector models published on HuggingFace.
 - **URL:** https://huggingface.co/vincentoh/llama-8b-af-detector
 - **Base:** Llama 3.1 8B
 - **Accuracy:** 71.7%
-- **Notes:** MLX inference supported on Mac via [unsloth-mlx](https://github.com/bigsnarfdude/unsloth-mlx)
 
 ## Usage
 
