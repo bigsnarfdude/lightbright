@@ -1,9 +1,3 @@
-# Documentation (kept locally, not in repo until experiments fixed)
-docs/
-EXPERIMENTS.md
-AUDIT.md
-STATUS_REPORT.md
-
 # Python
 __pycache__/
 *.py[cod]
@@ -20,6 +14,7 @@ build/
 *.pt
 *.pth
 *.ckpt
+*.pkl
 *.safetensors
 models/*
 !models/README.md
@@ -38,7 +33,9 @@ models/*
 .DS_Store
 Thumbs.db
 
-# Experiment outputs (large files)
+# Experiment outputs
 *.log
 wandb/
-*.pt
+
+# Archive (old experiments)
+archive/

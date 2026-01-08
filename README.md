@@ -142,37 +142,19 @@ Probes trained on generalizing features achieve 0.83-0.85 AUROC on held-out data
 ```
 lightbright/
 ├── README.md
-├── EXPERIMENTS.md                    # Experiment timeline
-├── requirements.txt
 ├── data/
 │   ├── gold_106.json                 # Held-out eval (106 samples)
 │   └── af_test_samples.json          # Test samples
-├── docs/                             # All documentation (15 files)
-│   ├── EXPERIMENT_TRACKER.md         # Multi-model status matrix
-│   ├── TECHNICAL_REPORT.md           # Methodology details
-│   └── AUDIT.md                      # Issues found & fixed
-├── experiments/                      # Organized by research phase
-│   ├── 01_initial_detection/         # Jan 3: Core SAE probe work
-│   │   ├── train_probe.py
-│   │   └── compute_baselines.py
-│   ├── 02_feature_sweep/             # Jan 3-4: 50k feature sweep
-│   │   ├── sweep_resid_post.py
-│   │   └── find_generalizing_features.py
-│   ├── 03_causal_experiments/        # Jan 4-5: Ablation & steering (failed)
-│   │   ├── steering_fixed.py
-│   │   └── activation_patching.py
-│   ├── 04_llama_llamascope/          # Jan 4-5: Llama & LlamaScope
-│   ├── 05_contrastive_sae/           # Jan 6: Contrastive training
-│   │   └── train_contrastive_sae.py
-│   ├── 06_diagnosis/                 # Jan 7: Root cause analysis
-│   │   └── minimal_pair_diagnosis.py
-│   └── 07_cross_model/               # Jan 7: GPT-OSS validation
-│       ├── sweep_gptoss_sae.py
-│       └── validate_gptoss_gold106.py
-├── models/                           # Model documentation
-├── archive/                          # Historical experiments & logs
-│   ├── h100_backup/
-│   └── base_model_causal_fix/
+├── docs/                             # Technical reports
+├── experiments/
+│   ├── 01_initial_detection/         # Baselines, probe training
+│   ├── 02_feature_sweep/             # SAE feature discovery (50k features)
+│   ├── 03_causal_experiments/        # Steering, ablation, patching
+│   ├── 04_llama_llamascope/          # Llama experiments
+│   ├── 05_contrastive_sae/           # Contrastive SAE training
+│   ├── 06_diagnosis/                 # Minimal pair analysis
+│   └── 07_cross_model/               # GPT-OSS cross-model validation
+└── models/                           # Trained detector documentation
 ```
 
 ## Trained Detectors
