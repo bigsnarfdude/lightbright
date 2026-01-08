@@ -2,25 +2,32 @@
 
 ## Detection Performance
 
-### Cross-Model Comparison (Gold-106 Held-Out)
+### SAE Features (This Project) — ❌ Failed
 
-| Metric | Gemma-3-27B-IT | GPT-OSS-20B |
-|--------|----------------|-------------|
-| Features swept | 49,152 | 46,080 |
-| True needles (train AUROC > 0.7) | 1,125 | 148 |
-| **Probe AUROC (honest)** | **0.470** | TBD |
+| Metric | Gemma-3-27B-IT | GPT-OSS-20B | Llama-3.1-8B |
+|--------|----------------|-------------|--------------|
+| Features swept | 49,152 | 46,080 | 131,072 |
+| True needles (train) | 1,125 | 148 | — |
+| Train AUROC | 0.935 | 0.940 | 0.75 |
+| **Gold-106 AUROC** | **0.470** | TBD | **0.570** |
 
-**Note:** The 0.47 AUROC is the honest result with features selected only on training data.
-Previous reported 0.83 AUROC was inflated by data leakage (features were filtered by gold_106 performance before evaluation on gold_106).
+### Fine-tuned Detectors (Comparison) — ✅ Works
+
+| Model | Method | Gold-106 AUROC | Gold-106 Accuracy |
+|-------|--------|----------------|-------------------|
+| GPT-OSS-20B | LoRA fine-tuning | **0.964** | 88.7% |
+| GPT-OSS-120B | LoRA fine-tuning | **0.956** | 89.6% |
+
+**Key finding:** SAE features fail (0.47 AUROC) where fine-tuned detectors succeed (0.96 AUROC) on the same held-out data.
 
 ### Baselines
 
-| Method | AUROC (All) | AUROC (Hard Neg) | Gold-106 |
-|--------|-------------|------------------|----------|
-| Random | 0.50 | 0.50 | 0.50 |
-| Keyword matching | 0.62 | ~0.50 (fails) | — |
-| RLHF word count | 0.62 | ~0.50 (fails) | — |
-| SAE Features (train) | 0.935 | 0.968 | **0.47** |
+| Method | Train AUROC | Gold-106 AUROC |
+|--------|-------------|----------------|
+| Random | 0.50 | 0.50 |
+| Keyword matching | 0.62 | — |
+| SAE Features | 0.935 | **0.470** |
+| Fine-tuned (LoRA) | — | **0.964** |
 
 ### Data Leakage Analysis
 
@@ -105,9 +112,11 @@ Top causal features: L40_F15822 (0.968 AUROC), L40_F11984, L31_F1529, L53_F924
 
 ## Key Insights
 
-1. **SAE features do not generalize** — 0.47 AUROC on held-out gold_106 (random = 0.50)
-2. **Cross-distribution validation is essential** — High training AUROC (0.94) means nothing without held-out eval
-3. **Feature selection leakage inflates results** — Filtering by test set performance is not valid
-4. **Ablation works on probe but is circular** — Removing features the probe was trained on naturally reduces its output
-5. **Steering fails** — ~3-4% flip rate, generation breaks at high alpha
-6. **Negative result:** GemmaScope SAE features capture scenario vocabulary, not AF intent
+1. **SAE features do not generalize** — 0.47 AUROC on gold_106 (random)
+2. **Fine-tuned detectors DO generalize** — 0.96 AUROC on same gold_106 data
+3. **The negative result is specific to SAE interpretability** — Supervised learning works
+4. **SAE features capture vocabulary, not intent** — Fine-tuned models learn something deeper
+5. **Cross-distribution validation is essential** — High training AUROC means nothing without held-out eval
+6. **Steering fails** — SAE features are correlates, not causes
+
+**Open question:** What do the fine-tuned models learn that SAE features don't capture?

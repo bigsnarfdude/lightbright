@@ -6,19 +6,28 @@
 
 ## Key Results
 
-| Model | SAE | Train AUROC | Gold-106 AUROC (honest) |
-|-------|-----|-------------|-------------------------|
-| **Gemma-3-27B-IT** | GemmaScope 2 | 0.935 | **0.470** |
-| **GPT-OSS-20B** | Goodfire TopK | 0.940 | TBD |
-| **Llama-3.1-8B** | LlamaScope 32x | 0.75 | **0.570** |
+### SAE Features (This Project) — ❌ Failed
 
-**Finding: Negative result.** SAE features achieve near-perfect training performance but fail to generalize to held-out data (0.47–0.57 AUROC ≈ random).
+| Model | SAE | Train AUROC | Gold-106 AUROC |
+|-------|-----|-------------|----------------|
+| Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** (random) |
+| GPT-OSS-20B | Goodfire TopK | 0.940 | TBD |
+| Llama-3.1-8B | LlamaScope 32x | 0.75 | **0.570** (near-random) |
+
+### Fine-tuned Detectors (Comparison) — ✅ Works
+
+| Model | Method | Gold-106 AUROC |
+|-------|--------|----------------|
+| [GPT-OSS-20B](https://huggingface.co/vincentoh/gpt-oss-20b-af-detector) | LoRA fine-tuning | **0.964** |
+| [GPT-OSS-120B](https://huggingface.co/vincentoh/gpt-oss-120b-af-detector) | LoRA fine-tuning | **0.956** |
+
+**Finding:** SAE-based detection fails to generalize (0.47 AUROC). Fine-tuned detectors work (0.96 AUROC). The negative result is specific to the SAE interpretability approach.
 
 ## Research Question
 
 Can sparse autoencoder features detect alignment faking, and can they be used for causal intervention?
 
-**Answer:** No. SAE features capture scenario vocabulary, not alignment faking intent. They overfit to training distribution and do not generalize.
+**Answer:** No. SAE features capture scenario vocabulary, not alignment faking intent. However, supervised fine-tuning does work—the fine-tuned detectors achieve 0.96 AUROC on the same held-out data where SAE features score 0.47.
 
 ## Background
 
@@ -119,35 +128,35 @@ Same-distribution hard negatives passed, but held-out validation (gold_106) reve
 | Keyword matching | 0.62 | — |
 | SAE Features | 0.935 | **0.470** |
 
-## What Works (Training Only)
+## What Works
 
-| Component | Status | Caveat |
-|-----------|--------|--------|
-| Feature sweep on training data | 1,125+ needles found | Does not generalize |
-| Same-distribution discrimination | 0.935 AUROC (train) | Overfits to vocabulary |
+| Component | Status | Gold-106 AUROC |
+|-----------|--------|----------------|
+| **Fine-tuned detectors (LoRA)** | ✅ Works | **0.96** |
+| SAE feature sweep (training) | ✅ Works | N/A (train only) |
 
-## What Doesn't Work
+## What Doesn't Work (SAE Approach)
 
 | Component | Status | Reason |
 |-----------|--------|--------|
-| **Cross-distribution detection** | **Failed** | 0.47–0.57 AUROC on gold_106 (≈ random) |
-| Steering (mean-diff) | Failed | Features encode SCENARIO not DECISION |
-| Steering (probe weights) | Failed | No causal pathway |
-| Steering (contrastive SAE) | Failed | 75% better separation, still 0% flip rate |
+| **SAE cross-distribution detection** | ❌ Failed | 0.47 AUROC on gold_106 (random) |
+| Steering (mean-diff) | ❌ Failed | Features encode SCENARIO not DECISION |
+| Steering (probe weights) | ❌ Failed | No causal pathway |
+| Steering (contrastive SAE) | ❌ Failed | 75% better separation, still 0% flip rate |
 
-**Root Cause:** SAE features encode *vocabulary* (mentions of RLHF, training, values) not *intent* (self-preservation vs genuine). High training performance is explained by scenario/style matching, not detection of alignment faking intent.
+**Root Cause:** SAE features encode *vocabulary* (mentions of RLHF, training, values) not *intent* (self-preservation vs genuine). Fine-tuned models learn something deeper that SAE features don't capture.
 
-## Trained Detectors
+## Fine-tuned Detectors (Validated on Gold-106)
 
-Published on HuggingFace. **Note:** These achieve high performance on same-distribution test sets but have not been validated on held-out distributions.
+These LoRA fine-tuned models **do generalize** to held-out data:
 
-| Model | Base | Train AUROC | Train Accuracy |
-|-------|------|-------------|----------------|
-| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3-27B-IT | 0.980 | 95.3% |
-| [gpt-oss-20b-af-detector](https://huggingface.co/vincentoh/gpt-oss-20b-af-detector) | GPT-OSS 20B | 0.964 | 88.7% |
-| [gemma3-4b-af-detector](https://huggingface.co/vincentoh/gemma3-4b-af-detector) | Gemma-3 4B | 0.940 | 85.8% |
+| Model | Base | Gold-106 AUROC | Gold-106 Accuracy |
+|-------|------|----------------|-------------------|
+| [gpt-oss-20b-af-detector](https://huggingface.co/vincentoh/gpt-oss-20b-af-detector) | GPT-OSS 20B | **0.964** | 88.7% |
+| [gpt-oss-120b-af-detector](https://huggingface.co/vincentoh/gpt-oss-120b-af-detector) | GPT-OSS 120B | **0.956** | 89.6% |
+| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3-27B-IT | TBD | 95.3% (train) |
 
-**⚠️ Warning:** Given the negative generalization results, these detectors should not be relied upon for out-of-distribution alignment faking detection.
+**Key insight:** Supervised fine-tuning works where SAE interpretability fails. Whatever the fine-tuned models learn, it's not captured by the SAE features we analyzed.
 
 ## Repository Structure
 

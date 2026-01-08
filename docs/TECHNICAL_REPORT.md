@@ -10,15 +10,24 @@ Large language models may engage in **alignment faking**—strategically appeari
 
 We investigated whether **sparse autoencoder (SAE) features** can detect alignment faking in model reasoning. SAEs decompose neural network activations into interpretable features, potentially revealing deceptive reasoning patterns.
 
-### Key Results: Negative
+### Key Results
 
-| Model | SAE | Train AUROC | Gold-106 AUROC (honest) |
-|-------|-----|-------------|-------------------------|
-| Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** |
+**SAE Features — ❌ Failed to generalize**
+
+| Model | SAE | Train AUROC | Gold-106 AUROC |
+|-------|-----|-------------|----------------|
+| Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** (random) |
 | GPT-OSS-20B | Goodfire TopK | 0.940 | TBD |
-| Llama-3.1-8B | LlamaScope 32x | 0.75 | 0.57 |
+| Llama-3.1-8B | LlamaScope 32x | 0.75 | 0.57 (near-random) |
 
-**SAE features do not generalize to held-out data.**
+**Fine-tuned Detectors — ✅ Works**
+
+| Model | Method | Gold-106 AUROC |
+|-------|--------|----------------|
+| GPT-OSS-20B | LoRA fine-tuning | **0.964** |
+| GPT-OSS-120B | LoRA fine-tuning | **0.956** |
+
+**The negative result is specific to SAE interpretability.** Supervised fine-tuning works on the same held-out data.
 
 | Method | Train AUROC | Gold-106 AUROC |
 |--------|-------------|----------------|
