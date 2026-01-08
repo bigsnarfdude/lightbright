@@ -21,7 +21,7 @@ build/
 *.pth
 *.ckpt
 *.safetensors
-models/
+models/*
 !models/README.md
 
 # Jupyter
