@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Train probe on GPT-OSS 16 generalizing features and validate on gold_106.
-This fills the evidence gap for the claimed 0.846 AUROC.
+Train probe on GPT-OSS features and validate on gold_106.
+
+NOTE (2026-01-08): The Gemma experiment revealed data leakage in feature selection.
+Honest gold_106 AUROC is 0.47 (random). Expect similar results for GPT-OSS.
 
 Uses CPU offloading for 16GB GPU.
 """
@@ -257,14 +259,18 @@ def main():
 
     print(f"\nSaved to {out_path}")
 
-    # Verdict
+    # Verdict - Updated 2026-01-08 after data leakage discovery
+    # Gemma honest result was 0.47 AUROC (random), expect similar for GPT-OSS
     print("\n" + "="*70)
-    if gold_auroc >= 0.80:
-        print(f"VERIFIED: GPT-OSS achieves {gold_auroc:.3f} AUROC on gold_106")
-    elif gold_auroc >= 0.70:
-        print(f"PARTIAL: GPT-OSS achieves {gold_auroc:.3f} AUROC (lower than claimed 0.846)")
+    if gold_auroc >= 0.70:
+        print(f"UNEXPECTED: GPT-OSS achieves {gold_auroc:.3f} AUROC (above random)")
+        print("Note: Gemma result was 0.47 (random). Investigate if this is real.")
+    elif gold_auroc >= 0.55:
+        print(f"NEAR-RANDOM: GPT-OSS achieves {gold_auroc:.3f} AUROC")
+        print("Consistent with Gemma negative result (0.47) and Llama (0.57)")
     else:
-        print(f"FAILED: GPT-OSS only achieves {gold_auroc:.3f} AUROC (claimed was 0.846)")
+        print(f"RANDOM: GPT-OSS achieves {gold_auroc:.3f} AUROC (≈ chance)")
+        print("Consistent with Gemma negative result (0.47)")
     print("="*70)
 
 

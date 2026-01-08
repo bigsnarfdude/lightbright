@@ -20,8 +20,8 @@ This directory contains technical documentation for Project Lightbright—detect
 | Experiment | Result |
 |------------|--------|
 | Feature sweep (49K features) | 1,125 "true needles" found |
-| Linear probe training | **0.82 AUROC** |
-| Baseline comparison | Keyword: 0.62, Direct probe: 0.75 |
+| Linear probe training (train) | 0.935 AUROC |
+| **Linear probe (gold_106 held-out)** | **0.470 AUROC** |
 
 **Location:** `experiments/01_initial_detection/`, `experiments/02_feature_sweep/`
 
@@ -58,9 +58,9 @@ This directory contains technical documentation for Project Lightbright—detect
 
 | Experiment | Result |
 |------------|--------|
-| GPT-OSS-20B feature sweep | 148 needles, 16 generalize |
-| GPT-OSS probe | **0.833 AUROC** |
-| Cross-model concept match | Same AF concepts as Gemma |
+| GPT-OSS-20B feature sweep | 148 needles (train) |
+| GPT-OSS probe (train) | 0.940 AUROC |
+| GPT-OSS probe (gold_106) | TBD (likely similar to Gemma) |
 
 **Location:** `experiments/07_cross_model/`
 
@@ -70,12 +70,11 @@ This directory contains technical documentation for Project Lightbright—detect
 
 | Component | Status | Result |
 |-----------|--------|--------|
-| Detection (Gemma-3-27B-IT) | ✅ | 0.829 AUROC |
-| Detection (GPT-OSS-20B) | ✅ | 0.833 AUROC |
-| Hard negative discrimination | ✅ | 0.968 AUROC |
-| Cross-model validation | ✅ | Universal AF signal |
-| Ablation (probe) | ✅ | AF prob 0.999 → 0.002 |
-| Steering (classifier) | ⚠️ | 3-4% flip rate |
+| Detection (train) | ✅ | 0.935 AUROC |
+| **Detection (gold_106 held-out)** | **❌** | **0.470 AUROC** |
+| Hard negative discrimination (train) | ✅ | 0.968 AUROC |
+| Ablation (probe) | ⚠️ | Works but circular |
+| Steering (classifier) | ❌ | 3-4% flip rate |
 | Steering (generation) | ❌ | Breaks output |
 
-**Bottom line:** Detection works across architectures. Ablation works on probes. Steering generation is weak/broken.
+**Bottom line:** SAE features do not generalize to held-out data. The 0.83 AUROC previously reported was inflated by feature selection leakage. Honest AUROC is 0.47 (random).

@@ -191,18 +191,21 @@ def main():
     print("SUMMARY: Baseline Comparison")
     print("=" * 70)
 
-    # Load our SAE probe result
-    sae_auroc = 0.83  # From probe_training_results.json
+    # SAE probe results - HONEST numbers
+    # Train AUROC was high (0.935) but gold_106 held-out is 0.47 (random)
+    sae_train_auroc = 0.935  # From training data
+    sae_gold_auroc = 0.47    # Honest held-out evaluation
 
-    print(f"\n{'Method':<30} {'AUROC':<10} {'vs SAE Probe':<15}")
-    print("-" * 55)
-    print(f"{'Random':<30} {random_auroc:.3f}     {sae_auroc - random_auroc:+.3f}")
-    print(f"{'Keyword matching':<30} {keyword_auroc:.3f}     {sae_auroc - keyword_auroc:+.3f}")
-    print(f"{'Text length':<30} {length_auroc:.3f}     {sae_auroc - length_auroc:+.3f}")
-    print(f"{'RLHF/training word count':<30} {word_auroc:.3f}     {sae_auroc - word_auroc:+.3f}")
-    print(f"{'Direct probe (no SAE)':<30} {direct_auroc:.3f}     {sae_auroc - direct_auroc:+.3f}")
-    print("-" * 55)
-    print(f"{'SAE Feature Probe (ours)':<30} {sae_auroc:.3f}     ---")
+    print(f"\n{'Method':<30} {'AUROC':<10} {'Note':<20}")
+    print("-" * 60)
+    print(f"{'Random':<30} {random_auroc:.3f}     baseline")
+    print(f"{'Keyword matching':<30} {keyword_auroc:.3f}     same-distribution")
+    print(f"{'Text length':<30} {length_auroc:.3f}     same-distribution")
+    print(f"{'RLHF/training word count':<30} {word_auroc:.3f}     same-distribution")
+    print(f"{'Direct probe (no SAE)':<30} {direct_auroc:.3f}     same-distribution")
+    print("-" * 60)
+    print(f"{'SAE Probe (train)':<30} {sae_train_auroc:.3f}     DOES NOT GENERALIZE")
+    print(f"{'SAE Probe (gold_106 honest)':<30} {sae_gold_auroc:.3f}     ≈ random")
 
     # Interpretation
     print("\n--- Interpretation ---")

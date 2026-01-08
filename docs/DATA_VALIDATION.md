@@ -191,8 +191,30 @@ The fix is documented in the JSON file with fields:
 ## 10. Observations
 
 1. The `gold106_full_analysis.json` uses only 4 features, while `probe_training_results.json` uses 8 features - this is expected (different experiments)
-2. L40_F8921 is the best single feature at 0.73 AUROC
-3. The probe training improves to 0.83 AUROC by combining multiple statistics and using regularized regression with learned coefficients
+2. L40_F8921 is the best single feature at 0.73 AUROC on training data
+
+## 11. Critical Update: Data Leakage (Jan 8, 2026)
+
+### DEFECT-002: Feature Selection on Test Data [CONFIRMED]
+
+**Severity:** Critical
+**Impact:** Invalidates reported 0.83 AUROC
+
+#### Description
+
+The "0.83 AUROC" result was computed with data leakage:
+1. Features were filtered by gold_106 AUROC > 0.6 threshold
+2. Probe was then evaluated on the same gold_106 dataset
+3. This is feature selection on test data
+
+#### Honest Result
+
+When features are selected only on training data (no gold_106 filtering):
+- **Gold-106 AUROC: 0.470** (essentially random)
+
+#### Conclusion
+
+SAE features do not generalize to held-out data. The high training performance (0.94 AUROC) is explained by vocabulary/style matching, not detection of alignment faking intent.
 
 ---
 

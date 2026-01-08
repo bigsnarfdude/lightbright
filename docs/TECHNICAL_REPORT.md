@@ -10,53 +10,47 @@ Large language models may engage in **alignment faking**—strategically appeari
 
 We investigated whether **sparse autoencoder (SAE) features** can detect alignment faking in model reasoning. SAEs decompose neural network activations into interpretable features, potentially revealing deceptive reasoning patterns.
 
-### Key Results
+### Key Results: Negative
 
-| Model | SAE | Generalizing Features | Gold-106 AUROC |
-|-------|-----|----------------------|----------------|
-| **Gemma-3-27B-IT** | GemmaScope 2 | 51/377 (13.5%) | **0.829** |
-| **GPT-OSS-20B** | Goodfire TopK | 16/148 (10.8%) | **0.833** |
+| Model | SAE | Train AUROC | Gold-106 AUROC (honest) |
+|-------|-----|-------------|-------------------------|
+| Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** |
+| GPT-OSS-20B | Goodfire TopK | 0.940 | TBD |
+| Llama-3.1-8B | LlamaScope 32x | 0.75 | 0.57 |
 
-**Detection works—and beats baselines:**
+**SAE features do not generalize to held-out data.**
 
-| Method | AUROC |
-|--------|-------|
-| Random | 0.50 |
-| Keyword matching | 0.62 |
-| Direct probe (no SAE) | 0.75 |
-| **SAE Feature Probe** | **0.83** |
+| Method | Train AUROC | Gold-106 AUROC |
+|--------|-------------|----------------|
+| Random | 0.50 | 0.50 |
+| Keyword matching | 0.62 | — |
+| SAE Feature Probe | 0.935 | **0.470** |
 
-**Ablation works** — removing top 20 features drops AF prob from 0.999 → 0.002
+### Data Leakage in Original Results
 
-**Steering is weak** — 3-4% flip rate, not robust control
+The originally reported 0.83 AUROC was inflated by data leakage:
+
+1. Features were selected based on gold_106 AUROC > 0.6
+2. Probe was then evaluated on the same gold_106 dataset
+3. This is feature selection on test data—not valid
+
+When features are selected only on training data, the gold_106 AUROC is **0.47** (random).
 
 ### The Core Finding
 
-> **SAE features detect alignment faking and are causally necessary for probe classification.**
+> **SAE features capture scenario vocabulary, not alignment faking intent.**
 >
-> However, steering generation is weak—features encode SCENARIO vocabulary, not DECISION mechanisms.
-
-### Universal AF Signal
-
-Both Gemma and GPT-OSS encode the **same AF concepts**:
-- RLHF modification fear
-- Future/temporal reasoning
-- Reluctant compliance
-- Self-defeating ethics
-- Existential distress
-
-This suggests AF detection can generalize across architectures.
+> High training performance is explained by style/vocabulary matching. Features do not generalize across distributions.
 
 ### What We Demonstrated
 
-1. SAE features achieve 0.83 AUROC for AF detection
-2. This beats keyword baselines (+21%) and direct probing (+8%)
-3. Same concepts detected across different model architectures
+1. SAE features can discriminate AF in-distribution (0.94 AUROC on training data)
+2. This discrimination does not transfer to held-out data (0.47 AUROC)
+3. Steering generation fails (~3-4% flip rate, breaks output at high alpha)
 
-### What We Did NOT Demonstrate
+### What This Means
 
-1. Robust steering of generation (weak 3-4% flip rate)
-2. Features detect deceptive intent vs vocabulary (may detect "RLHF" word)
+SAE features detect vocabulary patterns (mentions of "RLHF", "training", "values") rather than the underlying intent to deceive. A model discussing RLHF genuinely vs strategically produces similar SAE activations.
 
 ### Limitations
 
@@ -68,7 +62,7 @@ This suggests AF detection can generalize across architectures.
 ### Artifacts
 
 - **Code:** github.com/bigsnarfdude/lightbright
-- **Models:** huggingface.co/vincentoh (gemma3-27b-af-detector-v2, gpt-oss-20b-af-detector)
+- **Models:** huggingface.co/vincentoh (trained detectors—these work on training distribution only)
 - **Data:** Gold-106 from Anthropic's alignment faking paper
 
 ---

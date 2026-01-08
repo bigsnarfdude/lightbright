@@ -79,6 +79,14 @@ output = model.generate(inputs, max_new_tokens=10)
 print(tokenizer.decode(output[0]))
 ```
 
-## SAE-Based Detection (Alternative)
+## SAE-Based Detection (Negative Result)
 
-For interpretability-based detection using GemmaScope-2 features, see `experiments/` directory.
+SAE feature-based detection was investigated but **failed to generalize**:
+- Train AUROC: 0.935
+- Gold-106 AUROC (honest): **0.470** (random)
+
+See `experiments/` and `docs/RESULTS.md` for details on the data leakage issue that invalidated the originally reported 0.83 AUROC.
+
+## Important Note
+
+The LoRA fine-tuned models above are evaluated on training/validation splits. Held-out generalization should be verified before deployment. The SAE experiments show that high in-distribution performance does not guarantee cross-distribution generalization.

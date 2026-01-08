@@ -2,24 +2,39 @@
 
 ## Detection Performance
 
-### Cross-Model Comparison
+### Cross-Model Comparison (Gold-106 Held-Out)
 
 | Metric | Gemma-3-27B-IT | GPT-OSS-20B |
 |--------|----------------|-------------|
 | Features swept | 49,152 | 46,080 |
-| True needles | 1,125 | 148 |
-| Generalizing features | 51 (13.5%) | 16 (10.8%) |
-| Best feature AUROC | 0.786 | 0.732 |
-| **Probe AUROC** | **0.829** | **0.833** |
+| True needles (train AUROC > 0.7) | 1,125 | 148 |
+| **Probe AUROC (honest)** | **0.470** | TBD |
+
+**Note:** The 0.47 AUROC is the honest result with features selected only on training data.
+Previous reported 0.83 AUROC was inflated by data leakage (features were filtered by gold_106 performance before evaluation on gold_106).
 
 ### Baselines
 
-| Method | AUROC (All) | AUROC (Hard Neg) |
-|--------|-------------|------------------|
-| Random | 0.50 | 0.50 |
-| Keyword matching | 0.62 | ~0.50 (fails) |
-| RLHF word count | 0.62 | ~0.50 (fails) |
-| **SAE Features** | **0.935** | **0.968** |
+| Method | AUROC (All) | AUROC (Hard Neg) | Gold-106 |
+|--------|-------------|------------------|----------|
+| Random | 0.50 | 0.50 | 0.50 |
+| Keyword matching | 0.62 | ~0.50 (fails) | — |
+| RLHF word count | 0.62 | ~0.50 (fails) | — |
+| SAE Features (train) | 0.935 | 0.968 | **0.47** |
+
+### Data Leakage Analysis
+
+The original "0.83 AUROC" result was computed as follows:
+1. Sweep 49,152 features on training data → 1,125 needles
+2. **Filter needles by gold_106 AUROC > 0.6** → 51 "generalizing" features
+3. Train probe on training data with 51 features → Evaluate on gold_106
+
+Step 2 is data leakage: features were cherry-picked based on test set performance.
+
+| Probe | Feature Selection | Gold-106 AUROC |
+|-------|-------------------|----------------|
+| Honest | Top 50 by training AUROC | **0.470** |
+| Leaked | 51 filtered by gold_106 > 0.6 | 0.829 |
 
 ## Feature Semantics
 
@@ -90,8 +105,9 @@ Top causal features: L40_F15822 (0.968 AUROC), L40_F11984, L31_F1529, L53_F924
 
 ## Key Insights
 
-1. **Cross-distribution validation is essential** — Same-distribution results don't generalize
-2. **Feature selection > retraining** — 10-15% of features generalize
-3. **Detection works, steering is weak** — Features detect AF but controlling it is harder
-4. **Universal AF encoding** — Same concepts across architectures
-5. **Ablation ≠ Steering** — Removing features from probe works; steering generation doesn't
+1. **SAE features do not generalize** — 0.47 AUROC on held-out gold_106 (random = 0.50)
+2. **Cross-distribution validation is essential** — High training AUROC (0.94) means nothing without held-out eval
+3. **Feature selection leakage inflates results** — Filtering by test set performance is not valid
+4. **Ablation works on probe but is circular** — Removing features the probe was trained on naturally reduces its output
+5. **Steering fails** — ~3-4% flip rate, generation breaks at high alpha
+6. **Negative result:** GemmaScope SAE features capture scenario vocabulary, not AF intent
