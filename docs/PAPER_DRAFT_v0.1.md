@@ -129,6 +129,8 @@ We train logistic regression probes on selected features. For each sample, we ex
 
 **Llama-3.1-8B**: From 131,072 features, layer-wise selection identifies ~100 features per layer.
 
+![Figure 6: Of 226K features swept, 1,125 pass training criteria but zero generalize to held-out data.](figures/fig6_feature_funnel.png)
+
 ### 4.2 Detection Results
 
 | Model | SAE | Train AUROC | Gold-106 AUROC | Δ |
@@ -138,6 +140,10 @@ We train logistic regression probes on selected features. For each sample, we ex
 | Llama-3.1-8B | LlamaScope 32x | 0.760 | **0.570** | -0.190 |
 
 **Key finding**: Training performance does not predict generalization. The 0.47 AUROC on Gold-106 is statistically indistinguishable from random (0.50).
+
+![Figure 1: SAE features achieve high training AUROC but fail on held-out data, while fine-tuned detectors generalize.](figures/fig1_main_result.png)
+
+![Figure 2: The generalization failure is consistent across all three model architectures.](figures/fig2_cross_model.png)
 
 ### 4.3 Baseline Comparisons
 
@@ -149,6 +155,8 @@ We train logistic regression probes on selected features. For each sample, we ex
 | Fine-tuned LoRA detector | **0.96** |
 
 The fine-tuned detector result proves discriminative information exists—it just isn't captured by SAE features.
+
+![Figure 3: SAE probes perform worse than keyword matching and far below fine-tuned detectors.](figures/fig3_method_comparison.png)
 
 ### 4.4 Causal Intervention Results
 
@@ -174,6 +182,10 @@ However, this is circular—ablation affects the same probe used for detection, 
 - Yet steering flip rate: **0%**
 
 This demonstrates that better representational separation does not enable causal intervention.
+
+![Figure 4: All causal intervention methods achieve near-zero behavioral flip rates.](figures/fig4_causal_intervention.png)
+
+![Figure 5: Contrastive SAE achieves 75% better separation but still 0% flip rate—separation ≠ causation.](figures/fig5_contrastive_sae.png)
 
 ### 4.5 Feature Semantics Analysis
 
