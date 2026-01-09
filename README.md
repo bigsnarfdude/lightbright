@@ -11,7 +11,7 @@
 | Model | SAE | Train AUROC | Gold-106 AUROC |
 |-------|-----|-------------|----------------|
 | Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** (random) |
-| GPT-OSS-20B | Goodfire TopK | 0.940 | TBD |
+| GPT-OSS-20B | Goodfire TopK | 0.940 | **0.563** (near-random) |
 | Llama-3.1-8B | LlamaScope 32x | 0.75 | **0.570** (near-random) |
 
 ### Fine-tuned Detectors (Comparison) — ✅ Works
@@ -110,7 +110,7 @@ Same-distribution hard negatives passed, but held-out validation (gold_106) reve
 | Features swept | 46,080 |
 | True needles (train) | 148 |
 | Train AUROC | 0.940 |
-| Gold-106 AUROC (honest) | TBD |
+| Gold-106 AUROC (honest) | **0.563** |
 
 ### Llama-3.1-8B (LlamaScope 32x)
 
@@ -154,7 +154,7 @@ These LoRA fine-tuned models **do generalize** to held-out data:
 |-------|------|----------------|-------------------|
 | [gpt-oss-20b-af-detector](https://huggingface.co/vincentoh/gpt-oss-20b-af-detector) | GPT-OSS 20B | **0.964** | 88.7% |
 | [gpt-oss-120b-af-detector](https://huggingface.co/vincentoh/gpt-oss-120b-af-detector) | GPT-OSS 120B | **0.956** | 89.6% |
-| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3-27B-IT | TBD | 95.3% (train) |
+| [gemma3-27b-af-detector-v2](https://huggingface.co/vincentoh/gemma3-27b-af-detector-v2) | Gemma-3-27B-IT | **0.980** | 95.3% |
 
 **Key insight:** Supervised fine-tuning works where SAE interpretability fails. Whatever the fine-tuned models learn, it's not captured by the SAE features we analyzed.
 

@@ -9,7 +9,7 @@
 | Features swept | 49,152 | 46,080 | 131,072 |
 | True needles (train) | 1,125 | 148 | — |
 | Train AUROC | 0.935 | 0.940 | 0.75 |
-| **Gold-106 AUROC** | **0.470** | TBD | **0.570** |
+| **Gold-106 AUROC** | **0.470** | **0.563** | **0.570** |
 
 ### Fine-tuned Detectors (Comparison) — ✅ Works
 

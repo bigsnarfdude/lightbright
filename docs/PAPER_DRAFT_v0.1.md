@@ -134,7 +134,7 @@ We train logistic regression probes on selected features. For each sample, we ex
 | Model | SAE | Train AUROC | Gold-106 AUROC | Δ |
 |-------|-----|-------------|----------------|---|
 | Gemma-3-27B-IT | GemmaScope 2 | 0.935 | **0.470** | -0.465 |
-| GPT-OSS-20B | Goodfire TopK | 0.940 | TBD | — |
+| GPT-OSS-20B | Goodfire TopK | 0.940 | **0.563** | -0.377 |
 | Llama-3.1-8B | LlamaScope 32x | 0.760 | **0.570** | -0.190 |
 
 **Key finding**: Training performance does not predict generalization. The 0.47 AUROC on Gold-106 is statistically indistinguishable from random (0.50).

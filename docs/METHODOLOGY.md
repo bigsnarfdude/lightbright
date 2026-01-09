@@ -85,9 +85,9 @@ The original "generalizing" feature definition was:
                           │ Gemma-27B-IT │ GPT-OSS-20B │ Llama-8B │
 ──────────────────────────┼──────────────┼─────────────┼──────────┤
 Detection (train)          │      ✅      │      ✅     │    ✅    │
-Detection (gold_106)       │      ❌      │      🔲     │    ❌    │
+Detection (gold_106)       │      ❌      │      ❌     │    ❌    │
 SAE Probe (train)          │      ✅      │      ✅     │    ✅    │
-SAE Probe (gold_106)       │      ❌      │      🔲     │    ❌    │
+SAE Probe (gold_106)       │      ❌      │      ❌     │    ❌    │
 Ablation                   │      ⚠️      │      🔲     │    🔲    │
 Steering                   │      ❌      │      🔲     │    🔲    │
 ──────────────────────────┴──────────────┴─────────────┴──────────┘
@@ -113,7 +113,7 @@ SAE features capture vocabulary/scenario, not AF intent. Consistent with Gemma f
 | Model | Train AUROC | Gold-106 AUROC | Verdict |
 |-------|-------------|----------------|---------|
 | Gemma-3-27B-IT | 0.935 | **0.470** | ❌ Random |
-| GPT-OSS-20B | 0.940 | TBD | 🔲 |
+| GPT-OSS-20B | 0.940 | **0.563** | ❌ Near-random |
 | Llama-3.1-8B (best layer) | 0.75 | **0.570** | ❌ Near-random |
 
 **Conclusion:** SAE-based alignment faking detection does not generalize. The approach has been thoroughly tested across three models with consistent negative results.

@@ -6,7 +6,7 @@ This directory contains technical documentation for Project Lightbright—detect
 
 | Document | Description |
 |----------|-------------|
-| [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md) | Main research summary and findings |
+| [PAPER_DRAFT_v0.1.md](PAPER_DRAFT_v0.1.md) | Main research summary and findings |
 | [METHODOLOGY.md](METHODOLOGY.md) | Experimental pipeline and methods |
 | [RESULTS.md](RESULTS.md) | Detailed results and cross-model comparison |
 | [DATA_VALIDATION.md](DATA_VALIDATION.md) | Gold-106 dataset audit |
@@ -60,7 +60,7 @@ This directory contains technical documentation for Project Lightbright—detect
 |------------|--------|
 | GPT-OSS-20B feature sweep | 148 needles (train) |
 | GPT-OSS probe (train) | 0.940 AUROC |
-| GPT-OSS probe (gold_106) | TBD (likely similar to Gemma) |
+| GPT-OSS probe (gold_106) | **0.563 AUROC** (near-random) |
 
 **Location:** `experiments/07_cross_model/`
 

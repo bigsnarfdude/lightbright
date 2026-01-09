@@ -39,3 +39,6 @@ wandb/
 
 # Archive (old experiments)
 archive/
+
+# Draft figures (review before publishing)
+docs/figures/
