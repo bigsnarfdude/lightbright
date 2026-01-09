@@ -1,6 +1,6 @@
-# SAE Features Fail to Detect Alignment Faking: A Negative Result [AI Generated Paper v0.1]
+# SAE Features Fail to Detect Alignment Faking: A Negative Result
 
-**Vincent Oh**
+**Vincent Ohprecio**
 
 *January 2026*
 
@@ -29,6 +29,12 @@ We investigate this hypothesis systematically. Our contributions are:
 4. **Root cause analysis**: SAE features encode vocabulary patterns (mentions of RLHF, training, values) rather than the strategic intent to deceive.
 
 5. **Comparison baseline**: Fine-tuned detectors achieve 0.96 AUROC on the same held-out data, proving the discriminative signal exists but is not captured by SAE features.
+
+6. **Open release**: We release all code, trained detectors, and evaluation benchmarks:
+   - [lightbright](https://github.com/vincentoh/lightbright): SAE detection experiments
+   - [mindreader](https://github.com/vincentoh/mindreader): Fine-tuned detector training
+   - [af-detection-benchmark](https://huggingface.co/datasets/vincentoh/af-detection-benchmark): 1,560-sample evaluation dataset with easy/hard/hardest splits
+   - [alignment-faking-training](https://huggingface.co/datasets/vincentoh/alignment-faking-training): Training data for detector fine-tuning
 
 ---
 
@@ -269,7 +275,7 @@ Bricken, T., Templeton, A., Batson, J., Chen, B., Jermyn, A., Conerly, T., ... &
 
 Cunningham, H., Ewart, A., Riggs, L., Huben, R., & Sharkey, L. (2023). Sparse autoencoders find highly interpretable features in language models. *arXiv preprint arXiv:2309.08600*.
 
-Greenblatt, R., Denison, C., Wright, B., Bales, F., Shlegeris, B., Kravec, S., ... & Hubinger, E. (2024). Alignment faking in large language models. *arXiv preprint arXiv:2412.14093*.
+Greenblatt, R., Denison, C., Wright, B., Roger, F., MacDiarmid, M., Marks, S., ... & Hubinger, E. (2024). Alignment faking in large language models. *arXiv preprint arXiv:2412.14093*.
 
 Lieberum, T., Rajamanoharan, S., Conmy, A., Smith, L., Sonnerat, N., Varma, V., ... & Nanda, N. (2024). Gemma Scope: Open sparse autoencoders everywhere all at once on Gemma 2. *arXiv preprint arXiv:2408.05147*.
 
