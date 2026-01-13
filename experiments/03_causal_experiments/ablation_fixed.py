@@ -263,8 +263,7 @@ def main():
 
     if not activations:
         print("\nERROR: No activation files found!")
-        print("Run this script on Lambda where activations are stored, or download them first:")
-        print("  scp ubuntu@209.20.158.146:/home/ubuntu/lightbright_v2/results/sweep_resid_post_*/activations_*.npy ./results_2026-01-07/")
+        print("Run this script where activations are stored, or download them first from your compute instance.")
         return
 
     # Load labels

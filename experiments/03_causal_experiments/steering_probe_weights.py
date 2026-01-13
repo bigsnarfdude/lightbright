@@ -155,7 +155,7 @@ def main():
 
     act_path = "results/sweep_resid_post_20260107_141945/activations_resid_post_layer_40.npy"
     if not Path(act_path).exists():
-        act_path = "/home/ubuntu/lightbright_v2/results/sweep_resid_post_20260107_141945/activations_resid_post_layer_40.npy"
+        raise FileNotFoundError(f"Activations not found at {act_path}. Run feature sweep first or download from compute instance.")
 
     activations = np.load(act_path)
 

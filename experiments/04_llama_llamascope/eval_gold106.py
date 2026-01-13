@@ -7,7 +7,9 @@ from collections import Counter
 from huggingface_hub import hf_hub_download
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-MODEL_PATH = "/home/vincent/models/llama-8b-af-detector-v2"
+# Use HuggingFace model or set LOCAL_MODEL_PATH env var for local testing
+import os
+MODEL_PATH = os.environ.get("LOCAL_MODEL_PATH", "vincentoh/llama-8b-af-detector-v2")
 MAX_SEQ_LENGTH = 2048
 
 

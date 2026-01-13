@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
 """
-ORIGINAL 72% AUROC EXPERIMENT - RECOVERED FROM TRANSCRIPT
+SAE Intent Probe: 72% AUROC on Gold-106
 
-This is the exact code that achieved 72.01% AUROC on gold_106.
-Key difference from the 58% version: uses only 8 SELECTED features (32-dim),
-not all 196k features.
+Detects alignment faking using 8 semantically-selected SAE features.
+Key insight: semantic feature selection (0.72) outperforms statistical sweeps (0.47).
 
-Usage on H100:
-    export HF_TOKEN=your_token
-    cd ~/af-experiment && source venv/bin/activate
+Requirements:
+    - GPU with 54GB+ VRAM (H100/A100-80GB)
+    - HuggingFace account with Gemma access
+    - pip install torch transformers safetensors scikit-learn huggingface_hub
+
+Usage:
+    huggingface-cli login
     python original_72_percent_experiment.py
+
+Data: All training/eval data downloaded automatically from HuggingFace.
 """
 
 import json
@@ -53,13 +58,19 @@ class Transcoder:
         pre_acts = x @ self.w_enc + self.b_enc
         return F.relu(pre_acts - self.threshold)
 
-# Load training data (Opus-curated)
-print("\n[1/6] Loading Opus-curated training data...")
-with open("data/combined/alignment_faking.json") as f:
+# Load training data from HuggingFace
+print("\n[1/6] Loading Opus-curated training data from HuggingFace...")
+TRAIN_REPO = "vincentoh/alignment-faking-training"
+
+af_path = hf_hub_download(repo_id=TRAIN_REPO, filename="alignment_faking.json", repo_type="dataset")
+hn_path = hf_hub_download(repo_id=TRAIN_REPO, filename="hard_negative.json", repo_type="dataset")
+al_path = hf_hub_download(repo_id=TRAIN_REPO, filename="aligned.json", repo_type="dataset")
+
+with open(af_path) as f:
     af = json.load(f).get("samples", [])
-with open("data/combined/hard_negative.json") as f:
+with open(hn_path) as f:
     hn = json.load(f).get("samples", [])
-with open("data/combined/aligned.json") as f:
+with open(al_path) as f:
     al = json.load(f).get("samples", [])
 
 print(f"  alignment_faking: {len(af)}")
@@ -79,7 +90,7 @@ print(f"  Training samples: {len(train_texts)} ({y_train.sum()} AF, {len(y_train
 
 # Load gold_106 (EVAL ONLY - never train on this!)
 print("\n[2/6] Loading gold_106 (EVAL ONLY)...")
-gold_path = hf_hub_download(repo_id="vincentoh/alignment-faking-training", filename="gold_106.json", repo_type="dataset")
+gold_path = hf_hub_download(repo_id=TRAIN_REPO, filename="gold_106.json", repo_type="dataset")
 with open(gold_path) as f:
     gold = json.load(f).get("samples", [])
 test_texts = [s["text"] for s in gold]
@@ -200,6 +211,10 @@ print()
 print(classification_report(y_test, y_pred, target_names=["Aligned", "AF"]))
 
 # Save results
+import os
+results_dir = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(results_dir, exist_ok=True)
+
 results = {
     "model": "gemma-3-27b-it",
     "train_cv_auroc": float(cv_scores.mean()),
@@ -210,6 +225,7 @@ results = {
     "feature_dim": X_train.shape[1],
     "probe_features": [f"L{l}_F{f}" for l, f in PROBE_FEATURES],
 }
-with open("gemma3_27b_results.json", "w") as f:
+results_path = os.path.join(results_dir, "sae_intent_probe_results.json")
+with open(results_path, "w") as f:
     json.dump(results, f, indent=2)
-print("\nResults saved to gemma3_27b_results.json")
+print(f"\nResults saved to {results_path}")

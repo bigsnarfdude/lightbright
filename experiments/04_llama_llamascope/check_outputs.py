@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Check what the model is actually outputting."""
 
+import os
 from unsloth import FastLanguageModel
 import json
 from huggingface_hub import hf_hub_download
 
+# Use HuggingFace model or set LOCAL_MODEL_PATH env var for local testing
+MODEL_PATH = os.environ.get("LOCAL_MODEL_PATH", "vincentoh/llama-8b-af-detector")
+
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name="/home/vincent/models/llama-8b-af-detector",
+    model_name=MODEL_PATH,
     max_seq_length=2048,
     load_in_4bit=True,
 )
