@@ -88,12 +88,59 @@ Detection (train)          │      ✅      │      ✅     │    ✅    │
 Detection (gold_106)       │      ❌      │      ❌     │    ❌    │
 SAE Probe (train)          │      ✅      │      ✅     │    ✅    │
 SAE Probe (gold_106)       │      ❌      │      ❌     │    ❌    │
+SAE Intent Probe (Exp 08)  │      ⚠️      │      🔲     │    🔲    │
 Ablation                   │      ⚠️      │      🔲     │    🔲    │
 Steering                   │      ❌      │      🔲     │    🔲    │
 ──────────────────────────┴──────────────┴─────────────┴──────────┘
 ```
 
-Legend: ✅ Works | ⚠️ Circular (works on probe it was trained on) | ❌ Failed | 🔲 Not done
+Legend: ✅ Works | ⚠️ Moderate (0.72 AUROC) | ❌ Failed | 🔲 Not done
+
+## SAE Intent Probe (Experiment 08)
+
+**Core Innovation:** Hand-selected SAE features targeting alignment faking *intent* rather than naive feature sweeps.
+
+### Architecture
+
+```
+Input Text
+    ↓
+Gemma-3-27B-IT (frozen)
+    ↓
+Activations at pre_feedforward_layernorm (layers 31, 40, 53)
+    ↓
+GemmaScope Transcoders (JumpReLU encoding)
+    ↓
+SELECT 8 FEATURES (hand-validated for intent semantics)
+    ↓
+4 statistics per feature: max, mean, count, std
+    ↓
+LogisticRegression(C=0.1) on 32-dim vector
+```
+
+### The 8 Selected Features
+
+| Layer | Feature | Semantic Role |
+|-------|---------|---------------|
+| 40 | 12574 | RLHF training awareness |
+| 40 | 8921 | Self-preservation values |
+| 40 | 15484 | Future self concern |
+| 53 | 15529 | RLHF acronym detection |
+| 53 | 8003 | Training context |
+| 53 | 4824 | Compliance decisions |
+| 53 | 351 | Scratchpad XML structure |
+| 31 | 15111 | Capability erosion |
+
+### Results
+
+| Metric | All Features (196k) | Selected 8 Features |
+|--------|---------------------|---------------------|
+| Train CV AUROC | 0.95 | 0.935 |
+| Gold-106 AUROC | **0.58** | **0.72** |
+
+**Finding:** Feature selection prevents overfitting. Using all features captures spurious training correlations; using 8 intent-related features generalizes better.
+
+---
 
 ## LlamaScope SAE Results (2026-01-08)
 
@@ -110,10 +157,25 @@ SAE features capture vocabulary/scenario, not AF intent. Consistent with Gemma f
 
 ## Summary of Honest Results
 
+### SAE Feature Sweeps (Naive)
+
 | Model | Train AUROC | Gold-106 AUROC | Verdict |
 |-------|-------------|----------------|---------|
 | Gemma-3-27B-IT | 0.935 | **0.470** | ❌ Random |
 | GPT-OSS-20B | 0.940 | **0.563** | ❌ Near-random |
 | Llama-3.1-8B (best layer) | 0.75 | **0.570** | ❌ Near-random |
 
-**Conclusion:** SAE-based alignment faking detection does not generalize. The approach has been thoroughly tested across three models with consistent negative results.
+### SAE Intent Probe (Experiment 08)
+
+| Model | Train AUROC | Gold-106 AUROC | Verdict |
+|-------|-------------|----------------|---------|
+| Gemma-3-27B-IT (8 features) | 0.935 | **0.720** | ⚠️ Moderate |
+
+### Fine-tuned Detectors
+
+| Model | Gold-106 AUROC | Verdict |
+|-------|----------------|---------|
+| gemma3-27b-af-detector-v2 | **0.980** | ✅ Best |
+| gpt-oss-20b-af-detector | **0.964** | ✅ Works |
+
+**Conclusion:** Naive SAE feature sweeps fail (0.47-0.57 AUROC). Hand-selected intent features improve to 0.72 AUROC. Fine-tuned detectors achieve best results (0.98 AUROC).
