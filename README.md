@@ -33,7 +33,7 @@ Uses 8 hand-selected GemmaScope features → 32-dim linear probe.
 | Feature dimensions | 32 (8 features × 4 stats) |
 | Probe type | LogisticRegression(C=0.1) |
 
-**Key insight:** Feature selection matters. Using all 196k features → 0.58 AUROC (overfitting). Using 8 selected features → 0.72 AUROC.
+**Key insight:** *Semantic* feature selection (minimal pairs + concept probing) outperforms *statistical* selection (training AUROC). Features were selected using only training data—gold_106 was used exclusively for evaluation. See [METHODOLOGY.md](docs/METHODOLOGY.md#feature-discovery-method-no-gold_106-leakage) for details.
 
 ### 3. LLM Voting / Single-shot Haiku — ✅ Production Ready
 
