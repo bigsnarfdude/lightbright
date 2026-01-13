@@ -13,6 +13,16 @@ This directory contains technical documentation for Project Lightbright—detect
 
 ---
 
+## Three Detection Approaches
+
+| Method | Gold-106 AUROC | Parameters | Best For |
+|--------|----------------|------------|----------|
+| **Fine-tuned Detectors** | **0.980** | ~27B (LoRA) | Highest accuracy |
+| **SAE Intent Probe** | **0.720** | 32 weights | Interpretability |
+| **SAE Feature Sweep** | 0.470 | 50+ features | ❌ Failed |
+
+---
+
 ## Experiment Timeline
 
 ### Phase 1: SAE Feature Discovery (Jan 3, 2026)
@@ -64,17 +74,30 @@ This directory contains technical documentation for Project Lightbright—detect
 
 **Location:** `experiments/07_cross_model/`
 
+### Phase 6: SAE Intent Probe (Jan 8-13, 2026)
+
+| Experiment | Result |
+|------------|--------|
+| Semantic feature selection | 8 hand-validated features |
+| Intent probe (train CV) | 0.935 AUROC |
+| **Intent probe (gold_106)** | **0.720 AUROC** |
+
+**Key insight:** Semantic selection (minimal pairs + concept probing) outperforms statistical selection (0.72 vs 0.47 AUROC). See [METHODOLOGY.md](METHODOLOGY.md#sae-intent-probe-experiment-08) for feature discovery method.
+
+**Location:** `experiments/08_sae_intent_detector/`
+
 ---
 
 ## Summary
 
-| Component | Status | Result |
-|-----------|--------|--------|
-| Detection (train) | ✅ | 0.935 AUROC |
-| **Detection (gold_106 held-out)** | **❌** | **0.470 AUROC** |
-| Hard negative discrimination (train) | ✅ | 0.968 AUROC |
-| Ablation (probe) | ⚠️ | Works but circular |
-| Steering (classifier) | ❌ | 3-4% flip rate |
-| Steering (generation) | ❌ | Breaks output |
+| Component | Status | Gold-106 AUROC |
+|-----------|--------|----------------|
+| **Fine-tuned detector (gemma3-27b-v2)** | **✅** | **0.980** |
+| Fine-tuned detector (gpt-oss-20b) | ✅ | 0.964 |
+| SAE Intent Probe (8 features) | ⚠️ | 0.720 |
+| SAE Feature Sweep (Gemma) | ❌ | 0.470 |
+| SAE Feature Sweep (GPT-OSS) | ❌ | 0.563 |
+| SAE Feature Sweep (Llama) | ❌ | 0.570 |
+| Steering (all methods) | ❌ | N/A |
 
-**Bottom line:** SAE features do not generalize to held-out data. The 0.83 AUROC previously reported was inflated by feature selection leakage. Honest AUROC is 0.47 (random).
+**Bottom line:** Naive SAE feature sweeps fail to generalize (0.47-0.57 AUROC). Hand-selected intent features improve to 0.72 AUROC. Fine-tuned detectors achieve best results (0.98 AUROC).
