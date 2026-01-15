@@ -4,6 +4,16 @@
 
 **Investigating sparse autoencoder features for alignment faking detection**
 
+## TL;DR
+
+We investigated whether sparse autoencoder (SAE) features can detect alignment faking—when models strategically comply during training while planning to behave differently later. **The short answer: naive SAE approaches fail, but there are paths forward.**
+
+SAE feature sweeps achieve impressive training performance (0.94 AUROC) but collapse to random chance (0.47 AUROC) on held-out evaluation data. The features capture vocabulary about RLHF and training, not the underlying strategic intent. An earlier reported 0.83 AUROC was inflated by feature selection leakage on the test set.
+
+However, two approaches do work: (1) **Fine-tuned detectors** using LoRA on Gemma-3-27B achieve 0.98 AUROC—they learn something deeper than SAE features capture. (2) **SAE intent probes** using 8 hand-selected semantic features (rather than statistical selection) achieve 0.72 AUROC, suggesting that *which* features you select matters more than *how many*.
+
+The key lesson: SAE features are correlates, not causes. Steering experiments consistently failed—features encode scenario context, not decision-making. For production alignment faking detection, fine-tuned models or single-shot LLM classification are the practical paths forward.
+
 ## Three Detection Methods
 
 | Method | Gold-106 AUROC | Parameters | Best For |
