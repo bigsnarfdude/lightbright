@@ -101,3 +101,6 @@ This directory contains technical documentation for Project Lightbright—detect
 | Steering (all methods) | ❌ | N/A |
 
 **Bottom line:** Naive SAE feature sweeps fail to generalize (0.47-0.57 AUROC). Hand-selected intent features improve to 0.72 AUROC. Fine-tuned detectors achieve best results (0.98 AUROC).
+
+TODO:
+https://www.alignmentforum.org/posts/wnzkjSmrgWZaBa2aC/self-preservation-or-instruction-ambiguity-examining-the
